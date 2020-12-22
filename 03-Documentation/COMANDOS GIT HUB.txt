@@ -1,0 +1,65 @@
+git init = Crea la carpeta .git
+git status = Muestra el estado del trabajo 
+git branch -M main = Cambia del "brand master" al "bran main"
+git remote add origin https://github.com/CharlesZambrano/WHMyfirstRepoOOP3248T.git = Crear la carpeta de trabajo
+
+"Branch Master" = Rama principal del codigo
+"Main" = Codigo Extra
+
+COMANDOS BASICOS
+
+Subir el trabajo al repositorio (hacer push) = git push origin main  
+Descargar el trabajo del repositorio (hacer pull) = git pull origin main  
+
+Ver que archivos no han sido registrados = git status  
+Agregar todos los archivos para que esté pendiente de los cambios = git add . 
+Crear commit (fotografía del proyecto en ese momento) = git commit -m "Mensaje del commit" 
+Muestra la lista de commit del mas reciente al más antigüo = git log 
+
+TRUCOS
+
+Muestra en una línea los commit realizado = git log --oneline 
+Muestra en una línea los commit realizados pero más elegante = git log --oneline --decorate --all --graph  
+Solo muestra los archivos modificados = git status -s  
+Vemos información de la rama maestra = git status -s -b 
+''  ''  ''  '' ''  ''  ''  ''''  ''  = git status -sb   
+
+VIAJAR ATRAVEZ DE COMMITS 
+
+Viajamos al commit en específico f52f3da = git reset --mixed f52f3da  
+Viajamos al commit en específico f52f3da y eliminamos los cambios futuros = git reset --hard f52f3da  
+Muestra todos los cambios incluso si borramos los commit = git reflog  
+Viajamos al commit en específico f52f3da y podemos restaurar los archivos = git reset --hard f52f3da 
+
+Si no hicimos un commit pero aún así queremos revertir los cambios en un archivo 
+específico podríamos utilizar el siguiente comando:
+
+git checkout -- nombreArchivo.conExtensión
+
+Si deseamos destruir todos los cambios sin haber realizado un commit podemos 
+utilizar:
+
+git reset --hard
+
+RENOMBRAR ARCHIVOS Y ELIMINAR
+
+Cambiar nombre  = git mv nombreOriginal.vue nombreNuevo.vue 
+Eliminar archivos = git rm nombreArchivo.vue 
+
+"También recordar hacer el commit en ambos casos para que salgan cambios en git"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
