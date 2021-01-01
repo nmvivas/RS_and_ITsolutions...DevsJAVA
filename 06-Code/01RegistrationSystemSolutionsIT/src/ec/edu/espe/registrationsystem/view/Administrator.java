@@ -18,6 +18,15 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
+    public Administrator(Integer cedula, String name, String lastName, String email, String nickname, Integer password) {
+        this.cedula = cedula;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.nickname = nickname;
+        this.password = password;
+    }
+
     
     
 }
