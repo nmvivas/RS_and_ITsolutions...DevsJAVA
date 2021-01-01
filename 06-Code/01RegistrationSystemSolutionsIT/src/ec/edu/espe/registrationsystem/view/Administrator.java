@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystem.view;
 
 /**
  *
- * @author NATALIA
+ * @author KAREN VELASCO, NATALIA VIVAS, CHARLES ZAMBRANO
  */
 public class Administrator {
     
@@ -18,8 +18,8 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
-    public Administrator(Integer cedula, String name, String lastName, String email, String nickname, Integer password) {
-        this.cedula = cedula;
+    public Administrator(Integer idCard, String name, String lastName, String email, String nickname, Integer password) {
+        this.idCard = idCard;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -27,6 +27,30 @@ public class Administrator {
         this.password = password;
     }
 
+    public Integer getIdCard() {
+        return idCard;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public Integer getPassword() {
+        return password;
+    }
+    
     
     
 }
