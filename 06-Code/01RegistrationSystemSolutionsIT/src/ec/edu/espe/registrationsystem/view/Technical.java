@@ -18,4 +18,20 @@ public class Technical {
     private String position;
     private String assignedLevel;
     
+    public Technical(){
+        
+    }
+    
+    public void registerTechical(){
+        
+    }
+    
+    public void saveTechical(){
+        
+    }
+    
+    public void assignProblem(){
+        
+    }
+   
 }
