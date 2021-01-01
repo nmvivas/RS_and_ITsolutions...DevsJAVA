@@ -11,7 +11,7 @@ package ec.edu.espe.registrationsystem.view;
  */
 public class Administrator {
     
-    private Integer cedula;
+    private Integer idCard;
     private String name;
     private String lastName;
     private String email;
