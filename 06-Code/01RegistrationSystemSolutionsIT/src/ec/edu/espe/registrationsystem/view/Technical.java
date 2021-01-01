@@ -33,5 +33,63 @@ public class Technical {
     public void assignProblem(){
         
     }
+
+    public Integer getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(Integer idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getNames() {
+        return names;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public String getLastnames() {
+        return lastnames;
+    }
+
+    public void setLastnames(String lastnames) {
+        this.lastnames = lastnames;
+    }
+
+    public Integer getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(Integer telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getAssignedLevel() {
+        return assignedLevel;
+    }
+
+    public void setAssignedLevel(String assignedLevel) {
+        this.assignedLevel = assignedLevel;
+    }
+    
+    
    
 }
