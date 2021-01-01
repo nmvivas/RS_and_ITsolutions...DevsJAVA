@@ -7,8 +7,12 @@ package ec.edu.espe.registrationsystem.view;
 
 /**
  *
- * @author NATALIA
+ * @author KAREN VELASCO, NATALIA VIVAS, CHARLES ZAMBRANO
  */
 public class Client {
-    
+    private String company;
+    private String names;
+    private int idCardRuc;
+    private String address;
+    private int telephone;
 }
