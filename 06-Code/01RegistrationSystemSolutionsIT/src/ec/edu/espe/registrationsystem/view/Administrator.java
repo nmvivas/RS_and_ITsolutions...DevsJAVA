@@ -10,11 +10,14 @@ package ec.edu.espe.registrationsystem.view;
  * @author NATALIA
  */
 public class Administrator {
+    
     private Integer cedula;
-    private String nombres;
-    private String apellidos;
+    private String name;
+    private String lastName;
     private String email;
     private String nickname;
     private Integer password;
+
+    
     
 }
