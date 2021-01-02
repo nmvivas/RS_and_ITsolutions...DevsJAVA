@@ -19,5 +19,17 @@ public class File {
         this.problem = problem;
         this.typeProblem = typeProblem;
     }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public Problem getProblem() {
+        return problem;
+    }
+
+    public TypeProblem getTypeProblem() {
+        return typeProblem;
+    }
     
 }
