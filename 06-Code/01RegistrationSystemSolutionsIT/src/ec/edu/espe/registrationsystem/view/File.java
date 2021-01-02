@@ -13,4 +13,11 @@ public class File {
     private Client client;
     private Problem problem;
     private TypeProblem typeProblem;
+
+    public File(Client client, Problem problem, TypeProblem typeProblem) {
+        this.client = client;
+        this.problem = problem;
+        this.typeProblem = typeProblem;
+    }
+    
 }
