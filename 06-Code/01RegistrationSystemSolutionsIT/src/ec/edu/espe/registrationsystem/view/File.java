@@ -7,8 +7,10 @@ package ec.edu.espe.registrationsystem.view;
 
 /**
  *
- * @author NATALIA
+ * @author KAREN VELASCO, NATALIA VIVAS, CHARLES ZAMBRANO
  */
 public class File {
-    
+    private Client client;
+    private Problem problem;
+    private TypeProblem typeProblem;
 }
