@@ -43,5 +43,19 @@ public class File {
     public void setTypeProblem(TypeProblem typeProblem) {
         this.typeProblem = typeProblem;
     }
-    
+    public void saveFile(){
+        
+    }
+    public void readFile(){
+        
+    }
+    public void showFile(){
+        
+    }
+    public void searchFile(){
+        
+    }
+    public void removeFile(){
+        
+    }
 }
