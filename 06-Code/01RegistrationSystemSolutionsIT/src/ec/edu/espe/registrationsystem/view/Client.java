@@ -15,5 +15,13 @@ public class Client {
     private int idCardRuc;
     private String address;
     private int telephone;
+
+    public Client(String company, String names, int idCardRuc, String address, int telephone) {
+        this.company = company;
+        this.names = names;
+        this.idCardRuc = idCardRuc;
+        this.address = address;
+        this.telephone = telephone;
+    }
     
 }
