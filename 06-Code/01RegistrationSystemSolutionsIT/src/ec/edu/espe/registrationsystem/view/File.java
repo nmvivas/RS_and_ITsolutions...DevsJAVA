@@ -31,5 +31,17 @@ public class File {
     public TypeProblem getTypeProblem() {
         return typeProblem;
     }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public void setProblem(Problem problem) {
+        this.problem = problem;
+    }
+
+    public void setTypeProblem(TypeProblem typeProblem) {
+        this.typeProblem = typeProblem;
+    }
     
 }
