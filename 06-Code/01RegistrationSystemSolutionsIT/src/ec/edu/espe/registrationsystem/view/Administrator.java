@@ -26,7 +26,10 @@ public class Administrator {
         this.nickname = nickname;
         this.password = password;
     }
-
+    public Administrator(){
+        
+    }
+    
     public Integer getIdCard() {
         return idCard;
     }
@@ -75,6 +78,16 @@ public class Administrator {
         this.password = password;
     }
     
+    public String createAdmin(){
+        return name;
+        
+    }
+    public void saveAdmin(){
+        
+    }
     
+    public void removeAdmin(){
+        
+    }
     
 }
