@@ -15,4 +15,5 @@ public class Client {
     private int idCardRuc;
     private String address;
     private int telephone;
+    
 }
