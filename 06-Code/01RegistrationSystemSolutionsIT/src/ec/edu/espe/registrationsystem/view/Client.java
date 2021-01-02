@@ -23,5 +23,25 @@ public class Client {
         this.address = address;
         this.telephone = telephone;
     }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public String getNames() {
+        return names;
+    }
+
+    public int getIdCardRuc() {
+        return idCardRuc;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getTelephone() {
+        return telephone;
+    }
     
 }
