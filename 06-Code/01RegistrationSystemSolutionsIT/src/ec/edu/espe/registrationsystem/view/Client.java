@@ -43,5 +43,25 @@ public class Client {
     public int getTelephone() {
         return telephone;
     }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setNames(String names) {
+        this.names = names;
+    }
+
+    public void setIdCardRuc(int idCardRuc) {
+        this.idCardRuc = idCardRuc;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
+    }
     
 }
