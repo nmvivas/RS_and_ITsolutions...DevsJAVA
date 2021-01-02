@@ -8,7 +8,18 @@ package ec.edu.espe.registrationsystem.view;
 /**
  *
  * @author NATALIA
+ * @author CHARLES  
  */
 public class Problem {
-    
+   private String description;
+   private String state;
+
+   public Problem(){
+       
+   }
+   
+   public void describeProblem(){
+       
+   }
+           
 }

@@ -8,7 +8,17 @@ package ec.edu.espe.registrationsystem.view;
 /**
  *
  * @author NATALIA
+ * @author CHARLES
  */
 public class TypeProblem {
+    private String name;
+    private Integer code;
     
+    public TypeProblem(){
+        
+    }
+    
+    public void assignType(){
+        
+    }
 }
