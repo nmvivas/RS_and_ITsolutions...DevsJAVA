@@ -10,5 +10,5 @@ package ec.edu.espe.registrationsystem.view;
  * @author NATALIA
  */
 public class Login {
-    
+    Administrator administrator;
 }
