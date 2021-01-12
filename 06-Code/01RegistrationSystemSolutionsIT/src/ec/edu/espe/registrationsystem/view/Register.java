@@ -5,10 +5,16 @@
  */
 package ec.edu.espe.registrationsystem.view;
 
+import java.util.Date;
+
 /**
  *
  * @author NATALIA
  */
-public class Login {
-    Administrator administrator;
+public class Register {
+    public static void main(String[] args) {
+        
+        Date date = new Date();
+        System.out.println(date);
+}
 }
