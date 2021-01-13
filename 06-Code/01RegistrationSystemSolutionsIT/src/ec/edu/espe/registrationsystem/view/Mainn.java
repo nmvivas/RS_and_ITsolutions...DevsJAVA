@@ -6,7 +6,7 @@
 package ec.edu.espe.registrationsystem.view;
 
 import ec.edu.espe.registrationsystem.model.MenuAdministrator;
-import ec.edu.espe.registrationsystem.model.Principal;
+import ec.edu.espe.registrationsystem.model.PrincipalMenu;
 import java.util.Date;
 
 /**
@@ -19,7 +19,7 @@ public class Mainn {
         Date date = new Date();
         System.out.println(date);
         
-        Principal menu = new Principal();
+        PrincipalMenu menu = new PrincipalMenu();
         menu.Options();
         
         

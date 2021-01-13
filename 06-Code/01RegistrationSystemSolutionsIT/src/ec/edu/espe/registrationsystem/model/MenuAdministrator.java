@@ -47,13 +47,15 @@ public class MenuAdministrator {
                     case 3:
                         Technical technical = new Technical();
                         technical.registechnical();
-                  
+                    default:
+                        System.out.println(" The opcion have to be between 1 and 3 ");
                 }
             }catch(InputMismatchException e) {
                 System.out.println(" You have to put a number ");
                 scan.next();
             }
         }
-    }   
+    }
+    
 }
     

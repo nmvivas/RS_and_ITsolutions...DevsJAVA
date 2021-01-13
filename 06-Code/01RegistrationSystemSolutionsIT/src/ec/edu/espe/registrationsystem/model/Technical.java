@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Technical {
     
     private Integer idCard;
-    private String firstnames;
+    private String names;
     private String surnames;
     private Integer telephone;
     private String email;
@@ -25,11 +25,11 @@ public class Technical {
         
     }
 
-    public Technical(Integer idCard, String firstnames, String surnames, 
+    public Technical(Integer idCard, String names, String surnames, 
             Integer telephone, String email, String role, 
             String professionalCategory) {
         this.idCard = idCard;
-        this.firstnames = firstnames;
+        this.names = names;
         this.surnames = surnames;
         this.telephone = telephone;
         this.email = email;
@@ -43,15 +43,15 @@ public class Technical {
         System.out.println(" Regist Technicial \n");
         System.out.println(" Enter your Id Card: ");
         idCard = enterData.nextInt();
-        System.out.println(" Enter your Firt Names:  ");
-        firstnames = enterData.nextLine();
+        System.out.println(" Enter your Names:  ");
+        names = enterData.nextLine();
         System.out.println(" Enter your Surnames:  ");
         surnames = enterData.nextLine();
-        System.out.println(" Enter your telephone:  ");
+        System.out.println(" Enter your Telephone:  ");
         telephone = enterData.nextInt();
-        System.out.println(" Enter your email:  ");
+        System.out.println(" Enter your Email:  ");
         email = enterData.nextLine();
-        System.out.println(" Enter your role:  ");
+        System.out.println(" Enter your Role:  ");
         role = enterData.nextLine();
         System.out.println(" Enter your professional category:  ");
         professionalCategory = enterData.nextLine();
@@ -59,7 +59,7 @@ public class Technical {
     }
     @Override
     public String toString() {
-        return "Technical{" + "idCard=" + idCard + ", firstnames=" + firstnames +
+        return "Technical{" + "idCard=" + idCard + ", names=" + names +
                 ", surnames=" + surnames + ", telephone=" + telephone +
                 ", email=" + email + ", role=" + role + ", professionalCategory=" + 
                 professionalCategory + '}';
@@ -88,12 +88,12 @@ public class Technical {
         this.idCard = idCard;
     }
 
-    public String getFirstnames() {
-        return firstnames;
+    public String getNames() {
+        return names;
     }
 
-    public void setFirstnames(String firstnames) {
-        this.firstnames = firstnames;
+    public void setNames(String firstnames) {
+        this.names = names;
     }
 
     public String getSurnames() {
