@@ -31,51 +31,51 @@ public class Administrator {
 
     @Override
     public String toString() {
-        return "Administrator{" + "cedula=" + getCedula() + ", nombres=" 
-                + getNombres() + ", apellidos=" + getApellidos() + ", email=" 
-                + getEmail() + ", nickname=" + getNickname() + ", password=" 
-                + getPassword() + '}';
+        return "Administrator{" + "idCard=" + getIdCard() + ", firstnames=" 
+                + getFirstnames() + ", surnames=" + getSurnames() + ", email=" + 
+                getEmail() + ", nickname=" + getNickname() + ", password=" + 
+                getPassword() + '}';
     }
-    
+
     /**
-     * @return the cedula
+     * @return the idCard
      */
-    public Integer getCedula() {
+    public Integer getIdCard() {
         return idCard;
     }
 
     /**
-     * @param cedula the cedula to set
+     * @param idCard the idCard to set
      */
-    public void setCedula(Integer cedula) {
+    public void setIdCard(Integer idCard) {
         this.idCard = idCard;
     }
 
     /**
-     * @return the nombres
+     * @return the firstnames
      */
-    public String getNombres() {
+    public String getFirstnames() {
         return firstnames;
     }
 
     /**
-     * @param nombres the nombres to set
+     * @param firstnames the firstnames to set
      */
-    public void setNombres(String nombres) {
+    public void setFirstnames(String firstnames) {
         this.firstnames = firstnames;
     }
 
     /**
-     * @return the apellidos
+     * @return the surnames
      */
-    public String getApellidos() {
+    public String getSurnames() {
         return surnames;
     }
 
     /**
-     * @param apellidos the apellidos to set
+     * @param surnames the surnames to set
      */
-    public void setApellidos(String apellidos) {
+    public void setSurnames(String surnames) {
         this.surnames = surnames;
     }
 
@@ -120,8 +120,6 @@ public class Administrator {
     public void setPassword(Integer password) {
         this.password = password;
     }
-    
-    
-    
-    
+
+
 }
