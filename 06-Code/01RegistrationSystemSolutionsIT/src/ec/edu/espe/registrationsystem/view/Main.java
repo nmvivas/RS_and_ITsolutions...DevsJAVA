@@ -7,18 +7,19 @@ package ec.edu.espe.registrationsystem.view;
 
 import ec.edu.espe.registrationsystem.model.MenuAdministrator;
 import ec.edu.espe.registrationsystem.model.PrincipalMenu;
+import java.io.IOException;
 import java.util.Date;
 
 /**
  *
  * @author DEVS_JAVA_KND
  */
-public class Mainn {
-    public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) throws IOException, InterruptedException {
         
         Date date = new Date();
         System.out.println(date);
-        
+        System.out.println("");
         PrincipalMenu menu = new PrincipalMenu();
         menu.Options();
         
