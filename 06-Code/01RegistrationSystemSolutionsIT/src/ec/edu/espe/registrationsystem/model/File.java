@@ -5,9 +5,11 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class File {
     
@@ -19,6 +21,15 @@ public class File {
         this.client = client;
         this.problem = problem;
         this.typeproblem = typeproblem;
+    }
+    
+    public void registFile(){
+        Scanner enterData = new Scanner(System.in);
+        System.out.println(" Regist File \n");
+        System.out.println(" Enter client:  ");
+        
+        System.out.println("");
+        
     }
 
     @Override

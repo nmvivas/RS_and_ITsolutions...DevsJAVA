@@ -5,19 +5,33 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class Login {
     
     private Administrator administrator;
+    private String nickname;
+    private int password;
 
-    public Login(Administrator administrator) {
+    public Login() {
         
-        this.administrator = administrator;
     }
-
+    public void enterTheSystem(){
+        Scanner enterData = new Scanner(System.in);
+        System.out.println(" Enter your nick name:  ");
+        nickname = enterData.nextLine();
+        System.out.println(" Enter your password:  ");
+        password = enterData.nextInt();
+        MenuAdministrator menuadmin = new MenuAdministrator();
+        menuadmin.administratorMenu();
+        
+    }
+    
+    
     @Override
     public String toString() {
         return "Login{" + "administrator=" + getAdministrator() + '}';
