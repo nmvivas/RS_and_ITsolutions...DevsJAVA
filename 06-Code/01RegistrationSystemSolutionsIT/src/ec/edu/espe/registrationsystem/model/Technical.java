@@ -5,9 +5,11 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class Technical {
     
@@ -18,6 +20,10 @@ public class Technical {
     private String email;
     private String role;
     private String professionalCategory;
+    
+    public Technical(){
+        
+    }
 
     public Technical(Integer idCard, String firstnames, String surnames, 
             Integer telephone, String email, String role, 
@@ -30,7 +36,27 @@ public class Technical {
         this.role = role;
         this.professionalCategory = professionalCategory;
     }
-
+    
+    public void registechnical(){
+       
+        Scanner enterData = new Scanner(System.in);
+        System.out.println(" Regist Technicial \n");
+        System.out.println(" Enter your Id Card: ");
+        idCard = enterData.nextInt();
+        System.out.println(" Enter your Firt Names:  ");
+        firstnames = enterData.nextLine();
+        System.out.println(" Enter your Surnames:  ");
+        surnames = enterData.nextLine();
+        System.out.println(" Enter your telephone:  ");
+        telephone = enterData.nextInt();
+        System.out.println(" Enter your email:  ");
+        email = enterData.nextLine();
+        System.out.println(" Enter your role:  ");
+        role = enterData.nextLine();
+        System.out.println(" Enter your professional category:  ");
+        professionalCategory = enterData.nextLine();
+        
+    }
     @Override
     public String toString() {
         return "Technical{" + "idCard=" + idCard + ", firstnames=" + firstnames +
