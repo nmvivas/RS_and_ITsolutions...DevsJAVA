@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class Administrator {
     
@@ -20,23 +20,33 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
-    public Administrator(Integer idCard, String firstnames, String surnames, 
-            String email, String nickname, Integer password) {
-        
-        this.idCard = idCard;
-        this.firstnames = firstnames;
-        this.surnames = surnames;
-        this.email = email;
-        this.nickname = nickname;
-        this.password = password;
+    public Administrator(){
     }
 
    public void registAdministrator(){
        
        Scanner enterData = new Scanner(System.in);
        
-       System.out.println(" Regist Administrator  :) ");
+       System.out.println(" Regist Administrator  \n");
+       System.out.println(" Enter your number Id:   ");
+       idCard = enterData.nextInt();
+       System.out.println(" Enter your First Names: ");
+       firstnames = enterData.nextLine();
+       System.out.println(" Enter your Surnames:  ");
+       surnames = enterData.nextLine();
+       System.out.println(" Enter your email:  ");
+       email = enterData.nextLine();
+       System.out.println(" Enter your nickname:  ");
+       nickname = enterData.nextLine();
+       System.out.println(" Enter your password:  ");
+       password = enterData.nextInt();
+               
+       Administrator admin = new Administrator();
+       String dataToSave = admin.getIdCard() + "," + admin.getFirstnames() + "," 
+               + admin.getSurnames() + "," + admin.getEmail() + "," 
+               + admin.getNickname() + "," + admin.getPassword();
        
+             
      
    }
    
