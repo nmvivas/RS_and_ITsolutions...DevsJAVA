@@ -12,17 +12,19 @@ package ec.edu.espe.registrationsystem.model;
 public class Technical {
     
     private Integer idCard;
-    private String names;
-    private String lastnames;
+    private String firstnames;
+    private String surnames;
     private Integer telephone;
     private String email;
     private String role;
     private String professionalCategory;
 
-    public Technical(Integer idCard, String names, String lastnames, Integer telephone, String email, String role, String professionalCategory) {
+    public Technical(Integer idCard, String firstnames, String surnames, 
+            Integer telephone, String email, String role, 
+            String professionalCategory) {
         this.idCard = idCard;
-        this.names = names;
-        this.lastnames = lastnames;
+        this.firstnames = firstnames;
+        this.surnames = surnames;
         this.telephone = telephone;
         this.email = email;
         this.role = role;
@@ -31,10 +33,13 @@ public class Technical {
 
     @Override
     public String toString() {
-        return "Technical{" + "idCard=" + getIdCard() + ", names=" + getNames() + ", lastnames=" + getLastnames() + ", telephone=" + getTelephone() + ", email=" + getEmail() + ", role=" + getRole() + ", professionalCategory=" + getProfessionalCategory() + '}';
+        return "Technical{" + "idCard=" + idCard + ", firstnames=" + firstnames +
+                ", surnames=" + surnames + ", telephone=" + telephone +
+                ", email=" + email + ", role=" + role + ", professionalCategory=" + 
+                professionalCategory + '}';
     }
+
     
-     
     public void saveTechical(){
         
     }
@@ -57,35 +62,23 @@ public class Technical {
         this.idCard = idCard;
     }
 
-    /**
-     * @return the names
-     */
-    public String getNames() {
-        return names;
+    public String getFirstnames() {
+        return firstnames;
     }
 
-    /**
-     * @param names the names to set
-     */
-    public void setNames(String names) {
-        this.names = names;
+    public void setFirstnames(String firstnames) {
+        this.firstnames = firstnames;
     }
 
-    /**
-     * @return the lastnames
-     */
-    public String getLastnames() {
-        return lastnames;
+    public String getSurnames() {
+        return surnames;
     }
 
-    /**
-     * @param lastnames the lastnames to set
-     */
-    public void setLastnames(String lastnames) {
-        this.lastnames = lastnames;
+    public void setSurnames(String surnames) {
+        this.surnames = surnames;
     }
 
-    /**
+     /**
      * @return the telephone
      */
     public Integer getTelephone() {

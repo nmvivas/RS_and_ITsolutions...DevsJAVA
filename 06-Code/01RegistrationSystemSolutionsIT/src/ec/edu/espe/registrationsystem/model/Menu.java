@@ -23,6 +23,7 @@ public class Menu {
         
      System.out.println(" Welcome to the System ");
      System.out.println(" Select 1 : If you want to create a user administrator ");
+     
      System.out.println(" Select 2 : If you want to login ");
         
 }
