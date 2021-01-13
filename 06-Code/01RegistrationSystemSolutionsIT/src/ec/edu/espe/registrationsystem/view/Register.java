@@ -16,5 +16,6 @@ public class Register {
         
         Date date = new Date();
         System.out.println(date);
+        
 }
 }

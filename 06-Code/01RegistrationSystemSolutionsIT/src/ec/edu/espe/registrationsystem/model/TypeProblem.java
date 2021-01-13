@@ -57,6 +57,5 @@ public class TypeProblem {
         this.code = code;
     }
     
-    
-    
+        
 }

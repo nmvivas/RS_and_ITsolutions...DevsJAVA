@@ -22,8 +22,7 @@ public class Login {
         return "Login{" + "administrator=" + getAdministrator() + '}';
     }
     
-    
-    
+        
     public void verificationAdmin(){
         
     }

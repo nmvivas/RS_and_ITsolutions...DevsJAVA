@@ -26,8 +26,7 @@ public class File {
         return "File{" + "client=" + getClient() + ", problem=" + getProblem() + ", typeproblem=" + getTypeproblem() + '}';
     }
     
-    
-    
+        
     public void saveFile(){
         
     }

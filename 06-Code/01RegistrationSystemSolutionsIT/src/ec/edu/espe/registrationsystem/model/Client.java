@@ -27,7 +27,9 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client{" + "company=" + getCompany() + ", names=" + getNames() + ", idCardRuc=" + getIdCardRuc() + ", address=" + getAddress() + ", telephone=" + getTelephone() + '}';
+        return "Client{" + "company=" + getCompany() + ", names=" 
+                + getNames() + ", idCardRuc=" + getIdCardRuc() + ", address=" 
+                + getAddress() + ", telephone=" + getTelephone() + '}';
     }
 
     /**

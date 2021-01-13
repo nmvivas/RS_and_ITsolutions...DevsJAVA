@@ -10,17 +10,19 @@ package ec.edu.espe.registrationsystem.model;
  * @author NATALIA
  */
 public class Administrator {
-    private Integer cedula;
-    private String nombres;
-    private String apellidos;
+    
+    private Integer idCard;
+    private String firstnames;
+    private String surnames;
     private String email;
     private String nickname;
     private Integer password;
 
-    public Administrator(Integer cedula, String nombres, String apellidos, String email, String nickname, Integer password) {
-        this.cedula = cedula;
-        this.nombres = nombres;
-        this.apellidos = apellidos;
+    public Administrator(Integer idCard, String firstnames, String surnames, String email, String nickname, Integer password) {
+        
+        this.idCard = idCard;
+        this.firstnames = firstnames;
+        this.surnames = surnames;
         this.email = email;
         this.nickname = nickname;
         this.password = password;
@@ -28,9 +30,12 @@ public class Administrator {
 
     @Override
     public String toString() {
-        return "Administrator{" + "cedula=" + getCedula() + ", nombres=" + getNombres() + ", apellidos=" + getApellidos() + ", email=" + getEmail() + ", nickname=" + getNickname() + ", password=" + getPassword() + '}';
+        return "Administrator{" + "cedula=" + getCedula() + ", nombres=" 
+                + getNombres() + ", apellidos=" + getApellidos() + ", email=" 
+                + getEmail() + ", nickname=" + getNickname() + ", password=" 
+                + getPassword() + '}';
     }
-
+    
     /**
      * @return the cedula
      */

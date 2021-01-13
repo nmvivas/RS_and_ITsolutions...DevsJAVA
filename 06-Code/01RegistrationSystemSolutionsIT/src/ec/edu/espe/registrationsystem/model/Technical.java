@@ -33,8 +33,7 @@ public class Technical {
         return "Technical{" + "idCard=" + getIdCard() + ", names=" + getNames() + ", lastnames=" + getLastnames() + ", telephone=" + getTelephone() + ", email=" + getEmail() + ", role=" + getRole() + ", professionalCategory=" + getProfessionalCategory() + '}';
     }
     
- 
-    
+     
     public void saveTechical(){
         
     }
@@ -142,6 +141,5 @@ public class Technical {
     }
     
     
-    
-    
+        
 }
