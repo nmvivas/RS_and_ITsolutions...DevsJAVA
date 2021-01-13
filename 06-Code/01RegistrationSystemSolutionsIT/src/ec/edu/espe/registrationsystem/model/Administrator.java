@@ -40,42 +40,42 @@ public class Administrator {
      * @return the cedula
      */
     public Integer getCedula() {
-        return cedula;
+        return idCard;
     }
 
     /**
      * @param cedula the cedula to set
      */
     public void setCedula(Integer cedula) {
-        this.cedula = cedula;
+        this.idCard = idCard;
     }
 
     /**
      * @return the nombres
      */
     public String getNombres() {
-        return nombres;
+        return firstnames;
     }
 
     /**
      * @param nombres the nombres to set
      */
     public void setNombres(String nombres) {
-        this.nombres = nombres;
+        this.firstnames = firstnames;
     }
 
     /**
      * @return the apellidos
      */
     public String getApellidos() {
-        return apellidos;
+        return surnames;
     }
 
     /**
      * @param apellidos the apellidos to set
      */
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        this.surnames = surnames;
     }
 
     /**
