@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import ec.edu.espe.filemanager.utils.Data;
 import java.util.Scanner;
 
 /**
@@ -12,15 +13,40 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Client {
-    
+
     private String company;
     private String names;
     private int idCardRuc;
     private String address;
     private int telephone;
+
+    public Client() {
+
+        Scanner enterData = new Scanner(System.in);
+
+        System.out.println(" =================================  REGIST CLIENT ====================================== \n");
+        System.out.println("\n ---> Enter the Company:  ");
+        company = enterData.nextLine();
+        System.out.println(" \n ---> Enter names:  ");
+        names = enterData.nextLine();
+        System.out.println(" \n ---> Enter your Id Card Ruc:  ");
+        idCardRuc = enterData.nextInt();
+        System.out.println(" \n ---> Enter your address:  ");
+        address = enterData.nextLine();
+        System.out.println(" \n ---> Enter your telephone:  ");
+        telephone = enterData.nextInt();
+
+        String dataToSave = toString();
+
+        Data.save("Client.csv", dataToSave);
+
+    }
     
-    public Client(){
-        
+    @Override
+    public String toString() {
+        return "Client{" + "company = " + getCompany() + ", names = "
+                + getNames() + ", idCardRuc=" + getIdCardRuc() + ", address = "
+                + getAddress() + ", telephone = " + getTelephone() + '}';
     }
 
     public Client(String company, String names, int idCardRuc, String address, int telephone) {
@@ -30,28 +56,7 @@ public class Client {
         this.address = address;
         this.telephone = telephone;
     }
-    
-    public void registClient(){
-       
-       Scanner enterData = new Scanner(System.in);
-        System.out.println(" Regist Client \n");
-        System.out.println(" Enter the Company:  ");
-        company = enterData.nextLine();
-        System.out.println(" Enter names:  ");
-        names = enterData.nextLine();
-        System.out.println(" Enter your Id Card Ruc:  ");
-        idCardRuc = enterData.nextInt();
-        System.out.println(" Enter your address:  ");
-        address = enterData.nextLine();
-        System.out.println(" Enter your telephone:  ");
-        telephone = enterData.nextInt();
-    }
-    @Override
-    public String toString() {
-        return "Client{" + "company=" + getCompany() + ", names=" 
-                + getNames() + ", idCardRuc=" + getIdCardRuc() + ", address=" 
-                + getAddress() + ", telephone=" + getTelephone() + '}';
-    }
+
 
     /**
      * @return the company
@@ -122,9 +127,5 @@ public class Client {
     public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
-    
-    
-    
-    
-    
+
 }

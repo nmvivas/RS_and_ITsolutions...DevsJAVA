@@ -21,39 +21,35 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
-    
     public Administrator() {
 
         Scanner enterData = new Scanner(System.in);
 
-        System.out.println(" Regist Administrator  \n" + " ********************************************************* ");
-        System.out.println(" Enter your number Id: ");
+        System.out.println(" ==========================   REGIST ADMINISTRATOR ==========================================  \n");
+        System.out.println("\n ---> Enter your number Id: ");
         idCard = enterData.nextInt();
-        System.out.println(" ********************************************************* + \n " + " Enter your Names: ");
+        System.out.println("\n ---> Enter your Names:     ");
         names = enterData.next();
-        System.out.println(" ********************************************************* + \n " + " Enter your Surnames:  ");
+        System.out.println("\n ---> Enter your Surnames:  ");
         surnames = enterData.next();
-        System.out.println(" ********************************************************* + \n " + " Enter your email:  ");
+        System.out.println("\n ---> Enter your email:     ");
         email = enterData.next();
-        System.out.println(" ********************************************************* + \n " + " Enter your nickname:  ");
+        System.out.println("\n ---> Enter your nickname:  ");
         nickname = enterData.next();
-        System.out.println(" ********************************************************* + \n " + " Enter your password: ");
+        System.out.println("\n --->Enter your password:   ");
         password = enterData.nextInt();
-        
-        String dataToSave =  toString();
-        
+
+        String dataToSave = toString();
         Data.save("administrator.csv", dataToSave);
     }
-    
-      
+
     @Override
     public String toString() {
-        return "Administrator{" + "idCard=" + idCard + ", names=" + names + ", surnames=" + surnames + ", email=" + email + ", nickname=" + nickname + ", password=" + password + '}';
+        return "Administrator{" + "idCard = " + idCard + ", names = " + names + ", surnames = " + surnames + ", email = " + email + ", nickname = " + nickname + ", password = " + password + '}';
     }
 
-
     public Administrator(Integer idCard, String names, String surnames, String email, String nickname, Integer password) {
-        
+
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;

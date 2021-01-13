@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import ec.edu.espe.filemanager.utils.Data;
 import java.util.Scanner;
 
 /**
@@ -12,39 +13,44 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Problem {
-     private String description;
-     private String state;
-     private String typeProblem;
-     
-     public Problem(){
-         
-     }
-     
-     public void describeProblem(){
-         
-     }
+
+    private String description;
+    private String state;
+    private String typeProblem;
+
+    public Problem() {
+
+        Scanner enterData = new Scanner(System.in);
+
+        System.out.println(" ================================== REGIST PROBLEM  ================================= \n");
+        System.out.println(" \n ---> Enter description of problem:  ");
+        description = enterData.nextLine();
+        System.out.println(" \n ---> Enter type the problem: ");
+        typeProblem = enterData.nextLine();
+        System.out.println(" \n ---> Enter state of the problem:  ");
+        state = enterData.nextLine();
+        
+        String dataToSave = toString();
+        Data.save("Problem.csv", dataToSave);
+
+    }
+  
+     @Override
+    public String toString() {
+        return "Problem{" + "description=" + getDescription() + ", state="
+                + getState() + '}';
+    } 
+    
+    public void describeProblem() {
+
+    }
 
     public Problem(String description, String typeProblem, String state) {
         this.description = description;
         this.state = state;
         this.typeProblem = typeProblem;
     }
-    public void registProblem(){
-        Scanner enterData = new Scanner(System.in);
-        System.out.println(" Regist Problem \n");
-        System.out.println(" Enter description of problem:  ");
-        description = enterData.nextLine();
-        System.out.println(" Enter type the problem: ");
-        typeProblem = enterData.nextLine();
-        System.out.println(" Enter state of the problem:  ");
-        state = enterData.nextLine();
-    }
 
-    @Override
-    public String toString() {
-        return "Problem{" + "description=" + getDescription() + ", state=" + 
-                getState() + '}';
-    }
 
     /**
      * @return the description
@@ -73,7 +79,5 @@ public class Problem {
     public void setState(String state) {
         this.state = state;
     }
-     
-     
-    
+
 }

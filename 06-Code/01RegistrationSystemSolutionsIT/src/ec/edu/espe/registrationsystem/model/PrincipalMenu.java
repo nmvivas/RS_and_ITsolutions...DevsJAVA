@@ -32,10 +32,14 @@ public class PrincipalMenu {
 
         while (!salir) {
 
-            System.out.println(" Welcome to the System, please chose an option \n");
-            System.out.println(" Select 1 : If you want to create a user administrator. ");
-            System.out.println(" Select 2 : If you want to login. ");
-            System.out.println(" Select 3 : If you want to exit. ");
+            System.out.println(" ================*=====================*=====================*=============================");
+            System.out.println("                         WELCOME TO REGISTRATION SYSTEM SOLUTION IT                   ");
+            System.out.println("                           ---------  Principal menu --------- ");
+            System.out.println(" \n please , choose a option to continue... \n");
+            System.out.println(" ---> Select 1 :  Create a user administrator ");
+            System.out.println(" ---> Select 2 :  Login ");
+            System.out.println(" ---> Select 3 :  Exit ");
+            System.out.println(" ================*=====================*=====================*=============================");
 
             try {
 
@@ -44,23 +48,22 @@ public class PrincipalMenu {
                 switch (option) {
                     case 1:
                         Administrator admin = new Administrator();
-                       
                         break;
+
                     case 2:
                         Login login = new Login();
-                        login.enterTheSystem();
-                        
-
+                        login.enterSystem();
                         break;
+
                     case 3:
                         System.out.println(" ****** Thanks you for use our system *******");
                         System.exit(0);
-                        
                         break;
+                 
                     default:
                         System.out.println(" The opcion have to be between 1 and 3 ");
                 }
-            } catch (InputMismatchException e) {
+            } catch (Exception ex) {
                 System.out.println(" You have to put a number ");
                 scan.next();
             }

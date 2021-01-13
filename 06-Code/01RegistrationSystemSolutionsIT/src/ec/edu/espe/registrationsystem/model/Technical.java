@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import ec.edu.espe.filemanager.utils.Data;
 import java.util.Scanner;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Technical {
-    
+
     private Integer idCard;
     private String names;
     private String surnames;
@@ -20,14 +21,43 @@ public class Technical {
     private String email;
     private String role;
     private String professionalCategory;
+
+    public Technical() {
+
+        Scanner enterData = new Scanner(System.in);
+
+        System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
+        System.out.println(" \n ---> Enter your Id Card: ");
+        idCard = enterData.nextInt();
+        System.out.println("\n --->  Enter your Names:  ");
+        names = enterData.nextLine();
+        System.out.println(" \n ---> Enter your Surnames:  ");
+        surnames = enterData.nextLine();
+        System.out.println(" \n ---> Enter your Telephone:  ");
+        telephone = enterData.nextInt();
+        System.out.println("\n --->  Enter your Email:  ");
+        email = enterData.nextLine();
+        System.out.println("\n --->  Enter your Role:  ");
+        role = enterData.nextLine();
+        System.out.println("\n --->  Enter your professional category:  ");
+        professionalCategory = enterData.nextLine();
+
+        String dataToSave = toString();
+
+        Data.save("Technical.csv", dataToSave);
+
+    }
     
-    public Technical(){
-        
+    @Override
+    public String toString() {
+        return "Technical{" + "idCard = " + idCard + ", names = " + names
+                + ", surnames = " + surnames + ", telephone = " + telephone
+                + ", email = " + email + ", role = " + role + ", professionalCategory = "
+                + professionalCategory + '}';
     }
 
-    public Technical(Integer idCard, String names, String surnames, 
-            Integer telephone, String email, String role, 
-            String professionalCategory) {
+    public Technical(Integer idCard, String names, String surnames, Integer telephone, String email, String role, String professionalCategory) {
+
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;
@@ -36,42 +66,15 @@ public class Technical {
         this.role = role;
         this.professionalCategory = professionalCategory;
     }
-    
-    public void registechnical(){
-       
-        Scanner enterData = new Scanner(System.in);
-        System.out.println(" Regist Technicial \n");
-        System.out.println(" Enter your Id Card: ");
-        idCard = enterData.nextInt();
-        System.out.println(" Enter your Names:  ");
-        names = enterData.nextLine();
-        System.out.println(" Enter your Surnames:  ");
-        surnames = enterData.nextLine();
-        System.out.println(" Enter your Telephone:  ");
-        telephone = enterData.nextInt();
-        System.out.println(" Enter your Email:  ");
-        email = enterData.nextLine();
-        System.out.println(" Enter your Role:  ");
-        role = enterData.nextLine();
-        System.out.println(" Enter your professional category:  ");
-        professionalCategory = enterData.nextLine();
-        
-    }
-    @Override
-    public String toString() {
-        return "Technical{" + "idCard=" + idCard + ", names=" + names +
-                ", surnames=" + surnames + ", telephone=" + telephone +
-                ", email=" + email + ", role=" + role + ", professionalCategory=" + 
-                professionalCategory + '}';
-    }
 
     
-    public void saveTechical(){
-        
+
+    public void saveTechical() {
+
     }
-    
-    public void assignProblem(){
-        
+
+    public void assignProblem() {
+
     }
 
     /**
@@ -104,7 +107,7 @@ public class Technical {
         this.surnames = surnames;
     }
 
-     /**
+    /**
      * @return the telephone
      */
     public Integer getTelephone() {
@@ -159,7 +162,5 @@ public class Technical {
     public void setProfessionalCategory(String professionalCategory) {
         this.professionalCategory = professionalCategory;
     }
-    
-    
-        
+
 }
