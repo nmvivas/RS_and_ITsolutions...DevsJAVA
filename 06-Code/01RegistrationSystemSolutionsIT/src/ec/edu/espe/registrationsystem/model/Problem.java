@@ -25,7 +25,8 @@ public class Problem {
 
     @Override
     public String toString() {
-        return "Problem{" + "description=" + getDescription() + ", state=" + getState() + '}';
+        return "Problem{" + "description=" + getDescription() + ", state=" + 
+                getState() + '}';
     }
 
     /**

@@ -14,6 +14,7 @@ public class Login {
     private Administrator administrator;
 
     public Login(Administrator administrator) {
+        
         this.administrator = administrator;
     }
 
