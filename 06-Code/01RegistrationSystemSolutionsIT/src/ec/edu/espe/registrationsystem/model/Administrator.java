@@ -18,7 +18,8 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
-    public Administrator(Integer idCard, String firstnames, String surnames, String email, String nickname, Integer password) {
+    public Administrator(Integer idCard, String firstnames, String surnames, 
+            String email, String nickname, Integer password) {
         
         this.idCard = idCard;
         this.firstnames = firstnames;

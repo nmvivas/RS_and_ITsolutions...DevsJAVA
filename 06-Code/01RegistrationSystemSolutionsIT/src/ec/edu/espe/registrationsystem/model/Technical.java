@@ -10,6 +10,7 @@ package ec.edu.espe.registrationsystem.model;
  * @author NATALIA
  */
 public class Technical {
+    
     private Integer idCard;
     private String names;
     private String lastnames;
