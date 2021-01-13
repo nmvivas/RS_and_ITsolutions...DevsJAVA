@@ -5,9 +5,11 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class TypeProblem {
     
@@ -23,7 +25,16 @@ public class TypeProblem {
         this.name = name;
         this.code = code;
     }
-
+    
+    public void registTypeProblem(){
+        Scanner enterData = new Scanner(System.in);
+        System.out.println(" Regist Type Problem \n");
+        System.out.println(" Enter name of type problem:  ");
+        name = enterData.nextLine();
+        System.out.println(" Enter code of type problem:  ");
+        code = enterData.nextInt();
+        
+    }
     @Override
     public String toString() {
         return "TypeProblem{" + "name=" + getName() + ", code=" + getCode() + '}';
