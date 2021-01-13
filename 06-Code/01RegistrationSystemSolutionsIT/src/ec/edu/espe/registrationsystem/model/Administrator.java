@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Administrator {
     
     private Integer idCard;
-    private String firstnames;
+    private String names;
     private String surnames;
     private String email;
     private String nickname;
@@ -30,8 +30,8 @@ public class Administrator {
        System.out.println(" Regist Administrator  \n");
        System.out.println(" Enter your number Id:   ");
        idCard = enterData.nextInt();
-       System.out.println(" Enter your First Names: ");
-       firstnames = enterData.nextLine();
+       System.out.println(" Enter your Names: ");
+       names = enterData.nextLine();
        System.out.println(" Enter your Surnames:  ");
        surnames = enterData.nextLine();
        System.out.println(" Enter your email:  ");
@@ -42,23 +42,14 @@ public class Administrator {
        password = enterData.nextInt();
                
        Administrator admin = new Administrator();
-       String dataToSave = admin.getIdCard() + "," + admin.getFirstnames() + "," 
-               + admin.getSurnames() + "," + admin.getEmail() + "," 
-               + admin.getNickname() + "," + admin.getPassword();
+       String dataToSave = surnames;
        
-             
+       
+       
+       System.out.println(dataToSave);
      
    }
-   
-    
-    
-    @Override
-    public String toString() {
-        return "Administrator{" + "idCard=" + getIdCard() + ", firstnames=" 
-                + getFirstnames() + ", surnames=" + getSurnames() + ", email=" + 
-                getEmail() + ", nickname=" + getNickname() + ", password=" + 
-                getPassword() + '}';
-    }
+
 
     /**
      * @return the idCard
@@ -77,15 +68,15 @@ public class Administrator {
     /**
      * @return the firstnames
      */
-    public String getFirstnames() {
-        return firstnames;
+    public String getNames() {
+        return names;
     }
 
     /**
      * @param firstnames the firstnames to set
      */
-    public void setFirstnames(String firstnames) {
-        this.firstnames = firstnames;
+    public void setNames(String firstnames) {
+        this.names = names;
     }
 
     /**

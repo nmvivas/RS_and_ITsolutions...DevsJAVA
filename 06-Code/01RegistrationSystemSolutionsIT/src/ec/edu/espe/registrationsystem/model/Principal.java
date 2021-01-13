@@ -13,15 +13,15 @@ import java.util.InputMismatchException;
  * @author DEVS_JAVA_KND
  */
 public class Principal {
-    
+
     private Integer opcion1;
     private Integer opcion2;
     private Integer opcion3;
-    
-    
-    public Principal(){
-     
-}
+
+    public Principal() {
+
+    }
+
     public void Options() {
 
         Scanner scan = new Scanner(System.in);
@@ -37,14 +37,14 @@ public class Principal {
             System.out.println(" Select 3 : If you want to exit");
 
             try {
-  
+
                 option = scan.nextInt();
-                
+
                 switch (option) {
-                    case 1: 
+                    case 1:
                         Administrator admin = new Administrator();
                         admin.registAdministrator();
-                        
+
                         break;
                     case 2:
                         Login login = new Login();
@@ -55,7 +55,6 @@ public class Principal {
                         System.out.println("****** Thanks you for use our system *******");
                         System.exit(0);
                         
-                        
                         break;
                     default:
                         System.out.println(" The opcion have to be between 1 and 3 ");
@@ -65,12 +64,12 @@ public class Principal {
                 scan.next();
             }
         }
-}
-     
+    }
+
     @Override
     public String toString() {
-        return "Menu{" + "opcion1=" + opcion1 + ", opcion2=" + opcion2 + 
-                ", opcion3=" + opcion3 + '}';
+        return "Menu{" + "opcion1=" + opcion1 + ", opcion2=" + opcion2
+                + ", opcion3=" + opcion3 + '}';
     }
 
     public Integer getOpcion1() {
@@ -96,8 +95,5 @@ public class Principal {
     public void setOpcion3(Integer opcion3) {
         this.opcion3 = opcion3;
     }
-    
-   
 
 }
-
