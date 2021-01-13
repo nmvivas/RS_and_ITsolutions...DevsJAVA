@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
  * @author NATALIA
@@ -29,6 +31,17 @@ public class Administrator {
         this.password = password;
     }
 
+   public void registAdministrator(){
+       
+       Scanner enterData = new Scanner(System.in);
+       
+       System.out.println(" Regist Administrator  :) ");
+       
+     
+   }
+   
+    
+    
     @Override
     public String toString() {
         return "Administrator{" + "idCard=" + getIdCard() + ", firstnames=" 
