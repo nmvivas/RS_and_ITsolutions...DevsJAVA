@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import ec.edu.espe.filemanager.utils.Data;
 import java.util.Scanner;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Administrator {
-    
+
     private Integer idCard;
     private String names;
     private String surnames;
@@ -20,36 +21,46 @@ public class Administrator {
     private String nickname;
     private Integer password;
 
-    public Administrator(){
+    
+    public Administrator() {
+
+        Scanner enterData = new Scanner(System.in);
+
+        System.out.println(" Regist Administrator  \n" + " ********************************************************* ");
+        System.out.println(" Enter your number Id: ");
+        idCard = enterData.nextInt();
+        System.out.println(" ********************************************************* + \n " + " Enter your Names: ");
+        names = enterData.next();
+        System.out.println(" ********************************************************* + \n " + " Enter your Surnames:  ");
+        surnames = enterData.next();
+        System.out.println(" ********************************************************* + \n " + " Enter your email:  ");
+        email = enterData.next();
+        System.out.println(" ********************************************************* + \n " + " Enter your nickname:  ");
+        nickname = enterData.next();
+        System.out.println(" ********************************************************* + \n " + " Enter your password: ");
+        password = enterData.nextInt();
+        
+        String dataToSave =  toString();
+        
+        Data.save("administrator.csv", dataToSave);
+    }
+    
+      
+    @Override
+    public String toString() {
+        return "Administrator{" + "idCard=" + idCard + ", names=" + names + ", surnames=" + surnames + ", email=" + email + ", nickname=" + nickname + ", password=" + password + '}';
     }
 
-   public void registAdministrator(){
-       
-       Scanner enterData = new Scanner(System.in);
-       
-       System.out.println(" Regist Administrator  \n");
-       System.out.println(" Enter your number Id:   ");
-       idCard = enterData.nextInt();
-       System.out.println(" Enter your Names: ");
-       names = enterData.nextLine();
-       System.out.println(" Enter your Surnames:  ");
-       surnames = enterData.nextLine();
-       System.out.println(" Enter your email:  ");
-       email = enterData.nextLine();
-       System.out.println(" Enter your nickname:  ");
-       nickname = enterData.nextLine();
-       System.out.println(" Enter your password:  ");
-       password = enterData.nextInt();
-               
-       Administrator admin = new Administrator();
-       String dataToSave = surnames;
-       
-       
-       
-       System.out.println(dataToSave);
-     
-   }
 
+    public Administrator(Integer idCard, String names, String surnames, String email, String nickname, Integer password) {
+        
+        this.idCard = idCard;
+        this.names = names;
+        this.surnames = surnames;
+        this.email = email;
+        this.nickname = nickname;
+        this.password = password;
+    }
 
     /**
      * @return the idCard
@@ -134,6 +145,5 @@ public class Administrator {
     public void setPassword(Integer password) {
         this.password = password;
     }
-
 
 }

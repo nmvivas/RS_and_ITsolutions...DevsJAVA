@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -12,17 +13,17 @@ import java.util.InputMismatchException;
  *
  * @author DEVS_JAVA_KND
  */
-public class Principal {
+public class PrincipalMenu {
 
     private Integer opcion1;
     private Integer opcion2;
     private Integer opcion3;
 
-    public Principal() {
+    public PrincipalMenu() {
 
     }
 
-    public void Options() {
+    public void Options() throws IOException, InterruptedException {
 
         Scanner scan = new Scanner(System.in);
 
@@ -32,9 +33,9 @@ public class Principal {
         while (!salir) {
 
             System.out.println(" Welcome to the System, please chose an option \n");
-            System.out.println(" Select 1 : If you want to create a user administrator ");
-            System.out.println(" Select 2 : If you want to login ");
-            System.out.println(" Select 3 : If you want to exit");
+            System.out.println(" Select 1 : If you want to create a user administrator. ");
+            System.out.println(" Select 2 : If you want to login. ");
+            System.out.println(" Select 3 : If you want to exit. ");
 
             try {
 
@@ -43,16 +44,16 @@ public class Principal {
                 switch (option) {
                     case 1:
                         Administrator admin = new Administrator();
-                        admin.registAdministrator();
-
+                       
                         break;
                     case 2:
                         Login login = new Login();
                         login.enterTheSystem();
+                        
 
                         break;
                     case 3:
-                        System.out.println("****** Thanks you for use our system *******");
+                        System.out.println(" ****** Thanks you for use our system *******");
                         System.exit(0);
                         
                         break;
