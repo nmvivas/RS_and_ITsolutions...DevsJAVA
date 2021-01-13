@@ -76,6 +76,13 @@ public class PrincipalMenu {
                 + ", opcion3=" + opcion3 + '}';
     }
 
+    public PrincipalMenu(Integer opcion1, Integer opcion2, Integer opcion3) {
+        this.opcion1 = opcion1;
+        this.opcion2 = opcion2;
+        this.opcion3 = opcion3;
+    }
+    
+
     public Integer getOpcion1() {
         return opcion1;
     }

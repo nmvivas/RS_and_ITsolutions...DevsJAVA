@@ -45,10 +45,13 @@ public class Administrator {
 
     @Override
     public String toString() {
-        return "Administrator{" + "idCard = " + idCard + ", names = " + names + ", surnames = " + surnames + ", email = " + email + ", nickname = " + nickname + ", password = " + password + '}';
+        return "Administrator{" + "idCard = " + idCard + ", names = " 
+                + names + ", surnames = " + surnames + ", email = " + email 
+                + ", nickname = " + nickname + ", password = " + password + '}';
     }
 
-    public Administrator(Integer idCard, String names, String surnames, String email, String nickname, Integer password) {
+    public Administrator(Integer idCard, String names, String surnames,
+            String email, String nickname, Integer password) {
 
         this.idCard = idCard;
         this.names = names;

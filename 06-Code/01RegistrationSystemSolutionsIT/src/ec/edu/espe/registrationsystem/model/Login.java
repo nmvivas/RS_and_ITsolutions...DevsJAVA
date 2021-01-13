@@ -33,15 +33,20 @@ public class Login {
 
     }
 
+    public void verificationAdmin() {
+        
+    }
+    
     @Override
     public String toString() {
         return "Login{" + "administrator=" + getAdministrator() + '}';
     }
 
-    public void verificationAdmin() {
-
+    public Login(Administrator administrator, String nickname, int password) {
+        this.administrator = administrator;
+        this.nickname = nickname;
+        this.password = password;
     }
-
     /**
      * @return the administrator
      */

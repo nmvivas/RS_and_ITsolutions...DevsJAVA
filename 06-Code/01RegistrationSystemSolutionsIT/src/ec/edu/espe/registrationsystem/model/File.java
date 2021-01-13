@@ -34,7 +34,8 @@ public class File {
 
     @Override
     public String toString() {
-        return "File{" + "client=" + getClient() + ", problem=" + getProblem() + ", typeproblem=" + getTypeproblem() + '}';
+        return "File{" + "client=" + getClient() + ", problem=" + getProblem() 
+                + ", typeproblem=" + getTypeproblem() + '}';
     }
     
         

@@ -49,7 +49,8 @@ public class Client {
                 + getAddress() + ", telephone = " + getTelephone() + '}';
     }
 
-    public Client(String company, String names, int idCardRuc, String address, int telephone) {
+    public Client(String company, String names, int idCardRuc, String address,
+            int telephone) {
         this.company = company;
         this.names = names;
         this.idCardRuc = idCardRuc;

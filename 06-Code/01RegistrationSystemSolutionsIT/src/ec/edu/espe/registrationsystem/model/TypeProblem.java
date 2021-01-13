@@ -21,11 +21,7 @@ public class TypeProblem {
         
     }
 
-    public TypeProblem(String name, int code) {
-        this.name = name;
-        this.code = code;
-    }
-    
+
     public void registTypeProblem(){
         Scanner enterData = new Scanner(System.in);
         System.out.println(" Regist Type Problem \n");
@@ -39,6 +35,13 @@ public class TypeProblem {
     public String toString() {
         return "TypeProblem{" + "name=" + getName() + ", code=" + getCode() + '}';
     }
+    
+    public TypeProblem(String name, int code) {
+        
+        this.name = name;
+        this.code = code;
+    }
+    
 
     /**
      * @return the name

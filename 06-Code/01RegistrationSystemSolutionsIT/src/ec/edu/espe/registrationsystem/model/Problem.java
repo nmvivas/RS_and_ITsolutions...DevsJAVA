@@ -25,26 +25,21 @@ public class Problem {
         System.out.println(" ================================== REGIST PROBLEM  ================================= \n");
         System.out.println(" \n ---> Enter description of problem:  ");
         description = enterData.nextLine();
-        System.out.println(" \n ---> Enter type the problem: ");
+        System.out.println(" \n ---> Enter the type of the problem: ");
         typeProblem = enterData.nextLine();
-        System.out.println(" \n ---> Enter state of the problem:  ");
+        System.out.println(" \n ---> Enter the state of the problem:  ");
         state = enterData.nextLine();
         
         String dataToSave = toString();
         Data.save("Problem.csv", dataToSave);
 
     }
-  
-     @Override
+
+    @Override
     public String toString() {
-        return "Problem{" + "description=" + getDescription() + ", state="
-                + getState() + '}';
-    } 
-    
-    public void describeProblem() {
-
+        return "Problem{" + "description=" + description + ", state=" + state + ", typeProblem=" + typeProblem + '}';
     }
-
+  
     public Problem(String description, String typeProblem, String state) {
         this.description = description;
         this.state = state;

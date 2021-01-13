@@ -56,7 +56,8 @@ public class Technical {
                 + professionalCategory + '}';
     }
 
-    public Technical(Integer idCard, String names, String surnames, Integer telephone, String email, String role, String professionalCategory) {
+    public Technical(Integer idCard, String names, String surnames, 
+            Integer telephone, String email, String role, String professionalCategory) {
 
         this.idCard = idCard;
         this.names = names;
