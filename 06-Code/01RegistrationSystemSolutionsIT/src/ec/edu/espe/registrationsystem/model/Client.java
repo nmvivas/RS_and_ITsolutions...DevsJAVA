@@ -5,9 +5,11 @@
  */
 package ec.edu.espe.registrationsystem.model;
 
+import java.util.Scanner;
+
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class Client {
     
@@ -16,6 +18,10 @@ public class Client {
     private int idCardRuc;
     private String address;
     private int telephone;
+    
+    public Client(){
+        
+    }
 
     public Client(String company, String names, int idCardRuc, String address, int telephone) {
         this.company = company;
@@ -24,7 +30,22 @@ public class Client {
         this.address = address;
         this.telephone = telephone;
     }
-
+    
+    public void registClient(){
+       
+       Scanner enterData = new Scanner(System.in);
+        System.out.println(" Regist Client \n");
+        System.out.println(" Enter the Company:  ");
+        company = enterData.nextLine();
+        System.out.println(" Enter names:  ");
+        names = enterData.nextLine();
+        System.out.println(" Enter your Id Card Ruc:  ");
+        idCardRuc = enterData.nextInt();
+        System.out.println(" Enter your address:  ");
+        address = enterData.nextLine();
+        System.out.println(" Enter your telephone:  ");
+        telephone = enterData.nextInt();
+    }
     @Override
     public String toString() {
         return "Client{" + "company=" + getCompany() + ", names=" 
