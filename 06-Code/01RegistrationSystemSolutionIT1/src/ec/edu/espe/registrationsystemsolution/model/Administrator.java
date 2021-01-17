@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.model;
 
 /**
  *
- * @author karen
+ * @author Devs Java KND
  */
 public class Administrator {
     private Integer idCard;
