@@ -95,7 +95,7 @@ public class Main {
                         System.out.println(" --> Select 3 : Regist Technical  ");
                         System.out.println(" --> Select 4 : Back to Principal Menu  ");
                         System.out.println(" ================*=====================*=====================*====================== \n ");
-                        
+
                         Main main = new Main();
                         main.administratorMenu();
 
@@ -116,7 +116,7 @@ public class Main {
     }
 
     public void administratorMenu() {
-        
+
         Scanner scan = new Scanner(System.in);
 
         boolean salir = false;
@@ -127,7 +127,7 @@ public class Main {
                 option = scan.nextInt();
                 switch (option) {
                     case 1:
-                        
+
                         System.out.println(" ================================== REGIST PROBLEM  ================================= ");
                         System.out.println("");
                         System.out.println(" ---> Enter description of problem:  ");
@@ -136,14 +136,28 @@ public class Main {
                         String typeProblem = scan.next();
                         System.out.println(" ---> Enter the state of the problem:  ");
                         String state = scan.next();
-                        
+
                         Problem problem = new Problem(description, typeProblem, state);
                         System.out.println(problem);
-                        
+
                         //ARREGLAR SALTO DE LINEA DEL REGIST PROBLEM
-                        
                         break;
                     case 2:
+
+                        System.out.println(" =================================  REGIST CLIENT ====================================== \n");
+                        System.out.println("\n ---> Enter the Company:  ");
+                        String company = scan.next();
+                        System.out.println(" \n ---> Enter names:  ");
+                        String names = scan.next();
+                        System.out.println(" \n ---> Enter your Id Card Ruc:  ");
+                        int idCardRuc = scan.nextInt();
+                        System.out.println(" \n ---> Enter your address:  ");
+                        String address = scan.next();
+                        System.out.println(" \n ---> Enter your telephone:  ");
+                        int telephone = scan.nextInt();
+                        
+                        Client client = new Client(company, names, telephone, address, telephone);
+                        System.out.println(client);
 
                         break;
                     case 3:

@@ -25,13 +25,13 @@ public class ListClient {
        lista.add(c);
    }
    
-   public void showClient(int codigo){
+ /*  public void showClient(int codigo){
        Iterator it=lista.iterator();
        Client aux = new Client();
        while(it.hasNext()){
            aux = (Client)it.next();
            System.out.println(aux.toString());
            }
-       }
+       }*/
     
 }
