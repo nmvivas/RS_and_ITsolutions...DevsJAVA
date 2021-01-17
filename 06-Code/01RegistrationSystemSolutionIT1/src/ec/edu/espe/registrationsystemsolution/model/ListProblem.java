@@ -25,14 +25,14 @@ public class ListProblem {
        lista.add(p);
    }
    
-   public void showProblem(int codigo){
+  /*public void showProblem(int codigo){
        Iterator it=lista.iterator();
        Problem aux = new Problem();
        while(it.hasNext()){
            aux = (Problem)it.next();
            System.out.println(aux.toString());
            }
-       }
+       }*/
    }
     
 

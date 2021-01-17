@@ -8,6 +8,12 @@ package ec.edu.espe.registrationsystemsolution.view;
 import ec.edu.espe.registrationsystemsolution.model.PrincipalMenu;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Login;
+import ec.edu.espe.registrationsystemsolution.model.Problem;
+import ec.edu.espe.registrationsystemsolution.model.Client;
+import ec.edu.espe.registrationsystemsolution.model.ListClient;
+import ec.edu.espe.registrationsystemsolution.model.ListProblem;
+import ec.edu.espe.registrationsystemsolution.model.Technical;
+import ec.edu.espe.registrationsystemsolution.model.TypeProblem;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
@@ -32,7 +38,6 @@ public class Main {
         System.out.println(" ================*=====================*=====================*=============================");
         Main main = new Main();
         main.Options();
-
     }
 
     public void Options() throws IOException, InterruptedException {
@@ -90,6 +95,9 @@ public class Main {
                         System.out.println(" --> Select 3 : Regist Technical  ");
                         System.out.println(" --> Select 4 : Back to Principal Menu  ");
                         System.out.println(" ================*=====================*=====================*====================== \n ");
+                        
+                        Main main = new Main();
+                        main.administratorMenu();
 
                         break;
 
@@ -99,6 +107,52 @@ public class Main {
 
                     default:
                         System.out.println(" The opcion have to be between 1 and 3 ");
+                }
+            } catch (Exception ex) {
+                System.out.println(" You have to put a number ");
+                scan.next();
+            }
+        }
+    }
+
+    public void administratorMenu() {
+        
+        Scanner scan = new Scanner(System.in);
+
+        boolean salir = false;
+        int option;
+
+        while (!salir) {
+            try {
+                option = scan.nextInt();
+                switch (option) {
+                    case 1:
+                        
+                        System.out.println(" ================================== REGIST PROBLEM  ================================= ");
+                        System.out.println("");
+                        System.out.println(" ---> Enter description of problem:  ");
+                        String description = scan.next();
+                        System.out.println(" ---> Enter the type of the problem: ");
+                        String typeProblem = scan.next();
+                        System.out.println(" ---> Enter the state of the problem:  ");
+                        String state = scan.next();
+                        
+                        Problem problem = new Problem(description, typeProblem, state);
+                        System.out.println(problem);
+                        
+                        //ARREGLAR SALTO DE LINEA DEL REGIST PROBLEM
+                        
+                        break;
+                    case 2:
+
+                        break;
+                    case 3:
+
+                    case 4:
+                        PrincipalMenu menu = new PrincipalMenu();
+                        menu.Options();
+                    default:
+                        System.out.println(" The opcion have to be between 1 and 4 ");
                 }
             } catch (Exception ex) {
                 System.out.println(" You have to put a number ");
