@@ -60,18 +60,18 @@ public class Main {
                     case 1:
 
                         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
-                        System.out.print("\n ---> Enter your number Id: ");
+                        System.out.print("---> Enter your number Id: ");
                         int idCard = scan.nextInt();
                         scan.nextLine();
-                        System.out.print("---> Enter your Names:     ");
+                        System.out.print("---> Enter your Names: ");
                         String names = scan.nextLine();
-                        System.out.print("---> Enter your Surnames:  ");
+                        System.out.print("---> Enter your Surnames: ");
                         String surnames = scan.nextLine();
-                        System.out.print("---> Enter your email:     ");
+                        System.out.print("---> Enter your email: ");
                         String email = scan.nextLine();
-                        System.out.print("---> Enter your nickname:  ");
+                        System.out.print("---> Enter your nickname: ");
                         String nickname = scan.nextLine();
-                        System.out.print("---> Enter your password:   ");
+                        System.out.print("---> Enter your password: ");
                         int password = scan.nextInt();
                         System.out.println("");
                         Administrator admin = new Administrator(idCard, names, surnames, email, nickname, password);
@@ -137,16 +137,16 @@ public class Main {
 
                     case 1:
                         System.out.println(" =================================  REGIST CLIENT ====================================== \n");
-                        System.out.print("---> Enter the Company:  ");
+                        System.out.print("---> Enter the Company: ");
                         String company = scan.nextLine();
-                        System.out.print("---> Names of the person in charge:  ");
+                        System.out.print("---> Names of the person in charge: ");
                         String names = scan.nextLine();
-                        System.out.print("---> Enter your Id Card Ruc:  ");
+                        System.out.print("---> Enter your Id Card Ruc: ");
                         int idCardRuc = scan.nextInt();
                         scan.nextLine();
-                        System.out.print("---> Enter your address:  ");
+                        System.out.print("---> Enter your address: ");
                         String address = scan.nextLine();
-                        System.out.print("---> Enter your telephone:  ");
+                        System.out.print("---> Enter your telephone: ");
                         int telephone = scan.nextInt();
 
                         List clients;
@@ -166,11 +166,11 @@ public class Main {
                     case 2: 
                         System.out.println(" ================================== REGIST PROBLEM  ================================= ");
                         System.out.println("");
-                        System.out.println("--->Enter description of problem:  ");
+                        System.out.println("--->Enter description of problem: ");
                         String description = scan.nextLine();
                         System.out.println("--->Enter the type of the problem: ");
                         String typeProblem = scan.nextLine();
-                        System.out.println("---> Enter the state of the problem:  ");
+                        System.out.println("---> Enter the state of the problem: ");
                         String state = scan.nextLine();
 
                         Problem problem = new Problem(description, typeProblem, state);
@@ -192,21 +192,21 @@ public class Main {
                        
                     case 3:
                         System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
-                        System.out.print("--->Enter your Id Card: ");
+                        System.out.print("---> Enter your Id Card: ");
                         int idCard = scan.nextInt();
                         scan.nextLine();
-                        System.out.print("--->Enter your Names:  ");
+                        System.out.print("---> Enter your Names: ");
                         String techNames = scan.nextLine();
-                        System.out.print("---Enter your Surnames:  ");
+                        System.out.print("---> Enter your Surnames: ");
                         String surnames = scan.nextLine();
-                        System.out.print("--->Enter your Telephone:  ");
+                        System.out.print("---> Enter your Telephone: ");
                         int techTelephone = scan.nextInt();
                         scan.nextLine();
-                        System.out.print("--->Enter your Email:  ");
+                        System.out.print("---> Enter your Email: ");
                         String email = scan.nextLine();
-                        System.out.print("--->Enter your Role:  ");
+                        System.out.print("---> Enter your Role: ");
                         String role = scan.nextLine();
-                        System.out.print("--->Enter your professional category:  ");
+                        System.out.print("---> Enter your professional category: ");
                         String professionalCategory = scan.nextLine();
 
                         List technicals;
@@ -220,12 +220,12 @@ public class Main {
                         technicalsString = gsonTechnicals.toJson(technicals);
                         System.out.println("format gson ---> " + technicalsString);
                         Data.save("Technicals.gson", technicalsString  + "\n");
-
+                       
                         break;
 
                     case 4:
-                        //Main main = new Main();
-                        Options();
+                        Main main = new Main();
+                        main.Options();
 
                     default:
                         System.out.println(" The opcion have to be between 1 and 4 ");
