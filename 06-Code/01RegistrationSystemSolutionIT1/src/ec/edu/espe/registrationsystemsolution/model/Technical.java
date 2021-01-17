@@ -10,6 +10,7 @@ package ec.edu.espe.registrationsystemsolution.model;
  * @author karen
  */
 public class Technical {
+    
     private Integer idCard;
     private String names;
     private String surnames;
@@ -18,7 +19,8 @@ public class Technical {
     private String role;
     private String professionalCategory;
 
-    public Technical(Integer idCard, String names, String surnames, Integer telephone, String email, String role, String professionalCategory) {
+    public Technical(Integer idCard, String names, String surnames, 
+            Integer telephone, String email, String role, String professionalCategory) {
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;
@@ -30,66 +32,108 @@ public class Technical {
 
     @Override
     public String toString() {
-        return "Technical{" + "idCard=" + idCard + ", names=" + names + ", surnames=" + surnames + ", telephone=" + telephone + ", email=" + email + ", role=" + role + ", professionalCategory=" + professionalCategory + '}';
+        return "Technical{" + "idCard = " + getIdCard() + ", names = " + getNames() +
+                ", surnames = " + getSurnames() + ", telephone = " + getTelephone() +
+                ", email = " + getEmail() + ", role = " + getRole() + ", professionalCategory = " +
+                getProfessionalCategory() + '}';
     }
-    
 
+    /**
+     * @return the idCard
+     */
     public Integer getIdCard() {
         return idCard;
     }
 
-    public String getNames() {
-        return names;
-    }
-
-    public String getSurnames() {
-        return surnames;
-    }
-
-    public Integer getTelephone() {
-        return telephone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public String getProfessionalCategory() {
-        return professionalCategory;
-    }
-
+    /**
+     * @param idCard the idCard to set
+     */
     public void setIdCard(Integer idCard) {
         this.idCard = idCard;
     }
 
+    /**
+     * @return the names
+     */
+    public String getNames() {
+        return names;
+    }
+
+    /**
+     * @param names the names to set
+     */
     public void setNames(String names) {
         this.names = names;
     }
 
+    /**
+     * @return the surnames
+     */
+    public String getSurnames() {
+        return surnames;
+    }
+
+    /**
+     * @param surnames the surnames to set
+     */
     public void setSurnames(String surnames) {
         this.surnames = surnames;
     }
 
+    /**
+     * @return the telephone
+     */
+    public Integer getTelephone() {
+        return telephone;
+    }
+
+    /**
+     * @param telephone the telephone to set
+     */
     public void setTelephone(Integer telephone) {
         this.telephone = telephone;
     }
 
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * @return the role
+     */
+    public String getRole() {
+        return role;
+    }
+
+    /**
+     * @param role the role to set
+     */
     public void setRole(String role) {
         this.role = role;
     }
 
+    /**
+     * @return the professionalCategory
+     */
+    public String getProfessionalCategory() {
+        return professionalCategory;
+    }
+
+    /**
+     * @param professionalCategory the professionalCategory to set
+     */
     public void setProfessionalCategory(String professionalCategory) {
         this.professionalCategory = professionalCategory;
     }
-    
-    
     
 }

@@ -155,16 +155,40 @@ public class Main {
                         String address = scan.next();
                         System.out.println(" \n ---> Enter your telephone:  ");
                         int telephone = scan.nextInt();
-                        
+
                         Client client = new Client(company, names, telephone, address, telephone);
                         System.out.println(client);
 
                         break;
                     case 3:
 
+                        System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
+                        System.out.println(" \n ---> Enter your Id Card: ");
+                        int idCard = scan.nextInt();
+                        System.out.println("\n --->  Enter your Names:  ");
+                        String techNames = scan.next();
+                        System.out.println(" \n ---> Enter your Surnames:  ");
+                        String surnames = scan.next();
+                        System.out.println(" \n ---> Enter your Telephone:  ");
+                        int techTelephone = scan.nextInt();
+                        System.out.println("\n --->  Enter your Email:  ");
+                        String email = scan.next();
+                        System.out.println("\n --->  Enter your Role:  ");
+                        String role = scan.next();
+                        System.out.println("\n --->  Enter your professional category:  ");
+                        String professionalCategory = scan.next();
+
+                        Technical technical = new Technical(idCard, techNames,
+                                surnames, techTelephone, email, role, professionalCategory);
+                        System.out.println(technical);
+
+                        break;
                     case 4:
-                        PrincipalMenu menu = new PrincipalMenu();
-                        menu.Options();
+                        
+                        Main main = new Main();
+                        main.Options();
+                        
+                        break;
                     default:
                         System.out.println(" The opcion have to be between 1 and 4 ");
                 }
