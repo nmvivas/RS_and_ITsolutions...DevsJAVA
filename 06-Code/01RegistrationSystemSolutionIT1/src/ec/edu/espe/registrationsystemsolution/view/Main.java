@@ -70,43 +70,55 @@ public class Main {
                         System.out.print("---> Enter your email: ");
                         String email = scan.nextLine();
                         System.out.print("---> Enter your nickname: ");
-                        String nickname = scan.nextLine();
-                        System.out.print("---> Enter your password: ");
-                        int password = scan.nextInt();
-                        System.out.println("");
-                        Administrator admin = new Administrator(idCard, names, surnames, email, nickname, password);
+                        //String nickname = scan.nextLine();
+                        //System.out.print("---> Enter your password: ");
+                        //String password = scan.nextLine();
+                        //System.out.println(" your assigned user is: admin and your password is: 12345 ");
+                        Administrator admin = new Administrator(idCard, names, surnames, email, "admin", "12345");
                         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
                         
                         Gson gsonAdmin = new Gson();
                         String adminString;
+                        
+                        // serializacion
                         adminString = gsonAdmin.toJson(admin);
                         Data.save("Admin.txt",adminString + "\n");
+                        
+                        // deserializacion
+                        //Administrator objectAdmin;
+                        //objectAdmin = gsonAdmin.fromJson(adminString,Administrator.class);
                         
                         System.exit(0);
                         break;
 
                     case 2:
-
+                       //String user = admin.getNickname();
+                        //String key = admin.getPassword();
+                        
                         System.out.println(" *-----------------------------------* ");
                         System.out.print(" Enter your nickname:  ");
                         String loginNickname = scan.next();
                         System.out.print(" Enter your password:  ");
-                        int loginPassword = scan.nextInt();
-                        Login login = new Login(loginNickname, loginPassword);
+                        String loginPassword = scan.next();
                         
+                        
+                        if ( loginNickname.equals("admin") && loginPassword.equals("key")){
+                            System.out.println(" ================*=====================*=====================*======================");
+                            System.out.println("                            WELCOME TO REGISTRATION SYSTEM SOLUTION IT              ");
+                            System.out.println("                              ------- Administrator menu --------- ");
+                            System.out.println(" \n please , choose a option to continue... ");
+                            System.out.print("\n--> Select 1 : Regist Client   ");
+                            System.out.print("\n--> Select 2 : Regist Problem  ");
+                            System.out.print("\n--> Select 3 : Regist Technical  ");
+                            System.out.print("\n--> Select 4 : Back to Principal Menu  ");
+                            System.out.print("\n ================*=====================*=====================*====================== \n ");
+                            Main main = new Main();
+                            main.administratorMenu();
+                        }else{
+                            System.out.println(" ********  incorrect password, exited the system ********** "); 
+                        }
                        
-                        System.out.println(" ================*=====================*=====================*======================");
-                        System.out.println("                            WELCOME TO REGISTRATION SYSTEM SOLUTION IT              ");
-                        System.out.println("                              ------- Administrator menu --------- ");
-                        System.out.println(" \n please , choose a option to continue... ");
-                        System.out.print("\n--> Select 1 : Regist Client   ");
-                        System.out.print("\n--> Select 2 : Regist Problem  ");
-                        System.out.print("\n--> Select 3 : Regist Technical  ");
-                        System.out.print("\n--> Select 4 : Back to Principal Menu  ");
-                        System.out.print("\n ================*=====================*=====================*====================== \n ");
-                        Main main = new Main();
-                        main.administratorMenu();
-
+              
                         break;
 
                     case 3:
@@ -185,7 +197,6 @@ public class Main {
                         String problemsString;
  
                         problemsString = gsonProblems.toJson(problems);
-                        System.out.println("format gson ---> " + problemsString);
                         Data.save("Problems.gson", problemsString  + "\n");
 
                         break;
@@ -218,7 +229,6 @@ public class Main {
                         Gson gsonTechnicals = new Gson();
                         String technicalsString;
                         technicalsString = gsonTechnicals.toJson(technicals);
-                        System.out.println("format gson ---> " + technicalsString);
                         Data.save("Technicals.gson", technicalsString  + "\n");
                        
                         break;

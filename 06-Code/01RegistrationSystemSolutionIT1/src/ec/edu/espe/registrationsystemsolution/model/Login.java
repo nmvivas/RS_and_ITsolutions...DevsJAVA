@@ -12,7 +12,7 @@ package ec.edu.espe.registrationsystemsolution.model;
 public class Login {
     
     private String nickname;
-    private int password;
+    private String password;
 
     @Override
     public String toString() {
@@ -21,7 +21,7 @@ public class Login {
 
 
 
-    public Login(String nickname, int password) {
+    public Login(String nickname, String password) {
         this.nickname = nickname;
         this.password = password;
     }
@@ -43,14 +43,14 @@ public class Login {
     /**
      * @return the password
     */ 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
     /**
      * @param password the password to set
      */
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     } 
 

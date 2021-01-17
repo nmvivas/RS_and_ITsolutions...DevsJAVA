@@ -1,0 +1,1 @@
+{"idCard":1234567895,"names":"Susana Fernanda","surnames":"Rivera Vega","email":"susanita@gmail.com","nickname":"admin","password":"12345"}

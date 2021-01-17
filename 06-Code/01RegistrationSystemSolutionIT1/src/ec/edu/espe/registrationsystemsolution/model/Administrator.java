@@ -16,7 +16,7 @@ public class Administrator {
     private String surnames;
     private String email;
     private String nickname;
-    private int password;
+    private String password;
     
     public Administrator() {
         this.idCard = 25;
@@ -24,11 +24,11 @@ public class Administrator {
         this.surnames = "Zambrano65";
         this.email = "cdzam@espe65";
         this.nickname = "admin6565";
-        this.password = 2525;
+        this.password = "2525";
     }
 
     public Administrator(int idCard, String names, String surnames,
-            String email, String nickname, int password) {
+            String email, String nickname, String password) {
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;
@@ -65,7 +65,7 @@ public class Administrator {
         return nickname;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -89,7 +89,7 @@ public class Administrator {
         this.nickname = nickname;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
     
