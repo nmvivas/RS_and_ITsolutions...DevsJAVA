@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.model;
 
 /**
  *
- * @author Devs Java KND
+ * @author DEVS_JAVA_KND
  */
 public class Administrator {
     

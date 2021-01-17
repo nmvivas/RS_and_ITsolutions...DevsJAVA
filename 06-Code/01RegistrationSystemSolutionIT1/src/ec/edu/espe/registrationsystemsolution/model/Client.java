@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.model;
 
 /**
  *
- * @author karen
+ * @author DEVS_JAVA_KND
  */
 public class Client {
     

@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author karen
+ * @author DEVS_JAVA_KND
  */
 public class ListClient {
     List <Client>lista;

@@ -20,7 +20,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author karen
+  * @author DEVS_JAVA_KND
  */
 public class Main {
 
