@@ -10,14 +10,25 @@ package ec.edu.espe.registrationsystemsolution.model;
  * @author Devs Java KND
  */
 public class Administrator {
+    
     private Integer idCard;
     private String names;
     private String surnames;
     private String email;
     private String nickname;
     private Integer password;
+    
+    public Administrator() {
+        this.idCard = 25;
+        this.names = "Charles65";
+        this.surnames = "Zambrano65";
+        this.email = "cdzam@espe65";
+        this.nickname = "admin6565";
+        this.password = 2525;
+    }
 
-    public Administrator(Integer idCard, String names, String surnames, String email, String nickname, Integer password) {
+    public Administrator(Integer idCard, String names, String surnames,
+            String email, String nickname, Integer password) {
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;
@@ -28,7 +39,9 @@ public class Administrator {
 
     @Override
     public String toString() {
-        return "Administrator{" + "idCard=" + idCard + ", names=" + names + ", surnames=" + surnames + ", email=" + email + ", nickname=" + nickname + ", password=" + password + '}';
+        return "Administrator{" + "idCard = " + idCard + ", names = " + names + 
+                ", surnames = " + surnames + ", email = " + email + ", nickname = " 
+                + nickname + ", password = " + password + '}';
     }
     
 
