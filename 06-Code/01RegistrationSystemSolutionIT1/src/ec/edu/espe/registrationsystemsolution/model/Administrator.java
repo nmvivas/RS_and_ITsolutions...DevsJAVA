@@ -11,12 +11,12 @@ package ec.edu.espe.registrationsystemsolution.model;
  */
 public class Administrator {
     
-    private Integer idCard;
+    private int idCard;
     private String names;
     private String surnames;
     private String email;
     private String nickname;
-    private Integer password;
+    private int password;
     
     public Administrator() {
         this.idCard = 25;
@@ -27,8 +27,8 @@ public class Administrator {
         this.password = 2525;
     }
 
-    public Administrator(Integer idCard, String names, String surnames,
-            String email, String nickname, Integer password) {
+    public Administrator(int idCard, String names, String surnames,
+            String email, String nickname, int password) {
         this.idCard = idCard;
         this.names = names;
         this.surnames = surnames;
@@ -45,7 +45,7 @@ public class Administrator {
     }
     
 
-    public Integer getIdCard() {
+    public int getIdCard() {
         return idCard;
     }
 
@@ -65,11 +65,11 @@ public class Administrator {
         return nickname;
     }
 
-    public Integer getPassword() {
+    public int getPassword() {
         return password;
     }
 
-    public void setIdCard(Integer idCard) {
+    public void setIdCard(int idCard) {
         this.idCard = idCard;
     }
 
@@ -89,7 +89,7 @@ public class Administrator {
         this.nickname = nickname;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(int password) {
         this.password = password;
     }
     

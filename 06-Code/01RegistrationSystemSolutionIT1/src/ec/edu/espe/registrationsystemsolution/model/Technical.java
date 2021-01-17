@@ -11,10 +11,10 @@ package ec.edu.espe.registrationsystemsolution.model;
  */
 public class Technical {
     
-    private Integer idCard;
+    private int idCard;
     private String names;
     private String surnames;
-    private Integer telephone;
+    private int telephone;
     private String email;
     private String role;
     private String professionalCategory;

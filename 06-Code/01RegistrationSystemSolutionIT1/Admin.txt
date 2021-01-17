@@ -1,0 +1,2 @@
+{"idCard":1234567892,"names":"Carolina Vanessa","surnames":"Solis Vendaval","email":"carolinita@gmail.com","nickname":"carol","password":456789}
+{"idCard":456789456,"names":"Jhon Gabriel","surnames":"Vivas Pin ","email":"gabriel@hotmsil.com","nickname":"gabucho","password":456789}
