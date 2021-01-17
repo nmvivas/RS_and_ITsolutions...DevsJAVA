@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -12,39 +13,51 @@ import java.util.Scanner;
  * @author karen
  */
 public class PrincipalMenu {
-  
-    private int options;
-    
-    Scanner leer = new Scanner(System.in);
 
+        private Integer opcion1;
+        private Integer opcion2;
+        private Integer opcion3;
 
-    System.out.println("Menu por consola");
-    System.out.println("1.- Registrar nuevo empleado");
-    System.out.println("2.- Obtener datos de contacto de un empleado");
-    System.out.println("3.- Listar todos los empleados que cumplan anios en cierta fecha");
-    System.out.println("4.- Obtener el presupuesto total");
-    System.out.println("Ingrese la accion a realizar: "); //Pretendo que el usuario escriba el numero de  opcion
-    opciones=leer.nextInt();
+        public PrincipalMenu() {
 
-    switch(opciones) {
-    case 1: 
+        }
 
-    break;
+        public void Options() throws IOException, InterruptedException {
 
-    case 2:
+            Scanner scan = new Scanner(System.in);
 
-    break;
+            boolean salir = false;
+            int option;
 
-    case 3: 
+            while (!salir) {
 
-    break;
+                try {
+                    
+                    option = scan.nextInt();
 
-    case 4: 
+                    switch (option) {
+                        case 1:
+                            
+                            break;
 
-    break;
+                        case 2:
 
-    default:
-    System.out.println ("Numero no valido"); 
+                            break;
+
+                        case 3:
+                                System.exit(0);
+                            break;
+
+                        default:
+                            System.out.println(" The opcion have to be between 1 and 3 ");
+                    }
+                } catch (Exception ex) {
+                    System.out.println(" You have to put a number ");
+                    scan.next();
+                }
+            }
+        }
+
     }
-  
-}
+
+

@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
+import ec.edu.espe.registrationsystemsolution.model.PrincipalMenu;
+import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -13,8 +15,9 @@ import java.util.Date;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Date date = new Date();
+        
         System.out.println(date + "\n");
         System.out.println(" ================*=====================*=====================*=============================");
         System.out.println("                         WELCOME TO REGISTRATION SYSTEM SOLUTION IT                   ");
@@ -24,7 +27,12 @@ public class Main {
         System.out.println(" ---> Select 2 :  Login ");
         System.out.println(" ---> Select 3 :  Exit ");
         System.out.println(" ================*=====================*=====================*=============================");
-
+        PrincipalMenu principalMenu = new PrincipalMenu();
+        principalMenu.Options();
+        
+        
+        
+   
     }
 
 }

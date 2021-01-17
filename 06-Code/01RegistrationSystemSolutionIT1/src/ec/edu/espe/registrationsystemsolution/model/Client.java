@@ -24,10 +24,7 @@ public class Client {
         this.telephone = telephone;
     }
 
-    Client() {
-        
-    }
-
+    
     @Override
     public String toString() {
         return "Client{" + "company=" + company + ", names=" + names + ", idCardRuc=" + idCardRuc + ", address=" + address + ", telephone=" + telephone + '}';
