@@ -116,6 +116,7 @@ public class Main {
                             main.administratorMenu();
                         }else{
                             System.out.println(" ********  incorrect password, exited the system ********** "); 
+                            System.exit(0);
                         }
                        
               
