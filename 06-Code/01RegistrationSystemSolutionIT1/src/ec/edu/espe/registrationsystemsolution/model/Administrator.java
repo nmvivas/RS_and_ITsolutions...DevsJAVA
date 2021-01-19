@@ -5,27 +5,32 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
+import com.google.gson.Gson;
+import ec.edu.espe.filemanager.utils.Data;
+
 /**
  *
  * @author DEVS_JAVA_KND
  */
 public class Administrator {
-    
+
     private int idCard;
     private String names;
     private String surnames;
     private String email;
     private String nickname;
     private String password;
-    
-    public Administrator() {
+
+   /* public Administrator() {
+        
         this.idCard = 25;
         this.names = "Charles65";
         this.surnames = "Zambrano65";
         this.email = "cdzam@espe65";
-        this.nickname = "admin6565";
-        this.password = "2525";
-    }
+        this.nickname = "ADMIN";
+        this.password = "KEY";
+
+    }*/
 
     public Administrator(int idCard, String names, String surnames,
             String email, String nickname, String password) {
@@ -39,11 +44,10 @@ public class Administrator {
 
     @Override
     public String toString() {
-        return "Administrator{" + "idCard = " + idCard + ", names = " + names + 
-                ", surnames = " + surnames + ", email = " + email + ", nickname = " 
+        return "Administrator{" + "idCard = " + idCard + ", names = " + names
+                + ", surnames = " + surnames + ", email = " + email + ", nickname = "
                 + nickname + ", password = " + password + '}';
     }
-    
 
     public int getIdCard() {
         return idCard;
@@ -92,7 +96,5 @@ public class Administrator {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    
+
 }

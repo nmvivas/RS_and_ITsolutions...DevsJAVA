@@ -15,6 +15,9 @@ import ec.edu.espe.registrationsystemsolution.model.ListClient;
 import ec.edu.espe.registrationsystemsolution.model.ListProblem;
 import ec.edu.espe.registrationsystemsolution.model.Technical;
 import ec.edu.espe.registrationsystemsolution.model.TypeProblem;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,15 +29,16 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Main {
-    
 
     public static void main(String[] args) throws IOException, InterruptedException {
+
         Date date = new Date();
 
         System.out.println(date + "\n");
         printWelcomeMessage();
         Main main = new Main();
         main.printOptions();
+
     }
 
     private static void printWelcomeMessage() {
@@ -52,91 +56,111 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
+        int idCard;
+        String names;
+        String surnames;
+        String email;
+        String nickname;
+        String password;
+        String loginNickname;
+        String loginPassword;
+
         boolean salir = false;
         int option;
 
         while (!salir) {
 
-            try {
+            option = scan.nextInt();
 
-                option = scan.nextInt();
+            switch (option) {
+                case 1:
 
-                switch (option) {
-                    case 1:
+                    System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
+                    System.out.print("---> Enter your number Id: ");
+                    idCard = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print("---> Enter your Names: ");
+                    names = scan.nextLine();
+                    System.out.print("---> Enter your Surnames: ");
+                    surnames = scan.nextLine();
+                    System.out.print("---> Enter your email: ");
+                    email = scan.nextLine();
+                    System.out.print("---> Enter your nickname: ");
+                    nickname = scan.nextLine();
+                    System.out.print("---> Enter your password: ");
+                    password = scan.nextLine();
+                    Administrator admin = new Administrator(idCard, names, surnames, email, nickname, password);
+                    // System.out.println(" your assigned user is: admin and your password is: key ");
+                    System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
-                        System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
-                        System.out.print("---> Enter your number Id: ");
-                        int idCard = scan.nextInt();
-                        scan.nextLine();
-                        System.out.print("---> Enter your Names: ");
-                        String names = scan.nextLine();
-                        System.out.print("---> Enter your Surnames: ");
-                        String surnames = scan.nextLine();
-                        System.out.print("---> Enter your email: ");
-                        String email = scan.nextLine();
-                        System.out.print("---> Enter your nickname: ");
-                        //String nickname = scan.nextLine();
-                        //System.out.print("---> Enter your password: ");
-                        //String password = scan.nextLine();
-                        //System.out.println(" your assigned user is: admin and your password is: 12345 ");
-                        Administrator admin = new Administrator(idCard, names, surnames, email, "admin", "12345");
-                        System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
+                    saveAdmin(admin);
 
-                        Gson gsonAdmin = new Gson();
-                        String adminString;
+                    printWelcomeMessage();
+                    break;
 
-                        // serializacion
-                        adminString = gsonAdmin.toJson(admin);
-                        Data.save("Admin.txt", adminString + "\n");
+                case 2:
 
-                        // deserializacion
-                        //Administrator objectAdmin;
-                        //objectAdmin = gsonAdmin.fromJson(adminString,Administrator.class);
-                        System.exit(0);
-                        
-                        break;
+                    System.out.println(" *-----------------------------------* ");
+                    System.out.print(" Enter your nickname:  ");
+                    loginNickname = scan.next();
+                    System.out.print(" Enter your password:  ");
+                    loginPassword = scan.next();
+                    //Llamar funcion find
+                    Login admin1 = new Login(loginNickname, loginPassword);
+                    Data.find("Admin.csv", loginNickname);
+                    System.out.println(loginNickname);
+                    Data.find("Admin.csv", loginPassword);
+                    System.out.println(loginPassword);
+                    
+                    if (loginNickname.equals(admin1.getNickname()) && loginPassword.equals(admin1.getPassword())) {
 
-                    case 2:
-                        //String user = admin.getNickname();
-                        //String key = admin.getPassword();
+                        printAdministratorMenu();
 
-                        System.out.println(" *-----------------------------------* ");
-                        System.out.print(" Enter your nickname:  ");
-                        String loginNickname = scan.next();
-                        System.out.print(" Enter your password:  ");
-                        String loginPassword = scan.next();
+                    } else {
 
-                        //llamar funcion find
-                        if (loginNickname.equals("admin") && loginPassword.equals("key")) {
-                            System.out.println(" ================*=====================*=====================*======================");
-                            System.out.println("                            WELCOME TO REGISTRATION SYSTEM SOLUTION IT              ");
-                            System.out.println("                              ------- Administrator menu --------- ");
-                            System.out.println(" \n please , choose a option to continue... ");
-                            System.out.print("\n--> Select 1 : Regist Client   ");
-                            System.out.print("\n--> Select 2 : Regist Problem  ");
-                            System.out.print("\n--> Select 3 : Regist Technical  ");
-                            System.out.print("\n--> Select 4 : Back to Principal Menu  ");
-                            System.out.print("\n ================*=====================*=====================*====================== \n ");
-                            Main main = new Main();
-                            main.administratorMenu();
-                        } else {
-                            System.out.println(" ********  incorrect password, exited the system ********** ");
-                        }
+                        System.out.println(" ********  Incorrect password, exited the system   ********** ");
 
-                        break;
+                    }
 
-                    case 3:
-                        System.exit(0);
-                        break;
+                    System.out.println("finish");
 
-                    default:
-                        System.out.println(" The opcion have to be between 1 and 3 ");
-                }
-            } catch (Exception ex) {
-                System.out.println(" You have to put a number ");
-                scan.next();
+                    break;
+                case 3:
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println(" The opcion have to be between 1 and 3 ");
             }
         }
+    }
+
+    private void saveAdmin(Administrator admin) {
+
+        Gson gsonAdmin = new Gson();
+        String adminString;
+
+        adminString = gsonAdmin.toJson(admin);
+        Data.save("Admin.csv", adminString + "\n");
+
+        Administrator administrator1;
+        String jsonString = adminString;
+        administrator1 = gsonAdmin.fromJson(jsonString, Administrator.class);
+
+    }
+
+    private void printAdministratorMenu() {
+        System.out.println(" ================*=====================*=====================*======================");
+        System.out.println("                            WELCOME TO REGISTRATION SYSTEM SOLUTION IT              ");
+        System.out.println("                              ------- Administrator menu --------- ");
+        System.out.println(" \n please , choose a option to continue... ");
+        System.out.print("\n--> Select 1 : Regist Client   ");
+        System.out.print("\n--> Select 2 : Regist Problem  ");
+        System.out.print("\n--> Select 3 : Regist Technical  ");
+        System.out.print("\n--> Select 4 : Back to Principal Menu  ");
+        System.out.print("\n ================*=====================*=====================*====================== \n ");
+        Main main = new Main();
+        main.administratorMenu();
     }
 
     public void administratorMenu() {
@@ -152,29 +176,29 @@ public class Main {
                 switch (option) {
 
                     case 1:
-                        
+
                         registClient(scan);
 
                         break;
 
                     case 2:
-                        
+
                         registProblem(scan);
 
                         break;
 
                     case 3:
-                        
+
                         registTechnical(scan);
 
                         break;
 
                     case 4:
-                        
+
                         printWelcomeMessage();
-                        
+
                         break;
-                        
+
                     default:
                         System.out.println(" The opcion have to be between 1 and 4 ");
                 }
@@ -203,13 +227,13 @@ public class Main {
         String role = scan.nextLine();
         System.out.print("---> Enter your professional category: ");
         String professionalCategory = scan.nextLine();
-        
+
         List technicals;
         technicals = new ArrayList();
         technicals.add(new Technical(idCard, techNames,
                 surnames, techTelephone, email, role, professionalCategory));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        
+
         Gson gsonTechnicals = new Gson();
         String technicalsString;
         technicalsString = gsonTechnicals.toJson(technicals);
@@ -225,17 +249,17 @@ public class Main {
         String typeProblem = scan.nextLine();
         System.out.println("---> Enter the state of the problem: ");
         String state = scan.nextLine();
-        
+
         Problem problem = new Problem(description, typeProblem, state);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        
+
         List problems;
         problems = new ArrayList();
         problems.add(new Problem(description, typeProblem, state + "\n"));
-        
+
         Gson gsonProblems = new Gson();
         String problemsString;
-        
+
         problemsString = gsonProblems.toJson(problems);
         Data.save("Problems.gson", problemsString + "\n");
     }
@@ -253,14 +277,14 @@ public class Main {
         String address = scan.nextLine();
         System.out.print("---> Enter your telephone: ");
         int telephone = scan.nextInt();
-        
+
         List clients;
         clients = new ArrayList();
         clients.add(new Client(company, names, telephone, address, telephone));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        
+
         clients.add(new Client("PYME", "Jose Ignacio ", 123455678, "San Lorezo ", 1234567812));
-        
+
         Gson gsonClients = new Gson();
         String clientsString;
         clientsString = gsonClients.toJson(clients);

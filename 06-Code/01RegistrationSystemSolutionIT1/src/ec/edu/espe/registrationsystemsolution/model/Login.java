@@ -16,10 +16,9 @@ public class Login {
 
     @Override
     public String toString() {
-        return "Login{" + "nickname = " + getNickname() + ", password = " + getPassword() + '}';
+        return "Login{" + "nickname = " + getNickname() + ", password = " +
+                getPassword() + '}';
     }
-
-
 
     public Login(String nickname, String password) {
         this.nickname = nickname;
