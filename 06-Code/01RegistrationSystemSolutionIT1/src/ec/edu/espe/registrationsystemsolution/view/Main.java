@@ -247,11 +247,11 @@ public class Main {
     private void registProblem(Scanner scan) {
         System.out.println(" ================================== REGIST PROBLEM  ================================= ");
         System.out.println("");
-        System.out.println("--->Enter description of problem: ");
+        System.out.println("\n ---> Enter description of problem: ");
         String description = scan.nextLine();
-        System.out.println("--->Enter the type of the problem: ");
+        System.out.println("\n ---> Enter the type of the problem (Incidence/Solution remote): ");
         String typeProblem = scan.nextLine();
-        System.out.println("---> Enter the state of the problem: ");
+        System.out.println("\n ---> Enter the state of the problem: ");
         String state = scan.nextLine();
 
         Problem problem = new Problem(description, typeProblem, state);

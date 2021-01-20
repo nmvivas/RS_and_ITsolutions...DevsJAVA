@@ -10,22 +10,22 @@ package ec.edu.espe.registrationsystemsolution.model;
  * @author DEVS_JAVA_KND
  */
 public class TypeProblem {
-    private String name;
+    private String type;
     private int code;
 
     public TypeProblem(String name, int code) {
-        this.name = name;
+        this.type = name;
         this.code = code;
     }
 
     @Override
     public String toString() {
-        return "TypeProblem{" + "name=" + name + ", code=" + code + '}';
+        return "TypeProblem{" + "name=" + type + ", code=" + code + '}';
     }
     
 
     public String getName() {
-        return name;
+        return type;
     }
 
     public int getCode() {
@@ -33,7 +33,7 @@ public class TypeProblem {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.type = name;
     }
 
     public void setCode(int code) {
