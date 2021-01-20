@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author NATALIA
+ * @author DEVS_JAVA_KND
  */
 public class BaseData {
 
