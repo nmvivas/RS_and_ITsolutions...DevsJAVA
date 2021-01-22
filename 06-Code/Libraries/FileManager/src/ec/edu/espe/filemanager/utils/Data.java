@@ -18,8 +18,7 @@ public class Data {
 
     public static void save(String filename, String record) {
 
-        //Name name = new Name();                            
-        //OperationMcm op = new OperationMcm();                                                                 
+                                                                    
         File file = new File(filename);
 
         FileWriter write;
@@ -75,6 +74,39 @@ public class Data {
         }
         return results;
 
+    }
+    
+     public static String findAll (String fileName, String data)
+    {
+        //TODO code to find information in a file 
+        String results;
+        results = "Nathaly Vivas, 19, 0990397445\n Gabriel Vivas, 13, 0956871412";
+        
+        System.out.println(" returning ----> " + results );
+        
+        return results;
+    }
+    
+    public static boolean remove (String fileName, String data)
+    {
+        //TODO code to remove information in a file 
+        boolean removed;
+        
+        removed = true;
+        
+        System.out.println( data + " was removed ");
+        
+        return removed;
+    }
+        public static boolean update (String fileName, String data)
+    {
+        //TODO code to remove information in a file 
+        boolean modified;
+        
+        modified = true;
+        System.out.println( data + " was updated ");
+        
+        return modified;
     }
 
 }
