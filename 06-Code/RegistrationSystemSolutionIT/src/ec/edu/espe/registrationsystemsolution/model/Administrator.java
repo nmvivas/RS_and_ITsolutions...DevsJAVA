@@ -21,7 +21,7 @@ public class Administrator {
     private String nickname;
     private String password;
 
-   /* public Administrator() {
+    public Administrator() {
         
         this.idCard = 25;
         this.names = "Charles65";
@@ -30,7 +30,7 @@ public class Administrator {
         this.nickname = "ADMIN";
         this.password = "KEY";
 
-    }*/
+    }
 
     public Administrator(int idCard, String names, String surnames,
             String email, String nickname, String password) {
