@@ -22,14 +22,14 @@ import java.util.Scanner;
  */
 public class BaseData {
 
-    FatherMenu menus = new FatherMenu();
+    FatherMenu menus = new FatherMenu();//Method name in singular
 
     public Administrator registAdministrator(Scanner scan) {
         int idCard;
         String names;
         String surnames;
         String email;
-        System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
+        System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");//very long line of code
         System.out.print("---> Enter your number Id: ");
         idCard = scan.nextInt();
         scan.nextLine();
@@ -39,7 +39,7 @@ public class BaseData {
         surnames = scan.nextLine();
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
-        System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");
+        System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
         Administrator admin = new Administrator(idCard, names, surnames, email, "admin", "2858");
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
         return admin;
@@ -61,7 +61,7 @@ public class BaseData {
         int telephone = scan.nextInt();
 
         List clients;
-        clients = new ArrayList();
+        clients = new ArrayList();//place a synonym for clients can be misunderstood
         clients.add(new Client(company, names, telephone, address, telephone));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 

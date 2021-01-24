@@ -92,7 +92,7 @@ public class FatherMenu {
         loginNickname = scan.next();
         System.out.print(" Enter your password:  ");
         loginPassword = scan.next();
-        
+        //avoid commented code
         //Login admin1 = new Login(loginNickname, loginPassword);
         //Data.find("Admin.csv", loginNickname);
         //Data.find("Admin.csv", loginPassword);

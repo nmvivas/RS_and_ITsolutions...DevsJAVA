@@ -6,7 +6,7 @@
 package ec.edu.espe.registrationsystemsolution.model;
 
 /**
- *
+ *The methods described in the class diagram are missing
  * @author DEVS_JAVA_KND
  */
 public class Technical {

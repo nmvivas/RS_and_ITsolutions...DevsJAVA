@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 import ec.edu.espe.filemanager.utils.Data;
 
 /**
- *
+ *The methods described in the class diagram are missing
  * @author DEVS_JAVA_KND
  */
 public class Administrator {
