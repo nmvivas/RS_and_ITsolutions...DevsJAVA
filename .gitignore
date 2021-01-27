@@ -3,6 +3,9 @@
 /06-Code/01RegistrationSystemSolutionIT1/build/
 /06-Code/RegistrationSystemSolutionIT/build/
 
+# Compiled class file
+*.class
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 *.properties
