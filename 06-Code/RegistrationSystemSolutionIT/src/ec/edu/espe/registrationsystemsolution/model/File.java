@@ -12,17 +12,17 @@ package ec.edu.espe.registrationsystemsolution.model;
 public class File {
     private Client client;
     private Problem problem;
-    private TypeProblem typeproblem;
+    private TypeProblem typeProblem;
 
     public File(Client client, Problem problem, TypeProblem typeproblem) {
         this.client = client;
         this.problem = problem;
-        this.typeproblem = typeproblem;
+        this.typeProblem = typeProblem;
     }
 
     @Override
     public String toString() {
-        return "File{" + "client=" + client + ", problem=" + problem + ", typeproblem=" + typeproblem + '}';
+        return "File{" + "client=" + client + ", problem=" + problem + ", typeproblem=" + typeProblem + '}';
     }
     
     public Client getClient() {
@@ -33,8 +33,8 @@ public class File {
         return problem;
     }
 
-    public TypeProblem getTypeproblem() {
-        return typeproblem;
+    public TypeProblem getTypeProblem() {
+        return typeProblem;
     }
 
     public void setClient(Client client) {
@@ -45,8 +45,8 @@ public class File {
         this.problem = problem;
     }
 
-    public void setTypeproblem(TypeProblem typeproblem) {
-        this.typeproblem = typeproblem;
+    public void setTypeProblem(TypeProblem typeProblem) {
+        this.typeProblem = typeProblem;
     }
     
     
