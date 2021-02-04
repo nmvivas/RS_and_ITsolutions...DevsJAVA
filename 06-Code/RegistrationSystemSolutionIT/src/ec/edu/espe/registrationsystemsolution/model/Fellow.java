@@ -13,23 +13,13 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class Fellow {
-    
+
     private int idCard;
     private String names;
     private String surnames;
+    private int telephone;
 
-    public Fellow(int idCard, String names, String surnames) {
-        this.idCard = idCard;
-        this.names = names;
-        this.surnames = surnames;
-    }
-
-    @Override
-    public String toString() {
-        return "Fellow{" + "idCard = " + idCard + ", names = " + names
-                + ", surnames = " + surnames + '}';
-    }
-
+    
     public void saveFellow(boolean option, String informationData) {
         if (option == true) {
             Scanner scan = new Scanner(System.in);
@@ -42,6 +32,19 @@ public class Fellow {
             System.exit(0);
         }
 
+    }
+
+    public Fellow(int idCard, String names, String surnames, int telephone) {
+        this.idCard = idCard;
+        this.names = names;
+        this.surnames = surnames;
+        this.telephone = telephone;
+    }
+
+    @Override
+    public String toString() {
+        return "Fellow{" + "idCard=" + idCard + ", names=" + names
+                + ", surnames=" + surnames + ", telephone=" + telephone + '}';
     }
 
     /**
@@ -84,5 +87,13 @@ public class Fellow {
      */
     public void setSurnames(String surnames) {
         this.surnames = surnames;
+    }
+
+    public int getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(int telephone) {
+        this.telephone = telephone;
     }
 }

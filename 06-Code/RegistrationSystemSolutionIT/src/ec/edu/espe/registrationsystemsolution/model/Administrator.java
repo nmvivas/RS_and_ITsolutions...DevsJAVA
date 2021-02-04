@@ -13,10 +13,11 @@ public class Administrator extends Fellow {
 
     private String email;
 
-    public Administrator(String email, int idCard, String names, String surnames) {
-        super(idCard, names, surnames);
+    public Administrator(String email, int idCard, String names, String surnames, int telephone) {
+        super(idCard, names, surnames, telephone);
         this.email = email;
     }
+
 
     @Override
     public String toString() {
