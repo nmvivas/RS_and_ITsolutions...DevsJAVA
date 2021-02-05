@@ -9,21 +9,23 @@ package ec.edu.espe.registrationsystemsolution.model;
  *
  * @author CHARLES
  */
-public class Technical {
+public class Technical extends Fellow{
     
     private String role;
     private String professionalCategory;
 
-    public Technical(String role, String professionalCategory) {
+    public Technical(String role, String professionalCategory, int idCard, String names, String surnames, int telephone) {
+        super(idCard, names, surnames, telephone);
         this.role = role;
         this.professionalCategory = professionalCategory;
     }
 
     @Override
     public String toString() {
-        return "Technical{" + "role=" + role + ", professionalCategory=" +
-                professionalCategory + '}';
+        return "Technical{" + "role=" + role + ", professionalCategory=" + professionalCategory + '}';
     }
+    
+    
 
     /**
      * @return the role
