@@ -74,7 +74,7 @@ public class BaseData {
         Gson gsonClients = new Gson();
         String clientsString;
         clientsString = gsonClients.toJson(clients);
-        Data.save("Clients.gson", clientsString + "\n");
+        
 
         menus.continueKey(scan);
 
@@ -100,7 +100,8 @@ public class BaseData {
         String problemsString;
 
         problemsString = gsonProblems.toJson(problems);
-        Data.save("Problems.gson", problemsString + "\n");
+        questionSave();
+        saveFellow(option, problemsString);
 
         menus.continueKey(scan);
     }
@@ -134,7 +135,6 @@ public class BaseData {
         String technicalsString;
         technicalsString = gsonTechnicals.toJson(technicals);
         questionSave();
-        System.out.println(option);
         saveFellow(option, technicalsString);
 
         menus.continueKey(scan);
