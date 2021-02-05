@@ -19,20 +19,6 @@ public class Fellow {
     private String surnames;
     private int telephone;
 
-    
-    public void saveFellow(boolean option, String informationData) {
-        if (option == true) {
-            Scanner scan = new Scanner(System.in);
-            System.out.print("Enter file Name and extension (.csv - .txt - .gson )---> ");
-            String filename = scan.nextLine();
-            Data.save(filename, informationData);
-            System.out.println(" \n *------- SAVED FILE ----- * ");
-        } else {
-            System.out.println(" --- EXIT THE SYSTEM --- ");
-            System.exit(0);
-        }
-
-    }
 
     public Fellow(int idCard, String names, String surnames, int telephone) {
         this.idCard = idCard;
