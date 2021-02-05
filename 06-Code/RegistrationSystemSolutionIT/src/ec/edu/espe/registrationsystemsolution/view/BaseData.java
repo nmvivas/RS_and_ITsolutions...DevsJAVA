@@ -50,7 +50,7 @@ public class BaseData {
 
     }
 
-    public void registClient(Scanner scan) {
+    public void registCustomer(Scanner scan) {
         System.out.println(" =================================  REGIST CLIENT ====================================== \n");
         System.out.print("---> Enter the Company: ");
         String company = scan.nextLine();
@@ -72,8 +72,10 @@ public class BaseData {
         clients.add(new Customer(company, address, idCardRuc, names, names, telephone));
 
         Gson gsonClients = new Gson();
-        String clientsString;
-        clientsString = gsonClients.toJson(clients);
+        String customersString;
+        customersString = gsonClients.toJson(clients);
+        questionSave();
+        saveFellow(option, customersString);
         
 
         menus.continueKey(scan);
