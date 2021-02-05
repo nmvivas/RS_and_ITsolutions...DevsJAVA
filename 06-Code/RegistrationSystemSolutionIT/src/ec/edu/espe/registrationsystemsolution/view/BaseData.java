@@ -12,6 +12,7 @@ import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Client;
 import ec.edu.espe.registrationsystemsolution.model.Problem;
 import ec.edu.espe.registrationsystemsolution.model.Technical;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -40,7 +41,7 @@ public class BaseData {
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
-        Administrator admin = new Administrator(idCard, names, surnames, email, "admin", "2858");
+        Administrator admin = new Administrator(email, idCard, names, surnames, idCard);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
         return admin;
 
@@ -86,13 +87,12 @@ public class BaseData {
         System.out.println("\n ---> Enter the state of the problem: ");
         String state = scan.nextLine();
 
-        Problem problem = new Problem(description, typeProblem, state);
+        Problem problem = new Problem(true, 0, typeProblem, LocalDate.MIN);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         List problems;
         problems = new ArrayList();
-        problems.add(new Problem(description, typeProblem, state + "\n"));
-
+        problems.add(new Problem(true, 0, typeProblem, LocalDate.MIN);
         Gson gsonProblems = new Gson();
         String problemsString;
 
@@ -123,8 +123,7 @@ public class BaseData {
 
         List technicals;
         technicals = new ArrayList();
-        technicals.add(new Technical(idCard, techNames,
-                surnames, techTelephone, email, role, professionalCategory));
+        technicals.add(new Technical(role, professionalCategory);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         Gson gsonTechnicals = new Gson();
