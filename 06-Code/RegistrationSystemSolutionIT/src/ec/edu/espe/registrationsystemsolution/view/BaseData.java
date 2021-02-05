@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.view.FatherMenu;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
-import ec.edu.espe.registrationsystemsolution.model.Client;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
 import ec.edu.espe.registrationsystemsolution.model.Problem;
 import ec.edu.espe.registrationsystemsolution.model.Technical;
 import java.time.LocalDate;
@@ -24,12 +24,14 @@ import java.util.Scanner;
 public class BaseData {
 
     FatherMenu menus = new FatherMenu();//Method name in singular
-
+    boolean option;
     public Administrator registAdministrator(Scanner scan) {
         int idCard;
         String names;
         String surnames;
         String email;
+        
+        
         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");//very long line of code
         System.out.print("---> Enter your number Id: ");
         idCard = scan.nextInt();
@@ -41,6 +43,7 @@ public class BaseData {
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
+        
         Administrator admin = new Administrator(email, idCard, names, surnames, idCard);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
         return admin;
@@ -63,10 +66,10 @@ public class BaseData {
 
         List clients;
         clients = new ArrayList();//place a synonym for clients can be misunderstood
-        clients.add(new Client(company, names, telephone, address, telephone));
+        clients.add(new Customer(company, address, idCardRuc, names, names, telephone));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
-        clients.add(new Client("PYME", "Jose Ignacio ", 123455678, "San Lorezo ", 1234567812));
+        clients.add(new Customer(company, address, idCardRuc, names, names, telephone));
 
         Gson gsonClients = new Gson();
         String clientsString;
@@ -92,7 +95,7 @@ public class BaseData {
 
         List problems;
         problems = new ArrayList();
-        problems.add(new Problem(true, 0, typeProblem, LocalDate.MIN);
+        problems.add(new Problem(true, 0, typeProblem, LocalDate.MIN));
         Gson gsonProblems = new Gson();
         String problemsString;
 
@@ -103,6 +106,7 @@ public class BaseData {
     }
 
     public void registTechnical(Scanner scan) {
+        
         System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
         System.out.print("---> Enter your Id Card: ");
         int idCard = scan.nextInt();
@@ -123,30 +127,38 @@ public class BaseData {
 
         List technicals;
         technicals = new ArrayList();
-        technicals.add(new Technical(role, professionalCategory);
+        technicals.add(new Technical(role, professionalCategory));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         Gson gsonTechnicals = new Gson();
         String technicalsString;
         technicalsString = gsonTechnicals.toJson(technicals);
-        Data.save("Technicals.gson", technicalsString + "\n");
+        questionSave();
+        System.out.println(option);
+        saveFellow(option, technicalsString);
 
         menus.continueKey(scan);
 
     }
+    public void saveFellow(boolean option, String informationData) {
+        if (option == false) {
+            Scanner scan = new Scanner(System.in);
+            System.out.print("Enter file Name and extension (.csv - .txt - .gson )---> ");
+            String filename = scan.nextLine();
+            Data.save(filename, informationData);
+            System.out.println(" \n *------- SAVED FILE ----- * ");
+        } else {
+            System.out.println(" --- EXIT THE SYSTEM --- ");
+            System.exit(0);
+        }
 
-    public void saveGson(Administrator admin) {
-
-        Gson gsonAdmin = new Gson();
-        String adminString;
-
-        adminString = gsonAdmin.toJson(admin);
-        Data.save("Admin.csv", adminString + "\n");
-
-        Administrator administrator1;
-        String jsonString = adminString;
-        administrator1 = gsonAdmin.fromJson(jsonString, Administrator.class);
-
+    }
+    private boolean questionSave() {
+        System.out.println("\n ¿Do you want save? true/false");
+        Scanner scan = new Scanner(System.in);
+        boolean option = scan.nextBoolean();
+        scan.nextLine();
+        return option;
     }
 
 }

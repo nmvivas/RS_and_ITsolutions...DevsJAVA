@@ -19,6 +19,7 @@ public class Customer extends Fellow {
         this.company = company;
         this.address = address;
     }
+   
 
     @Override
     public String toString() {
