@@ -65,7 +65,6 @@ public class FatherMenu {
             switch (option) {
                 case 1:
                     Administrator admin = creationbd.registAdministrator(scan);
-                    creationbd.saveGson(admin);
                     continueKey(scan);
                     printWelcomeMenu();
                     break;
@@ -121,7 +120,7 @@ public class FatherMenu {
 
                     case 1:
 
-                        creationbd.registClient(scan);
+                        creationbd.registCustomer(scan);
 
                         break;
 
