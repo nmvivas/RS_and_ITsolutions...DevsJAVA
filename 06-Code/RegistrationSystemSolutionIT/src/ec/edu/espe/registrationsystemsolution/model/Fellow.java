@@ -15,22 +15,22 @@ import java.util.Scanner;
 public class Fellow {
 
     private int idCard;
-    private String names;
-    private String surnames;
+    private String name;
+    private String surname;
     private int telephone;
 
 
     public Fellow(int idCard, String names, String surnames, int telephone) {
         this.idCard = idCard;
-        this.names = names;
-        this.surnames = surnames;
+        this.name = names;
+        this.surname = surnames;
         this.telephone = telephone;
     }
 
     @Override
     public String toString() {
-        return "Fellow{" + "idCard=" + idCard + ", names=" + names
-                + ", surnames=" + surnames + ", telephone=" + telephone + '}';
+        return "Fellow{" + "idCard=" + idCard + ", names=" + name
+                + ", surnames=" + surname + ", telephone=" + telephone + '}';
     }
 
     /**
@@ -48,31 +48,31 @@ public class Fellow {
     }
 
     /**
-     * @return the names
+     * @return the name
      */
-    public String getNames() {
-        return names;
+    public String getName() {
+        return name;
     }
 
     /**
-     * @param names the names to set
+     * @param name the name to set
      */
-    public void setNames(String names) {
-        this.names = names;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
-     * @return the surnames
+     * @return the surname
      */
-    public String getSurnames() {
-        return surnames;
+    public String getSurname() {
+        return surname;
     }
 
     /**
-     * @param surnames the surnames to set
+     * @param surname the surname to set
      */
-    public void setSurnames(String surnames) {
-        this.surnames = surnames;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public int getTelephone() {

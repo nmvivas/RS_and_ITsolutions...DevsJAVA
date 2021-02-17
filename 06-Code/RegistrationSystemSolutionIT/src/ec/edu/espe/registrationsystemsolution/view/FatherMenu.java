@@ -7,6 +7,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -14,7 +15,6 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public class FatherMenu {
-    
 
     public void printWelcomeMenu() {
         System.out.println(" ================*=====================*=====================*=============================");
@@ -43,17 +43,7 @@ public class FatherMenu {
     public void welcomeOptions() throws IOException, InterruptedException {
 
         Scanner scan = new Scanner(System.in);
-        BaseData creationbd = new BaseData();
-       
-
-        int idCard;
-        String names;
-        String surnames;
-        String email;
-        String nickname;
-        String password;
-        String loginNickname;
-        String loginPassword;
+        BaseData dataBase = new BaseData();
 
         boolean salir = false;
         int option;
@@ -61,28 +51,32 @@ public class FatherMenu {
         while (!salir) {
 
             option = scan.nextInt();
+            try {
+                switch (option) {
+                    case 1:
+                        Administrator admin = dataBase.registAdministrator(scan);
+                        continueKey(scan);
+                        printWelcomeMenu();
+                        break;
 
-            switch (option) {
-                case 1:
-                    Administrator admin = creationbd.registAdministrator(scan);
-                    continueKey(scan);
-                    printWelcomeMenu();
-                    break;
+                    case 2:
+                        loginAdmin(scan);
+                        break;
 
-                case 2:
-                    loginAdmin(scan);
-                    break;
+                    case 3:
+                        System.exit(0);
+                        break;
 
-                case 3:
-                    System.exit(0);
-                    break;
-
-                default:
-                    System.out.println(" The opcion have to be between 1 and 3 ");
+                    default:
+                        System.out.println(" The opcion have to be between 1 and 3 ");
+                }
+            } catch (InputMismatchException ex) {
+                System.out.println("You have tu put a number");
+                scan.next();
             }
         }
     }
-
+    
     public void loginAdmin(Scanner scan) {
         String loginNickname;
         String loginPassword;
@@ -91,16 +85,12 @@ public class FatherMenu {
         loginNickname = scan.next();
         System.out.print(" Enter your password:  ");
         loginPassword = scan.next();
-        //avoid commented code
-        //Login admin1 = new Login(loginNickname, loginPassword);
-        //Data.find("Admin.csv", loginNickname);
-        //Data.find("Admin.csv", loginPassword);
         if (loginNickname.equals("admin") && loginPassword.equals("2858")) {
-            
+
             printAdministratorMenu();
-            
+
         } else {
-            
+
             System.out.println(" ********  Incorrect password, exited the system   ********** ");
             System.exit(0);
         }
@@ -109,10 +99,10 @@ public class FatherMenu {
     public void administratorOptions() {
         BaseData creationbd = new BaseData();
         Scanner scan = new Scanner(System.in);
-        boolean salir = false;
+        boolean exit = false;
         int option;
 
-        while (!salir) {
+        while (!exit) {
             try {
                 option = scan.nextInt();
                 scan.nextLine();
@@ -146,13 +136,13 @@ public class FatherMenu {
                     default:
                         System.out.println(" The opcion have to be between 1 and 4 ");
                 }
-            } catch (Exception ex) {
+            } catch (IOException | InterruptedException ex) {
                 System.out.println(" You have to put a number ");
                 scan.next();
             }
         }
     }
-    
+
     public void continueKey(Scanner scan) {
         System.out.println(" press any key to continue... ");
         String key = scan.next();

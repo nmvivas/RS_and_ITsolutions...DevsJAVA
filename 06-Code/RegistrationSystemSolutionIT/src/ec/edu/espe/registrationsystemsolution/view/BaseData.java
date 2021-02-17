@@ -29,8 +29,8 @@ public class BaseData {
         
     public Administrator registAdministrator(Scanner scan) {
         int idCard;
-        String names;
-        String surnames;
+        String name;
+        String surname;
         String email;
         
         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");//very long line of code
@@ -38,14 +38,14 @@ public class BaseData {
         idCard = scan.nextInt();
         scan.nextLine();
         System.out.print("---> Enter your Names: ");
-        names = scan.nextLine();
+        name = scan.nextLine();
         System.out.print("---> Enter your Surnames: ");
-        surnames = scan.nextLine();
+        surname = scan.nextLine();
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
         
-        Administrator admin = new Administrator(email, idCard, names, surnames, idCard);
+        Administrator admin = new Administrator(email, idCard, name, surname, idCard);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
         return admin;
 
@@ -57,7 +57,7 @@ public class BaseData {
         String company = scan.nextLine();
         System.out.print("---> Names of the person in charge: ");
         String names = scan.nextLine();
-        System.out.print("---> Surames of the person in charge: ");
+        System.out.print("---> Surnames of the person in charge: ");
         String surnames = scan.nextLine();
         System.out.print("---> Enter your Id Card Ruc: ");
         int idCardRuc = scan.nextInt();
@@ -67,14 +67,14 @@ public class BaseData {
         System.out.print("---> Enter your telephone: ");
         int telephone = scan.nextInt();
 
-        List clients;
-        clients = new ArrayList();//place a synonym for clients can be misunderstood
-        clients.add(new Customer(company, address, idCardRuc, names, surnames, telephone));
+        List customer;
+        customer = new ArrayList();//place a synonym for customer can be misunderstood
+        customer.add(new Customer(company, address, idCardRuc, names, surnames, telephone));
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         Gson gsonClients = new Gson();
         String customersString;
-        customersString = gsonClients.toJson(clients);
+        customersString = gsonClients.toJson(customer);
         questionSave();
         saveFellow(option, customersString);
         
@@ -180,5 +180,4 @@ public class BaseData {
         scan.nextLine();
         return option;
     }
-
 }

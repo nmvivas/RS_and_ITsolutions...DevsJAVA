@@ -13,7 +13,7 @@ import java.time.Period;
  * @author CHARLES
  */
 public class File {
-    
+
     private int idProblem;
     private String titleProblem;
     private LocalDate dateOfShipment;
@@ -23,9 +23,7 @@ public class File {
         LocalDate currentDate;
 
         currentDate = LocalDate.now();
-        age = Period.between(dateOfShipment, currentDate).getYears()
-                + Period.between(dateOfShipment, currentDate).getMonths()
-                + Period.between(dateOfShipment, currentDate).getDays();
+        age = Period.between(dateOfShipment, currentDate).getYears();
         return age;
     }
 
@@ -82,5 +80,5 @@ public class File {
     public void setDateOfShipment(LocalDate dateOfShipment) {
         this.dateOfShipment = dateOfShipment;
     }
-    
+
 }
