@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.model;
 
 /**
  *
- * @author CHARLES
+ * @author DEVS_JAVA_KND
  */
 public class Customer extends Fellow {
 
