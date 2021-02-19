@@ -86,19 +86,19 @@ public class FatherMenu {
         loginNickname = null;
         loginPassword = null;
 
-        while (loginNickname != "admin" || loginPassword != "2858" && (attempts<maximum)) {
+        while (loginNickname != "admin" || loginPassword != "2858" && (attempts < maximum)) {
             System.out.println(" *-----------------------------------* ");
             System.out.print(" Enter your nickname:  ");
             loginNickname = scan.next();
             System.out.print(" Enter your password:  ");
             loginPassword = scan.next();
             if (attempts == 2) {
-                System.out.println(" ********  Incorrect password, exited the system   ********** ");
+                System.out.println(" ********  Incorrect password or user , exited the system   ********** ");
                 System.exit(0);
             }
             printAdministratorMenu();
         }
-        
+
     }
 
     public void administratorOptions() {
