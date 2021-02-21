@@ -6,6 +6,7 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.Login;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ import java.util.Scanner;
  *
  * @author DEVS_JAVA_KND
  */
-public class FatherMenu {
+public class FatherMenu implements Login {
 
     public void printWelcomeMenu() {
         System.out.println(" ================*=====================*=====================*=============================");

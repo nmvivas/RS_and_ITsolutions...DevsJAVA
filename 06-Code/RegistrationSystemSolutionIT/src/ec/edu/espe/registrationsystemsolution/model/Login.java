@@ -6,50 +6,17 @@
 package ec.edu.espe.registrationsystemsolution.model;
 
 /**
- 
+ *
  * @author DEVS_JAVA_KND
  */
-public class Login {
-    
-    private String nickname;
-    private String password;
+public interface Login {
 
-    @Override
-    public String toString() {
-        return "Login{" + "nickname = " + getNickname() + ", password = " +
-                getPassword() + '}';
-    }
+    String loginNickname = null;
+    String loginPassword = null;
 
-    public Login(String nickname, String password) {
-        this.nickname = nickname;
-        this.password = password;
-    }
+    int attempts = 0;
+    int maximum = 2;
 
-    /**
-     * @return the nickname
-    */ 
-    public String getNickname() {
-        return nickname;
-    }
+    public void loginAdmin();
 
-    /**
-     * @param nickname the nickname to set
-     */
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
-    /**
-     * @return the password
-    */ 
-    public String getPassword() {
-        return password;
-    }
-
-    /**
-     * @param password the password to set
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    } 
 }
