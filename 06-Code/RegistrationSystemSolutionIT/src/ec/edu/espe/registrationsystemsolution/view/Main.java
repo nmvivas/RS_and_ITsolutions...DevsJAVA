@@ -7,6 +7,8 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 
 import ec.edu.espe.filemanager.utils.Data;
+import ec.edu.espe.registrationsystemsolution.controller.New;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
@@ -20,9 +22,13 @@ public class Main {
 
         Date date = new Date();
         System.out.println(date + "\n");
-        FatherMenu menus = new FatherMenu();
+        Administrator admin1 = new Administrator("Jose", 120456789, "Sandoval", "jose@espe.edu.ec", 234567);
+        New newAdmin = new New();
+        newAdmin.insert(admin1);
+        
+        /*FatherMenu menus = new FatherMenu();
         menus.printWelcomeMenu();
-        menus.welcomeOptions();
+        menus.welcomeOptions();*/
     }
    
 }
