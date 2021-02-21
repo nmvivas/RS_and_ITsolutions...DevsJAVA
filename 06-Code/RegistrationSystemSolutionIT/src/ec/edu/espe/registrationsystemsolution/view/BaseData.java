@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import com.google.gson.Gson;
 import ec.edu.espe.filemanager.utils.Data;
-import ec.edu.espe.registrationsystemsolution.controller.New;
+import ec.edu.espe.registrationsystemsolution.controller.MongoDB;
 import ec.edu.espe.registrationsystemsolution.view.FatherMenu;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
@@ -51,15 +51,15 @@ public class BaseData {
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
         
         Administrator admin1 = new Administrator(email, idCard, name, surname, telephone);
-        New newAdmin = new New();
-        newAdmin.insert(admin1);
+        MongoDB newAdmin = new MongoDB();
+        newAdmin.createDocument(admin1);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
         return admin1;
 
     }
 
     public void registCustomer(Scanner scan) {
-        System.out.println(" =================================  REGIST CLIENT ====================================== \n");
+        System.out.println(" =================================  REGIST CUSTOMER ====================================== \n");
         System.out.print("---> Enter the Company: ");
         String company = scan.nextLine();
         System.out.print("---> Names of the person in charge: ");

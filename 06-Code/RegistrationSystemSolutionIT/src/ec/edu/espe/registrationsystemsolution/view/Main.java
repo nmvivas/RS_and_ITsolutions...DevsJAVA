@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 
 import ec.edu.espe.filemanager.utils.Data;
-import ec.edu.espe.registrationsystemsolution.controller.New;
+import ec.edu.espe.registrationsystemsolution.controller.MongoDB;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import java.io.FileNotFoundException;
 import java.io.IOException;

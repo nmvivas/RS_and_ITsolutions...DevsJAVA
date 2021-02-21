@@ -16,22 +16,22 @@ import java.util.ArrayList;
  *
  * @author Meli
  */
-public class New {
+public class MongoDB {
     private ArrayList<Administrator> listAdministrator;
     private ArrayList<Customer> listCustomer;
     private ArrayList<Technical> listTechnical;
     private ArrayList<Problem> listProblem;
     BasicDBObject dbObject;
-    ConnectionMongodb connection;
+    ConnectionMongoDB connection;
     
-    public New(){
+    public MongoDB(){
         listAdministrator = new ArrayList();
         listCustomer = new ArrayList();
         dbObject = new BasicDBObject();
-        connection = new ConnectionMongodb();             
+        connection = new ConnectionMongoDB();             
     }
     
-    public void insert (Administrator admin){
+    public void createDocument (Administrator admin){
         dbObject.append("ID-Card", admin.getIdCard());
         dbObject.append("Names", admin.getName());
         dbObject.append("Surnames", admin.getSurname());
@@ -41,7 +41,7 @@ public class New {
         
     }
     
-    public void insert (Customer customer){
+    public void createDocument (Customer customer){
         dbObject.append("ID-Card",customer.getIdCard());
         dbObject.append("Company",customer.getCompany());
         dbObject.append("Name of Responsable",customer.getName());

@@ -16,14 +16,14 @@ import java.util.Scanner;
  *
  * @author Meli
  */
-public class ConnectionMongodb {
+public class ConnectionMongoDB {
     private MongoClient mongoClient;
     private MongoClientURI mongoCURI;
     private DB database;
     private DBCollection dbCollection;
     private Scanner scan = new Scanner(System.in);
     
-    public ConnectionMongodb(){
+    public ConnectionMongoDB(){
         String nameDatabase;
         String nameCollection;
         mongoCURI = new MongoClientURI("mongodb+srv://user2_nathy21:123456789.Vivas@cluster0.ra3w0.mongodb.net/<dbname>?retryWrites=true&w=majority");
