@@ -7,6 +7,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import com.google.gson.Gson;
 import ec.edu.espe.filemanager.utils.Data;
+import ec.edu.espe.registrationsystemsolution.controller.New;
 import ec.edu.espe.registrationsystemsolution.view.FatherMenu;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
@@ -32,6 +33,7 @@ public class BaseData {
         String name;
         String surname;
         String email;
+        int telephone;
         
         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");//very long line of code
         System.out.print("---> Enter your number Id: ");
@@ -41,13 +43,18 @@ public class BaseData {
         name = scan.nextLine();
         System.out.print("---> Enter your Surnames: ");
         surname = scan.nextLine();
+        System.out.print("---> Enter your telephone:  ");
+        telephone = scan.nextInt();
+        scan.nextLine();
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
         
-        Administrator admin = new Administrator(email, idCard, name, surname, idCard);
+        Administrator admin1 = new Administrator(email, idCard, name, surname, telephone);
+        New newAdmin = new New();
+        newAdmin.insert(admin1);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        return admin;
+        return admin1;
 
     }
 

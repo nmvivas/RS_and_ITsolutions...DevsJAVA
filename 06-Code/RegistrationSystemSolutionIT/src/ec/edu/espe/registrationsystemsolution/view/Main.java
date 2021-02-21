@@ -22,13 +22,9 @@ public class Main {
 
         Date date = new Date();
         System.out.println(date + "\n");
-        Administrator admin1 = new Administrator("Jose", 120456789, "Sandoval", "jose@espe.edu.ec", 234567);
-        New newAdmin = new New();
-        newAdmin.insert(admin1);
-        
-        /*FatherMenu menus = new FatherMenu();
+        FatherMenu menus = new FatherMenu();
         menus.printWelcomeMenu();
-        menus.welcomeOptions();*/
+        menus.welcomeOptions();
     }
    
 }
