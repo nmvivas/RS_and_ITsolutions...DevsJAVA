@@ -22,13 +22,13 @@ public class MongoDB {
     private ArrayList<Technical> listTechnical;
     private ArrayList<Problem> listProblem;
     BasicDBObject dbObject;
-    ConnectionMongoDB connection;
+    ConnectionMongodb connection;
     
     public MongoDB(){
         listAdministrator = new ArrayList();
         listCustomer = new ArrayList();
         dbObject = new BasicDBObject();
-        connection = new ConnectionMongoDB();             
+        connection = new ConnectionMongodb();             
     }
     
     public void createDocument (Administrator admin){

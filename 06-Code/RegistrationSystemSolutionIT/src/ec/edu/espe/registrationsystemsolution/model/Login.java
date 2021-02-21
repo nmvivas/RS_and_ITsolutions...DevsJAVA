@@ -5,18 +5,17 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DEVS_JAVA_KND
  */
 public interface Login {
 
-    String loginNickname = null;
-    String loginPassword = null;
-
     int attempts = 0;
     int maximum = 2;
 
-    public void loginAdmin();
+    public void loginAdmin(Scanner scan);
 
 }
