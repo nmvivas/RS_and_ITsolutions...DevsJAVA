@@ -79,30 +79,28 @@ public class FatherMenu implements Login {
     }
 
     public void loginAdmin(Scanner scan) {
+
         String loginNickname = "";
         String loginPassword = "";
         int attempts = -1;
         int maximum = 2;
-        
-        while (!loginNickname.equals("Admin")  || !loginPassword.equals("2858") && (attempts < maximum)) {
-            System.out.println(" *-----------------------------------* ");
-            attempts++;
-            System.out.println("ENter de nickname");
-            loginNickname = scan.next();
-            System.out.println("Enter the password");
-            loginPassword = scan.next();
 
+        while (!loginNickname.equals("Admin") || !loginPassword.equals("2858") && (attempts < maximum)) {
+            attempts++;
+            System.out.println(" *-----------------------------------* ");
+            System.out.print("Enter your nickname:  ");
+            loginNickname = scan.next();
+            System.out.print("Enter your password:  ");
+            loginPassword = scan.next();
+            
+            if ((loginNickname.equals("Admin") && loginPassword.equals("2858") && (attempts < maximum))== true) {
+                printAdministratorMenu();
+            }
             if (attempts == 2) {
                 System.out.println(" ********  Incorrect password or user , exited the system   ********** ");
                 System.exit(0);
             }
-            if  ((loginNickname.equals("Admin")  && loginPassword.equals("2858") && (attempts < maximum)) == true) {
-                printAdministratorMenu();
-            }
- 
-            
         }
-
     }
 
     public void administratorOptions() {
