@@ -14,7 +14,7 @@ import java.util.Scanner;
       
 /**
  *
- * @author Meli
+ * @author DEVS_JAVA_KND
  */
 public class ConnectionMongoDB {
     private MongoClient mongoClient;
