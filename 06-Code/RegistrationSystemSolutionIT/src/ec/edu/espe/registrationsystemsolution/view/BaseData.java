@@ -35,7 +35,7 @@ public class BaseData {
         String email;
         int telephone;
         
-        System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");//very long line of code
+        System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
         System.out.print("---> Enter your number Id: ");
         idCard = scan.nextInt();
         scan.nextLine();
@@ -48,7 +48,7 @@ public class BaseData {
         scan.nextLine();
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
-        System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");//very long line of code
+        System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");
         
         Administrator admin1 = new Administrator(email, idCard, name, surname, telephone);
         New newAdmin = new New();

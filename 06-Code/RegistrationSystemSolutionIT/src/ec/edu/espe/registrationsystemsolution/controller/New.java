@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Meli
+ * @author DEVS_JAVA_KND
  */
 public class New {
     private ArrayList<Administrator> listAdministrator;
@@ -42,13 +42,7 @@ public class New {
     }
     
     public void insert (Customer customer){
-        dbObject.append("ID-Card",customer.getIdCard());
-        dbObject.append("Company",customer.getCompany());
-        dbObject.append("Name of Responsable",customer.getName());
-        dbObject.append("Surname",customer.getSurname());
-        dbObject.append("Telephone",customer.getTelephone());
-        dbObject.append("Address",customer.getAddress());
-        connection.getDbCollection().insert(dbObject);
+        
     }  
     
     public void insert ( Technical technical){

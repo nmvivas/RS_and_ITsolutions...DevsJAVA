@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author CDEVS_JAVA_KND
+ * @author DEVS_JAVA_KND
  */
 public class TypeProblem extends Problem {
     
