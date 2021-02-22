@@ -6,7 +6,7 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
-import ec.edu.espe.registrationsystemsolution.model.Login;
+import ec.edu.espe.registrationsystemsolution.interfaces.Login;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;

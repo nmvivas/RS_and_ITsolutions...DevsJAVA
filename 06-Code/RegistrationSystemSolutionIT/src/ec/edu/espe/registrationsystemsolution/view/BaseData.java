@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
+import ec.edu.espe.registrationsystemsolution.interfaces.NewRegister;
 import com.google.gson.Gson;
 import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.controller.MongoDB;
@@ -119,7 +120,7 @@ public class BaseData implements NewRegister {
 
         problemsString = gsonProblems.toJson(problems);
         questionSave();
-        createDocument(option, problemsString);
+        save(option, problemsString);
         problem.archiveProblem();
         System.out.println("Problems in Base Data are ---> " + problem.getProblemInTheBaseData());
         System.out.println("This is the problem number ---> " + problem.getIdProblem());
@@ -154,10 +155,10 @@ public class BaseData implements NewRegister {
         menus.continueKey(scan);
 
     }
-    public void createDocument(boolean option, String informationData) {
+    public void save(boolean option, String informationData) {
         if (option == false) {
             Scanner scan = new Scanner(System.in);
-            System.out.print("Enter file Name and extension (.csv - .txt - .gson )---> ");
+            System.out.print("Enter file Name and the extension (.csv - .txt - .gson )---> ");
             String filename = scan.nextLine();
             Data.save(filename, informationData);
             System.out.println(" \n *------- SAVED FILE ----- * ");
