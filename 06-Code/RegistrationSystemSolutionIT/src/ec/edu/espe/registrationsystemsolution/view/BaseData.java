@@ -145,16 +145,11 @@ public class BaseData implements NewRegister {
         System.out.print("---> Enter your professional category: ");
         String professionalCategory = scan.nextLine();
 
-        List technicals;
-        technicals = new ArrayList();
-        technicals.add(new Technical(role, professionalCategory, idCard, names, surnames, telephone));
-        System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
+        
+        Technical technical1 = new Technical(role, professionalCategory, idCard, names, surnames, telephone);
+       System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
-        Gson gsonTechnicals = new Gson();
-        String technicalsString;
-        technicalsString = gsonTechnicals.toJson(technicals);
-        questionSave();
-        createDocument(option, technicalsString);
+        
 
         menus.continueKey(scan);
 
