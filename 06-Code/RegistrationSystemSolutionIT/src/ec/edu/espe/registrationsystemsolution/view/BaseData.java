@@ -7,6 +7,8 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.registrationsystemsolution.interfaces.NewRegister;
 import com.google.gson.Gson;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.controller.MongoDB;
 import ec.edu.espe.registrationsystemsolution.view.FatherMenu;
@@ -175,5 +177,15 @@ public class BaseData implements NewRegister {
         boolean option = scan.nextBoolean();
         scan.nextLine();
         return option;
+    }
+
+    @Override
+    public void createDocument(DBCollection colecctionName, DBObject doc) {
+        
+    }
+
+    @Override
+    public void readDocument(DBObject dbObject, DBCollection colecctionName) {
+        
     }
 }

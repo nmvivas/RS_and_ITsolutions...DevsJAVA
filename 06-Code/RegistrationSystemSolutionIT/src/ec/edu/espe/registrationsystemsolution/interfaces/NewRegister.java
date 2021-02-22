@@ -7,6 +7,7 @@ package ec.edu.espe.registrationsystemsolution.interfaces;
 
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.Scanner;
 
@@ -21,7 +22,8 @@ public  interface NewRegister {
     public void registProblem(Scanner scan);
     public void save(boolean option, String informationData);
     public void createDocument(DBCollection colecctionName, DBObject doc);
-    public void read(Customer customer, DBCollection colecctionName);
+    public void readDocument(DBObject dbObject , DBCollection colecctionName);
+    
 }
 
 
