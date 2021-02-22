@@ -74,18 +74,10 @@ public class BaseData implements NewRegister {
         System.out.print("---> Enter your telephone: ");
         int telephone = scan.nextInt();
 
-        List customer;
-        customer = new ArrayList();//place a synonym for customer can be misunderstood
-        customer.add(new Customer(company, address, idCardRuc, names, surnames, telephone));
+       
+        Customer customer1 = new Customer(company, address, idCardRuc, names, surnames, telephone);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-
-        Gson gsonClients = new Gson();
-        String customersString;
-        customersString = gsonClients.toJson(customer);
-        questionSave();
-        createDocument(option, customersString);
         
-
         menus.continueKey(scan);
 
     }

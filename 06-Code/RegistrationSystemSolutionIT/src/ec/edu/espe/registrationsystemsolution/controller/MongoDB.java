@@ -51,11 +51,11 @@ public class MongoDB {
         connection.getDbCollection().insert(dbObject);
     }  
     
-    public void insert ( Technical technical){
+    public void createDocument ( Technical technical){
         
     }
     
-    public void insert (Problem problem){
+    public void createDocument (Problem problem){
         
     }
 
