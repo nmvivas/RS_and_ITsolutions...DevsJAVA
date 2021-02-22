@@ -12,10 +12,12 @@ import java.util.Scanner;
  * @author DEVS_JAVA_KND
  */
 public interface Login {
+   
+        int attempts = -1;
+        int maximum = 2;
 
-    int attempts = 0;
-    int maximum = 2;
+   
 
-    public void loginAdmin(Scanner scan);
+    public void verify(Scanner scan);
 
 }

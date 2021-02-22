@@ -61,7 +61,7 @@ public class FatherMenu implements Login {
                         break;
 
                     case 2:
-                        loginAdmin(scan);
+                        verify(scan);
                         break;
 
                     case 3:
@@ -78,15 +78,12 @@ public class FatherMenu implements Login {
         }
     }
 
-    public void loginAdmin(Scanner scan) {
+    public void verify(Scanner scan) {
 
         String loginNickname = "";
         String loginPassword = "";
-        int attempts = -1;
-        int maximum = 2;
 
         while (!loginNickname.equals("Admin") || !loginPassword.equals("2858") && (attempts < maximum)) {
-            attempts++;
             System.out.println(" *-----------------------------------* ");
             System.out.print("Enter your nickname:  ");
             loginNickname = scan.next();

@@ -19,12 +19,12 @@ public class File {
     private LocalDate dateOfShipment;
 
     public int getDayOfAttention() {
-        int age = 0;
+        int time = 0;
         LocalDate currentDate;
 
         currentDate = LocalDate.now();
-        age = Period.between(dateOfShipment, currentDate).getYears();
-        return age;
+        time = Period.between(dateOfShipment, currentDate).getDays();
+        return time;
     }
 
     public File(int idProblem, String titleProblem, LocalDate dateOfShipment) {
