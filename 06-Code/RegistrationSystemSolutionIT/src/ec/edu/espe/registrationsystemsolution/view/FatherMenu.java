@@ -45,6 +45,7 @@ public class FatherMenu implements Login {
 
         Scanner scan = new Scanner(System.in);
         BaseData dataBase = new BaseData();
+        
 
         boolean salir = false;
         int option;
@@ -55,7 +56,7 @@ public class FatherMenu implements Login {
             try {
                 switch (option) {
                     case 1:
-                        Administrator admin = dataBase.registAdministrator(scan);
+                        dataBase.registAdministrator(scan);
                         continueKey(scan);
                         printWelcomeMenu();
                         break;

@@ -23,12 +23,12 @@ import java.util.Scanner;
  *
  * @author DEVS_JAVA_KND
  */
-public class BaseData {
+public class BaseData implements NewRegister {
 
     FatherMenu menus = new FatherMenu();//Method name in singular
     boolean option;
         
-    public Administrator registAdministrator(Scanner scan) {
+    public void registAdministrator(Scanner scan) {
         int idCard;
         String name;
         String surname;
@@ -54,7 +54,7 @@ public class BaseData {
         MongoDB newAdmin = new MongoDB();
         newAdmin.createDocument(admin1);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        return admin1;
+        
 
     }
 
@@ -83,7 +83,7 @@ public class BaseData {
         String customersString;
         customersString = gsonClients.toJson(customer);
         questionSave();
-        saveFellow(option, customersString);
+        createDocument(option, customersString);
         
 
         menus.continueKey(scan);
@@ -127,7 +127,7 @@ public class BaseData {
 
         problemsString = gsonProblems.toJson(problems);
         questionSave();
-        saveFellow(option, problemsString);
+        createDocument(option, problemsString);
         problem.archiveProblem();
         System.out.println("Problems in Base Data are ---> " + problem.getProblemInTheBaseData());
         System.out.println("This is the problem number ---> " + problem.getIdProblem());
@@ -162,12 +162,12 @@ public class BaseData {
         String technicalsString;
         technicalsString = gsonTechnicals.toJson(technicals);
         questionSave();
-        saveFellow(option, technicalsString);
+        createDocument(option, technicalsString);
 
         menus.continueKey(scan);
 
     }
-    public void saveFellow(boolean option, String informationData) {
+    public void createDocument(boolean option, String informationData) {
         if (option == false) {
             Scanner scan = new Scanner(System.in);
             System.out.print("Enter file Name and extension (.csv - .txt - .gson )---> ");
