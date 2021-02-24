@@ -51,7 +51,11 @@ public class MongoDB {
         connection.getDbCollection().insert(dbObject);
     }  
     
+    
     public void createDocument ( Technical technical){
+        dbObject.append("role", technical.getRole());
+        dbObject.append("professionalCategory", technical.getProfessionalCategory());
+        connection.getDbCollection().insert(dbObject);
         
     }
     
