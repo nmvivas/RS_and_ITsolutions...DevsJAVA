@@ -26,7 +26,8 @@ public class ConnectionMongodb {
     public ConnectionMongodb (){
         String nameDatabase;
         String nameCollection;
-        mongoCURI = new MongoClientURI("mongodb+srv://user2_nathy21:123456789.Vivas@cluster0.ra3w0.mongodb.net/<dbname>?retryWrites=true&w=majority");
+        mongoCURI = new MongoClientURI("mongodb+srv://user_devsknd:1234.devsknd"
+                + "@project0.tqftq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         mongoClient = new MongoClient(getMongoCURI());
         System.out.println(" Enter the name of the database");
         nameDatabase = scan.nextLine();
