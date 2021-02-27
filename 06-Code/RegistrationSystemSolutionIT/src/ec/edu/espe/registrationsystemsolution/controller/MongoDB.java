@@ -55,11 +55,16 @@ public class MongoDB {
     public void createDocument ( Technical technical){
         dbObject.append("role", technical.getRole());
         dbObject.append("professionalCategory", technical.getProfessionalCategory());
+        dbObject.append("idCard", technical.getIdCard());
+        dbObject.append("name", technical.getName());
+        dbObject.append("suurename", technical.getSurname());
+        dbObject.append("telephone", technical.getTelephone());
         connection.getDbCollection().insert(dbObject);
         
     }
     
     public void createDocument (Problem problem){
+        
         
     }
 
