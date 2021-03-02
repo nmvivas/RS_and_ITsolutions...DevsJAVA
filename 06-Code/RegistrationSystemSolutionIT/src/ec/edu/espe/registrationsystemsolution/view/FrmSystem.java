@@ -6,22 +6,32 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.WriteResult;
 import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author karen
  */
 public class FrmSystem extends javax.swing.JFrame {
+
     BasicDBObject dbObject;
     ConnectionMongodb connection;
-    
 
     /**
      * Creates new form FrmSystem
      */
     public FrmSystem() {
         initComponents();
+    }
+
+    public void empty() {
+        txtCustomer.setText("");
+        cmbProblem.setSelectedIndex(0);
+        txtState.setText("");
+        txtTechnical.setText("");
     }
 
     /**
@@ -114,6 +124,11 @@ public class FrmSystem extends javax.swing.JFrame {
         });
 
         btnEdit.setText("Edit");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Delete");
 
@@ -168,9 +183,9 @@ public class FrmSystem extends javax.swing.JFrame {
                                 .addComponent(txtState, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnNew)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnEdit)
                         .addGap(29, 29, 29)
+                        .addComponent(btnEdit)
+                        .addGap(41, 41, 41)
                         .addComponent(btnDelete)
                         .addGap(30, 30, 30)
                         .addComponent(btnCancel)
@@ -234,7 +249,7 @@ public class FrmSystem extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Customer ", "Type Problem", "State", "Technical"
             }
         ));
         jScrollPane1.setViewportView(tblContents);
@@ -267,16 +282,38 @@ public class FrmSystem extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-        dbObject = new BasicDBObject();
-        connection = new ConnectionMongodb();  
-        dbObject.append("Customer: ", txtCustomer.getText());
-        dbObject.append("Problem: " , cmbProblem.getSelectedItem());
-        dbObject.append(" Type - problem", chkRemote.getSelectedIcon());
-        dbObject.append("State: " , txtState.getText());
-        dbObject.append("Technical" , txtTechnical.getText());
-        connection.getDbCollection().insert(dbObject);
-                
+        try {
+            dbObject = new BasicDBObject();
+            connection = new ConnectionMongodb();
+            dbObject.append("Customer: ", txtCustomer.getText());
+            dbObject.append("Problem: ", cmbProblem.getSelectedItem());
+            dbObject.append(" Type - problem", chkRemote.getSelectedIcon());
+            dbObject.append("State: ", txtState.getText().toString());
+            dbObject.append("Technical", txtTechnical.getText());
+            connection.getDbCollection().insert(dbObject);
+
+            DBCursor res = connection.getDbCollection().find();
+            if (res != null) {
+                JOptionPane.showMessageDialog(null, "Saved Request");
+                empty();
+            } else {
+                JOptionPane.showMessageDialog(null, " ¡¡ ERROR !! ");
+                empty();
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+
+        }
+
+
     }//GEN-LAST:event_btnNewActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        dbObject = new BasicDBObject();
+        connection = new ConnectionMongodb();
+
+        dbObject.append("Customer: ", txtCustomer.getText());
+    }//GEN-LAST:event_btnEditActionPerformed
 
     /**
      * @param args the command line arguments
