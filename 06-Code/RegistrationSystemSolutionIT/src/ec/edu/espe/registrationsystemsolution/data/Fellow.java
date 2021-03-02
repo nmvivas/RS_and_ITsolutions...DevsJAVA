@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.model;
+package ec.edu.espe.registrationsystemsolution.data;
 
+import com.mongodb.BasicDBObject;
 import ec.edu.espe.filemanager.utils.Data;
 import java.util.Scanner;
 
@@ -14,11 +15,10 @@ import java.util.Scanner;
  */
 public class Fellow {
 
-    private int idCard;
-    private String name;
-    private String surname;
-    private int telephone;
-
+    int idCard;
+    String name;
+    String surname;
+    int telephone;
 
     public Fellow(int idCard, String names, String surnames, int telephone) {
         this.idCard = idCard;
@@ -32,6 +32,7 @@ public class Fellow {
         return "Fellow{" + "idCard=" + idCard + ", names=" + name
                 + ", surnames=" + surname + ", telephone=" + telephone + '}';
     }
+
 
     /**
      * @return the idCard
@@ -82,4 +83,5 @@ public class Fellow {
     public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
+
 }

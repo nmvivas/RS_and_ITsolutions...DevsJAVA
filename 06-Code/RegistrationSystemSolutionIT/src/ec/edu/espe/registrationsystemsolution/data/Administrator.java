@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.model;
+package ec.edu.espe.registrationsystemsolution.data;
+
+import com.mongodb.BasicDBObject;
 
 /**
  *
@@ -17,7 +19,7 @@ public class Administrator extends Fellow {
         super(idCard, names, surnames, telephone);
         this.email = email;
     }
-
+    
 
     @Override
     public String toString() {
