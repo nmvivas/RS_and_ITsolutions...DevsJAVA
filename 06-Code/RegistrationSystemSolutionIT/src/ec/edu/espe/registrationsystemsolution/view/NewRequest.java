@@ -5,10 +5,10 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
-import ec.edu.espe.registrationsystemsolution.data.Administrator;
-import ec.edu.espe.registrationsystemsolution.data.Customer;
-import ec.edu.espe.registrationsystemsolution.data.Problem;
-import ec.edu.espe.registrationsystemsolution.data.Technical;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
+import ec.edu.espe.registrationsystemsolution.model.Problem;
+import ec.edu.espe.registrationsystemsolution.model.Technical;
 import java.util.ArrayList;
 import java.util.Scanner;
 
