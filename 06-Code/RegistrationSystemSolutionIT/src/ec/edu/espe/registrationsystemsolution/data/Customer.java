@@ -14,7 +14,7 @@ public class Customer extends Fellow {
     private String company;
     private String address;
 
-    public Customer(String company, String address, int idCard, String names, String surnames, int telephone) {
+    public Customer(String company, String address, String idCard, String names, String surnames, int telephone) {
         super(idCard, names, surnames, telephone);
         this.company = company;
         this.address = address;
