@@ -66,6 +66,11 @@ public class FrmLogin extends javax.swing.JFrame {
         });
 
         txtCancelar.setText("Cancelar");
+        txtCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,6 +177,10 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_buttonLoginActionPerformed
+
+    private void txtCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCancelarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_txtCancelarActionPerformed
 
     /**
      * @param args the command line arguments
