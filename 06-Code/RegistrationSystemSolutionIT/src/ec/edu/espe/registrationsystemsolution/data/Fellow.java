@@ -15,12 +15,12 @@ import java.util.Scanner;
  */
 public class Fellow {
 
-    int idCard;
+   String idCard;
     String name;
     String surname;
     int telephone;
 
-    public Fellow(int idCard, String names, String surnames, int telephone) {
+    public Fellow(String idCard, String names, String surnames, int telephone) {
         this.idCard = idCard;
         this.name = names;
         this.surname = surnames;
@@ -37,14 +37,14 @@ public class Fellow {
     /**
      * @return the idCard
      */
-    public int getIdCard() {
+    public String getIdCard() {
         return idCard;
     }
 
     /**
      * @param idCard the idCard to set
      */
-    public void setIdCard(int idCard) {
+    public void setIdCard(String idCard) {
         this.idCard = idCard;
     }
 

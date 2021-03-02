@@ -70,7 +70,7 @@ public class BaseData implements NewRegister {
         System.out.print("---> Surnames of the person in charge: ");
         String surnames = scan.nextLine();
         System.out.print("---> Enter your Id Card Ruc: ");
-        int idCardRuc = scan.nextInt();
+        String idCardRuc = scan.nextLine();
         scan.nextLine();
         System.out.print("---> Enter your address: ");
         String address = scan.nextLine();
