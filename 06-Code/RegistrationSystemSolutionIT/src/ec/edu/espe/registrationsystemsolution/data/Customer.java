@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import com.mongodb.BasicDBObject;
+
 /**
  *
  * @author DEVS_JAVA_KND
@@ -19,6 +21,12 @@ public class Customer extends Fellow {
         this.company = company;
         this.address = address;
     }
+
+    public Customer(BasicDBObject basicDBObject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
    
 
     @Override
