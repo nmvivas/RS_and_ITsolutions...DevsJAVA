@@ -18,16 +18,14 @@ import java.util.Scanner;
  */
 public class NewRequest {
     
-    Scanner scan = new Scanner(System.in);
-    
-    public void Datain(){
-    System.out.println(" Enter the Customer's name: ");
-    String customer = scan.nextLine();
+    private ArrayList<Customer> listCustomer;
+    private ArrayList<Technical> listTechnical;
+    private ArrayList<Problem> listProblem;
     
     
 }
     
-}
+
 
 
 
