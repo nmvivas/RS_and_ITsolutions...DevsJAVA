@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
-import ec.edu.espe.registrationsystemsolution.interfaces.NewRegister;
+import ec.edu.espe.registrationsystemsolution.utils.NewRegister;
 import com.google.gson.Gson;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;

@@ -182,12 +182,12 @@ public class FrmSystem extends javax.swing.JFrame {
                                 .addComponent(txtTechnical, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtState, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnNew)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnEdit)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnDelete)
-                        .addGap(30, 30, 30)
+                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
                         .addComponent(btnCancel)
                         .addGap(30, 30, 30)
                         .addComponent(btnPrint)
@@ -229,13 +229,15 @@ public class FrmSystem extends javax.swing.JFrame {
                         .addComponent(chkRemote)
                         .addComponent(chkIncident)))
                 .addGap(33, 33, 33)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnNew)
-                    .addComponent(btnEdit)
-                    .addComponent(btnDelete)
-                    .addComponent(btnCancel)
-                    .addComponent(btnPrint)
-                    .addComponent(btnExit))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnCancel)
+                        .addComponent(btnPrint)
+                        .addComponent(btnExit))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnEdit)
+                        .addComponent(btnDelete)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -253,6 +255,12 @@ public class FrmSystem extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tblContents);
+        if (tblContents.getColumnModel().getColumnCount() > 0) {
+            tblContents.getColumnModel().getColumn(0).setHeaderValue("Customer ");
+            tblContents.getColumnModel().getColumn(1).setHeaderValue("Type Problem");
+            tblContents.getColumnModel().getColumn(2).setHeaderValue("State");
+            tblContents.getColumnModel().getColumn(3).setHeaderValue("Technical");
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -311,7 +319,7 @@ public class FrmSystem extends javax.swing.JFrame {
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         dbObject = new BasicDBObject();
         connection = new ConnectionMongodb();
-
+        
         dbObject.append("Customer: ", txtCustomer.getText());
     }//GEN-LAST:event_btnEditActionPerformed
 

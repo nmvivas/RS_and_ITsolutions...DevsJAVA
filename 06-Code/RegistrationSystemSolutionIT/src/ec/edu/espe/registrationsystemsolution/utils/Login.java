@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.interfaces;
+package ec.edu.espe.registrationsystemsolution.utils;
 
 import java.util.Scanner;
 
@@ -15,9 +15,6 @@ public interface Login {
    
         int attempts = -1;
         int maximum = 2;
-
-   
-
     public void verify(Scanner scan);
 
 }
