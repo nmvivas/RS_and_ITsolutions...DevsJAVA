@@ -30,17 +30,17 @@ public class BaseData implements NewRegister {
 
     FatherMenu menus = new FatherMenu();//Method name in singular
     boolean option;
-        
+
     public void registAdministrator(Scanner scan) {
-        int idCard;
+        String idCard;
         String name;
         String surname;
         String email;
         int telephone;
-        
+
         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
         System.out.print("---> Enter your number Id: ");
-        idCard = scan.nextInt();
+        idCard = scan.nextLine();
         scan.nextLine();
         System.out.print("---> Enter your Names: ");
         name = scan.nextLine();
@@ -52,12 +52,11 @@ public class BaseData implements NewRegister {
         System.out.print("---> Enter your email:  ");
         email = scan.nextLine();
         System.out.println("\n****  your assigned user is: admin and your password is: 2858 **** ");
-        
+
         Administrator admin1 = new Administrator(email, idCard, name, surname, telephone);
         MongoDB newAdmin = new MongoDB();
         newAdmin.createDocument(admin1);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        
 
     }
 
@@ -76,17 +75,15 @@ public class BaseData implements NewRegister {
         String address = scan.nextLine();
         System.out.print("---> Enter your telephone: ");
         int telephone = scan.nextInt();
-
-       
         Customer customer1 = new Customer(company, address, idCardRuc, names, surnames, telephone);
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-        
+
         menus.continueKey(scan);
 
     }
 
     public void registProblem(Scanner scan) {
-        
+
         System.out.println(" ================================== REGIST PROBLEM  ================================= ");
         System.out.println("");
         System.out.println("\n ---> State of the problem (solve = true/ not solve = false)");
@@ -101,17 +98,17 @@ public class BaseData implements NewRegister {
         System.out.println("Enter of description the problem: ");
         String descriptionProblem = scan.nextLine();
         System.out.println("\n ---> Enter the type of the problem (incident/ remote solution): ");
-        String   typeProblem= scan.nextLine();
+        String typeProblem = scan.nextLine();
         TypeProblem problem = new TypeProblem(isSolve, idProblem, titleProblem, LocalDate.MIN);
-        if("incident".equals(typeProblem)){
+        if ("incident".equals(typeProblem)) {
             System.out.println("The code problem is: " + problem.getTypeIncident());
-        }else if("remote solution".equals(typeProblem)){
-            System.out.println("The code problem is: " + problem.getTypeRemoteSolution());   
+        } else if ("remote solution".equals(typeProblem)) {
+            System.out.println("The code problem is: " + problem.getTypeRemoteSolution());
         }
-        
+
         System.out.println("\n ---> Enter the state of the problem: ");
         String state = scan.nextLine();
-        
+
         System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         List problems;
@@ -131,10 +128,10 @@ public class BaseData implements NewRegister {
     }
 
     public void registTechnical(Scanner scan) {
-        
+
         System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
         System.out.print("---> Enter your Id Card: ");
-        int idCard = scan.nextInt();
+        String idCard = scan.nextLine();
         scan.nextLine();
         System.out.print("---> Enter your Names: ");
         String names = scan.nextLine();
@@ -148,15 +145,13 @@ public class BaseData implements NewRegister {
         System.out.print("---> Enter your professional category: ");
         String professionalCategory = scan.nextLine();
 
-        
         Technical technical1 = new Technical(role, professionalCategory, idCard, names, surnames, telephone);
-       System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
-
-        
+        System.out.println("----- SUCCESSFUL REGISTRATION  --- ");
 
         menus.continueKey(scan);
 
     }
+
     public void save(boolean option, String informationData) {
         if (option == false) {
             Scanner scan = new Scanner(System.in);
@@ -167,10 +162,11 @@ public class BaseData implements NewRegister {
         } else {
             System.out.println(" --- EXIT THE SYSTEM --- ");
             System.exit(0);
-            
+
         }
 
     }
+
     private boolean questionSave() {
         System.out.println("\n ¿Do you want save? true/false");
         Scanner scan = new Scanner(System.in);
@@ -181,11 +177,11 @@ public class BaseData implements NewRegister {
 
     @Override
     public void createDocument(DBCollection colecctionName, DBObject doc) {
-        
+
     }
 
     @Override
     public void readDocument(DBObject dbObject, DBCollection colecctionName) {
-        
+
     }
 }
