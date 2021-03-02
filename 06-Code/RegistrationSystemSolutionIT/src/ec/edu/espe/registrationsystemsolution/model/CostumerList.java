@@ -37,7 +37,7 @@ public class CostumerList {
         this.customerList = customerList;
     }
     
-    public void insertC (Customer customer)
+    public boolean insertC (Customer customer)
     {
         boolean aux = true;
         document.append("ID-Card",customer.getIdCard());
@@ -46,7 +46,18 @@ public class CostumerList {
         document.append("Surname",customer.getSurname());
         document.append("Telephone",customer.getTelephone());
         document.append("Address",customer.getAddress());
-        //connection.getDbCollection().insert(document);
+        for(int i=0;i<customerList.size();i++){
+                        if(customer.getIdCard().equals(customerList.get(i).getIdCard())){
+                                aux=false;
+                               break;
+                        }else{ 
+                               aux=true;
+                        }
+                }
+                if(aux==true){
+                        connection.getDbCollection().insert(document);
+                }
+                return aux;
     }
     
 }
