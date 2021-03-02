@@ -4,38 +4,44 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.registrationsystemsolution.controller;
- 
+
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-      
 /**
  *
  * @author DEVS_JAVA_KND
  */
 public class ConnectionMongodb {
+
     private MongoClient mongoClient;
     private MongoClientURI mongoCURI;
     private DB database;
     private DBCollection dbCollection;
     private Scanner scan = new Scanner(System.in);
-    
-    public ConnectionMongodb (){
-        String nameDatabase;
-        String nameCollection;
-        mongoCURI = new MongoClientURI("mongodb+srv://user_devsknd:1234.devsknd"
-                + "@project0.tqftq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-        mongoClient = new MongoClient(getMongoCURI());
-        System.out.println(" Enter the name of the database");
-        nameDatabase = scan.nextLine();
-        database = mongoClient.getDB(nameDatabase);
-        System.out.println(" Enter the name of the collection");
-        nameCollection = scan.nextLine();
-        dbCollection = database.getCollection(nameCollection);
-        
+
+    public ConnectionMongodb() {
+        try {
+            String nameDatabase;
+            String nameCollection;
+            mongoCURI = new MongoClientURI("mongodb+srv://user_devsknd:1234.devsknd"
+                    + "@project0.tqftq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+            mongoClient = new MongoClient(getMongoCURI());
+            System.out.println(" Enter the name of the database");
+            nameDatabase = scan.nextLine();
+            database = mongoClient.getDB(nameDatabase);
+            System.out.println(" Enter the name of the collection");
+            nameCollection = scan.nextLine();
+            dbCollection = database.getCollection(nameCollection);
+            JOptionPane.showMessageDialog(null, "Successful Connection");
+        } catch(Exception e) {
+            System.err.println(e);   
+        }
+
     }
 
     /**
@@ -107,8 +113,5 @@ public class ConnectionMongodb {
     public void setScan(Scanner scan) {
         this.scan = scan;
     }
-    
-    
-    
-    
+
 }
