@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import com.mongodb.BasicDBObject;
+
 /**
  *
  * @author DEVS_JAVA_KND
@@ -14,10 +16,14 @@ public class Technical extends Fellow{
     private String role;
     private String professionalCategory;
 
-    public Technical(String role, String professionalCategory, int idCard, String names, String surnames, int telephone) {
+    public Technical(String role, String professionalCategory, String idCard, String names, String surnames, int telephone) {
         super(idCard, names, surnames, telephone);
         this.role = role;
         this.professionalCategory = professionalCategory;
+    }
+
+    public Technical(BasicDBObject basicDBObject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

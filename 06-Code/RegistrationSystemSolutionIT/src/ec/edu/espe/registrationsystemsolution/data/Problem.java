@@ -15,16 +15,20 @@ public class Problem extends File {
 
     private boolean isSolve;
     private static int problemInTheBaseData;
+    private String nameProblem;
 
-    public Problem(boolean isSolve, int idProblem, String titleProblem, LocalDate dateOfShipment) {
+    public Problem(boolean isSolve, String nameProblem, int idProblem, String titleProblem, LocalDate dateOfShipment) {
         super(idProblem, titleProblem, dateOfShipment);
         this.isSolve = isSolve;
+        this.nameProblem = nameProblem;
     }
 
+    
+
     public int archiveProblem() {
-        if (isSolve == false) {
-            problemInTheBaseData++;
-            return problemInTheBaseData;
+        if (isIsSolve() == false) {
+            setProblemInTheBaseData(getProblemInTheBaseData() + 1);
+            return getProblemInTheBaseData();
         } else {
             return 0;
         }
@@ -44,13 +48,35 @@ public class Problem extends File {
         this.isSolve = isSolve;
     }
 
-    public int getProblemInTheBaseData() {
+    /**
+     * @return the problemInTheBaseData
+     */
+    public static int getProblemInTheBaseData() {
         return problemInTheBaseData;
     }
 
-    public void setProblemInTheBaseData(int problemInTheBaseData) {
-        Problem.problemInTheBaseData = problemInTheBaseData;
+    /**
+     * @param aProblemInTheBaseData the problemInTheBaseData to set
+     */
+    public static void setProblemInTheBaseData(int aProblemInTheBaseData) {
+        problemInTheBaseData = aProblemInTheBaseData;
     }
-    
+
+    /**
+     * @return the nameProblem
+     */
+    public String getNameProblem() {
+        return nameProblem;
+    }
+
+    /**
+     * @param nameProblem the nameProblem to set
+     */
+    public void setNameProblem(String nameProblem) {
+        this.nameProblem = nameProblem;
+    }
+
 }
+
+
 

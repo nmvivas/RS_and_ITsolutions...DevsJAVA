@@ -15,7 +15,7 @@ public class Administrator extends Fellow {
 
     private String email;
 
-    public Administrator(String email, int idCard, String names, String surnames, int telephone) {
+    public Administrator(String email, String idCard, String names, String surnames, int telephone) {
         super(idCard, names, surnames, telephone);
         this.email = email;
     }

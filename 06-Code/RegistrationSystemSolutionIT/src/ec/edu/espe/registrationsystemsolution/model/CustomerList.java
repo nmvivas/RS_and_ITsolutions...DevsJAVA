@@ -18,13 +18,13 @@ import java.util.List;
  *
  * @author ruben
  */
-public class CostumerList {
+public class CustomerList {
 
     private ArrayList<Customer> customerList;
     BasicDBObject document;
     ConnectionMongodb connection;
 
-    public CostumerList() {
+    public CustomerList() {
         customerList = new ArrayList();
         connection = new ConnectionMongodb();
         document = new BasicDBObject();
@@ -79,7 +79,7 @@ public class CostumerList {
         DBCursor cursor = connection.getDbCollection().find(update);
         while (cursor.hasNext()) {
             DBObject ObjectC = cursor.next();
-            ObjectC.put("IDCard", company);
+            ObjectC.put("IDCard", IdCard);
             ObjectC.put("Name", name);
             ObjectC.put("Surname", surname);
             ObjectC.put("Company", company);
