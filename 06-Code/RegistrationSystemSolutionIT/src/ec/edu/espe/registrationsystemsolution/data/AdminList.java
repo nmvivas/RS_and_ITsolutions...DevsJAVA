@@ -10,6 +10,8 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
 import ec.edu.espe.registrationsystemsolution.data.Administrator;
+import ec.edu.espe.registrationsystemsolution.data.Administrator;
+import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.data.Customer;
 import java.util.ArrayList;
@@ -52,7 +54,7 @@ public class AdminList {
         document.append("Surnames", admin.getSurnames());
         document.append("Telephone", admin.getTelephone());
         document.append("E-mail", admin.getEmail());
-        connection.getDbCollection().insert(document);
+    
         for (int i = 0; i < adminList.size(); i++) {
             if (admin.getIdCard().equals(adminList.get(i).getIdCard())) {
                 aux = false;
