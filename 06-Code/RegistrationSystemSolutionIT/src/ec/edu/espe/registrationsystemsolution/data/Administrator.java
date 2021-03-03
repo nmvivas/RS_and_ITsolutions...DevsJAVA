@@ -94,15 +94,20 @@ public class Administrator {
     /**
      * @return the telephone
      */
-    public String getTelephone() {
+    public int getTelephone() {
         return telephone;
     }
 
     /**
      * @param telephone the telephone to set
      */
-    public void setTelephone(String telephone) {
+    public void setTelephone(int telephone) {
         this.telephone = telephone;
     }
+
+    /**
+     * @return the telephone
+     */
+    
 
 }
