@@ -15,24 +15,25 @@ import javax.swing.JOptionPane;
  *
  * @author karen
  */
-public class FrmSystem extends javax.swing.JFrame {
+public class FrmNewRequest extends javax.swing.JFrame {
 
-    BasicDBObject dbObject;
-    ConnectionMongodb connection;
+    private BasicDBObject dbObject;
+    private ConnectionMongodb connection;
 
     /**
      * Creates new form FrmSystem
      */
-    public FrmSystem() {
+    public FrmNewRequest() {
         initComponents();
     }
 
     public void empty() {
-        txtCustomer.setText("");
-        cmbProblem.setSelectedIndex(0);
-        txtState.setText("");
-        txtTechnical.setText("");
+        getTxtCustomer().setText("");
+        getCmbProblem().setSelectedIndex(0);
+        getTxtState().setText("");
+        getTxtTechnical().setText("");
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -178,9 +179,8 @@ public class FrmSystem extends javax.swing.JFrame {
                                 .addComponent(chkRemote)
                                 .addGap(18, 18, 18)
                                 .addComponent(chkIncident))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtTechnical, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtState, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE))))
+                            .addComponent(txtTechnical)
+                            .addComponent(txtState)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -203,7 +203,7 @@ public class FrmSystem extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(70, 70, 70)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -291,16 +291,16 @@ public class FrmSystem extends javax.swing.JFrame {
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
         try {
-            dbObject = new BasicDBObject();
-            connection = new ConnectionMongodb();
-            dbObject.append("Customer: ", txtCustomer.getText());
-            dbObject.append("Problem: ", cmbProblem.getSelectedItem());
-            dbObject.append(" Type - problem", chkRemote.getSelectedIcon());
-            dbObject.append("State: ", txtState.getText().toString());
-            dbObject.append("Technical", txtTechnical.getText());
-            connection.getDbCollection().insert(dbObject);
+            setDbObject(new BasicDBObject());
+            setConnection(new ConnectionMongodb());
+            getDbObject().append("Customer: ", getTxtCustomer().getText());
+            getDbObject().append("Problem: ", getCmbProblem().getSelectedItem());
+            getDbObject().append(" Type - problem", getChkRemote().getSelectedIcon());
+            getDbObject().append("State: ", getTxtState().getText().toString());
+            getDbObject().append("Technical", getTxtTechnical().getText());
+            getConnection().getDbCollection().insert(getDbObject());
 
-            DBCursor res = connection.getDbCollection().find();
+            DBCursor res = getConnection().getDbCollection().find();
             if (res != null) {
                 JOptionPane.showMessageDialog(null, "Saved Request");
                 empty();
@@ -317,10 +317,10 @@ public class FrmSystem extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        dbObject = new BasicDBObject();
-        connection = new ConnectionMongodb();
+        setDbObject(new BasicDBObject());
+        setConnection(new ConnectionMongodb());
         
-        dbObject.append("Customer: ", txtCustomer.getText());
+        getDbObject().append("Customer: ", getTxtCustomer().getText());
     }//GEN-LAST:event_btnEditActionPerformed
 
     /**
@@ -340,20 +340,21 @@ public class FrmSystem extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmSystem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewRequest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmSystem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewRequest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmSystem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewRequest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmSystem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmNewRequest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmSystem().setVisible(true);
+                new FrmNewRequest().setVisible(true);
             }
         });
     }
@@ -392,4 +393,480 @@ public class FrmSystem extends javax.swing.JFrame {
     private javax.swing.JTextField txtState;
     private javax.swing.JTextField txtTechnical;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @return the dbObject
+     */
+    public BasicDBObject getDbObject() {
+        return dbObject;
+    }
+
+    /**
+     * @param dbObject the dbObject to set
+     */
+    public void setDbObject(BasicDBObject dbObject) {
+        this.dbObject = dbObject;
+    }
+
+    /**
+     * @return the connection
+     */
+    public ConnectionMongodb getConnection() {
+        return connection;
+    }
+
+    /**
+     * @param connection the connection to set
+     */
+    public void setConnection(ConnectionMongodb connection) {
+        this.connection = connection;
+    }
+
+    /**
+     * @return the btnCancel
+     */
+    public javax.swing.JButton getBtnCancel() {
+        return btnCancel;
+    }
+
+    /**
+     * @param btnCancel the btnCancel to set
+     */
+    public void setBtnCancel(javax.swing.JButton btnCancel) {
+        this.btnCancel = btnCancel;
+    }
+
+    /**
+     * @return the btnDelete
+     */
+    public javax.swing.JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    /**
+     * @param btnDelete the btnDelete to set
+     */
+    public void setBtnDelete(javax.swing.JButton btnDelete) {
+        this.btnDelete = btnDelete;
+    }
+
+    /**
+     * @return the btnEdit
+     */
+    public javax.swing.JButton getBtnEdit() {
+        return btnEdit;
+    }
+
+    /**
+     * @param btnEdit the btnEdit to set
+     */
+    public void setBtnEdit(javax.swing.JButton btnEdit) {
+        this.btnEdit = btnEdit;
+    }
+
+    /**
+     * @return the btnExit
+     */
+    public javax.swing.JButton getBtnExit() {
+        return btnExit;
+    }
+
+    /**
+     * @param btnExit the btnExit to set
+     */
+    public void setBtnExit(javax.swing.JButton btnExit) {
+        this.btnExit = btnExit;
+    }
+
+    /**
+     * @return the btnNew
+     */
+    public javax.swing.JButton getBtnNew() {
+        return btnNew;
+    }
+
+    /**
+     * @param btnNew the btnNew to set
+     */
+    public void setBtnNew(javax.swing.JButton btnNew) {
+        this.btnNew = btnNew;
+    }
+
+    /**
+     * @return the btnPrint
+     */
+    public javax.swing.JButton getBtnPrint() {
+        return btnPrint;
+    }
+
+    /**
+     * @param btnPrint the btnPrint to set
+     */
+    public void setBtnPrint(javax.swing.JButton btnPrint) {
+        this.btnPrint = btnPrint;
+    }
+
+    /**
+     * @return the chkIncident
+     */
+    public javax.swing.JCheckBox getChkIncident() {
+        return chkIncident;
+    }
+
+    /**
+     * @param chkIncident the chkIncident to set
+     */
+    public void setChkIncident(javax.swing.JCheckBox chkIncident) {
+        this.chkIncident = chkIncident;
+    }
+
+    /**
+     * @return the chkRemote
+     */
+    public javax.swing.JCheckBox getChkRemote() {
+        return chkRemote;
+    }
+
+    /**
+     * @param chkRemote the chkRemote to set
+     */
+    public void setChkRemote(javax.swing.JCheckBox chkRemote) {
+        this.chkRemote = chkRemote;
+    }
+
+    /**
+     * @return the cmbProblem
+     */
+    public javax.swing.JComboBox<String> getCmbProblem() {
+        return cmbProblem;
+    }
+
+    /**
+     * @param cmbProblem the cmbProblem to set
+     */
+    public void setCmbProblem(javax.swing.JComboBox<String> cmbProblem) {
+        this.cmbProblem = cmbProblem;
+    }
+
+    /**
+     * @return the jCheckBoxMenuItem1
+     */
+    public javax.swing.JCheckBoxMenuItem getjCheckBoxMenuItem1() {
+        return jCheckBoxMenuItem1;
+    }
+
+    /**
+     * @param jCheckBoxMenuItem1 the jCheckBoxMenuItem1 to set
+     */
+    public void setjCheckBoxMenuItem1(javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1) {
+        this.jCheckBoxMenuItem1 = jCheckBoxMenuItem1;
+    }
+
+    /**
+     * @return the jLabel1
+     */
+    public javax.swing.JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    /**
+     * @param jLabel1 the jLabel1 to set
+     */
+    public void setjLabel1(javax.swing.JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    /**
+     * @return the jLabel2
+     */
+    public javax.swing.JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    /**
+     * @param jLabel2 the jLabel2 to set
+     */
+    public void setjLabel2(javax.swing.JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    /**
+     * @return the jLabel3
+     */
+    public javax.swing.JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    /**
+     * @param jLabel3 the jLabel3 to set
+     */
+    public void setjLabel3(javax.swing.JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    /**
+     * @return the jLabel4
+     */
+    public javax.swing.JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    /**
+     * @param jLabel4 the jLabel4 to set
+     */
+    public void setjLabel4(javax.swing.JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    /**
+     * @return the jLabel5
+     */
+    public javax.swing.JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    /**
+     * @param jLabel5 the jLabel5 to set
+     */
+    public void setjLabel5(javax.swing.JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    /**
+     * @return the jLabel6
+     */
+    public javax.swing.JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    /**
+     * @param jLabel6 the jLabel6 to set
+     */
+    public void setjLabel6(javax.swing.JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    /**
+     * @return the jLabel7
+     */
+    public javax.swing.JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    /**
+     * @param jLabel7 the jLabel7 to set
+     */
+    public void setjLabel7(javax.swing.JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    /**
+     * @return the jLabel8
+     */
+    public javax.swing.JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    /**
+     * @param jLabel8 the jLabel8 to set
+     */
+    public void setjLabel8(javax.swing.JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    /**
+     * @return the jMenu1
+     */
+    public javax.swing.JMenu getjMenu1() {
+        return jMenu1;
+    }
+
+    /**
+     * @param jMenu1 the jMenu1 to set
+     */
+    public void setjMenu1(javax.swing.JMenu jMenu1) {
+        this.jMenu1 = jMenu1;
+    }
+
+    /**
+     * @return the jMenu2
+     */
+    public javax.swing.JMenu getjMenu2() {
+        return jMenu2;
+    }
+
+    /**
+     * @param jMenu2 the jMenu2 to set
+     */
+    public void setjMenu2(javax.swing.JMenu jMenu2) {
+        this.jMenu2 = jMenu2;
+    }
+
+    /**
+     * @return the jMenu3
+     */
+    public javax.swing.JMenu getjMenu3() {
+        return jMenu3;
+    }
+
+    /**
+     * @param jMenu3 the jMenu3 to set
+     */
+    public void setjMenu3(javax.swing.JMenu jMenu3) {
+        this.jMenu3 = jMenu3;
+    }
+
+    /**
+     * @return the jMenuItem1
+     */
+    public javax.swing.JMenuItem getjMenuItem1() {
+        return jMenuItem1;
+    }
+
+    /**
+     * @param jMenuItem1 the jMenuItem1 to set
+     */
+    public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
+        this.jMenuItem1 = jMenuItem1;
+    }
+
+    /**
+     * @return the jPanel2
+     */
+    public javax.swing.JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    /**
+     * @param jPanel2 the jPanel2 to set
+     */
+    public void setjPanel2(javax.swing.JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    /**
+     * @return the jPopupMenu1
+     */
+    public javax.swing.JPopupMenu getjPopupMenu1() {
+        return jPopupMenu1;
+    }
+
+    /**
+     * @param jPopupMenu1 the jPopupMenu1 to set
+     */
+    public void setjPopupMenu1(javax.swing.JPopupMenu jPopupMenu1) {
+        this.jPopupMenu1 = jPopupMenu1;
+    }
+
+    /**
+     * @return the jPopupMenu2
+     */
+    public javax.swing.JPopupMenu getjPopupMenu2() {
+        return jPopupMenu2;
+    }
+
+    /**
+     * @param jPopupMenu2 the jPopupMenu2 to set
+     */
+    public void setjPopupMenu2(javax.swing.JPopupMenu jPopupMenu2) {
+        this.jPopupMenu2 = jPopupMenu2;
+    }
+
+    /**
+     * @return the jRadioButtonMenuItem1
+     */
+    public javax.swing.JRadioButtonMenuItem getjRadioButtonMenuItem1() {
+        return jRadioButtonMenuItem1;
+    }
+
+    /**
+     * @param jRadioButtonMenuItem1 the jRadioButtonMenuItem1 to set
+     */
+    public void setjRadioButtonMenuItem1(javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1) {
+        this.jRadioButtonMenuItem1 = jRadioButtonMenuItem1;
+    }
+
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    /**
+     * @param jScrollPane1 the jScrollPane1 to set
+     */
+    public void setjScrollPane1(javax.swing.JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    /**
+     * @return the popupMenu1
+     */
+    public java.awt.PopupMenu getPopupMenu1() {
+        return popupMenu1;
+    }
+
+    /**
+     * @param popupMenu1 the popupMenu1 to set
+     */
+    public void setPopupMenu1(java.awt.PopupMenu popupMenu1) {
+        this.popupMenu1 = popupMenu1;
+    }
+
+    /**
+     * @return the tblContents
+     */
+    public javax.swing.JTable getTblContents() {
+        return tblContents;
+    }
+
+    /**
+     * @param tblContents the tblContents to set
+     */
+    public void setTblContents(javax.swing.JTable tblContents) {
+        this.tblContents = tblContents;
+    }
+
+    /**
+     * @return the txtCustomer
+     */
+    public javax.swing.JTextField getTxtCustomer() {
+        return txtCustomer;
+    }
+
+    /**
+     * @param txtCustomer the txtCustomer to set
+     */
+    public void setTxtCustomer(javax.swing.JTextField txtCustomer) {
+        this.txtCustomer = txtCustomer;
+    }
+
+    /**
+     * @return the txtState
+     */
+    public javax.swing.JTextField getTxtState() {
+        return txtState;
+    }
+
+    /**
+     * @param txtState the txtState to set
+     */
+    public void setTxtState(javax.swing.JTextField txtState) {
+        this.txtState = txtState;
+    }
+
+    /**
+     * @return the txtTechnical
+     */
+    public javax.swing.JTextField getTxtTechnical() {
+        return txtTechnical;
+    }
+
+    /**
+     * @param txtTechnical the txtTechnical to set
+     */
+    public void setTxtTechnical(javax.swing.JTextField txtTechnical) {
+        this.txtTechnical = txtTechnical;
+    }
 }

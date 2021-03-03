@@ -99,7 +99,7 @@ public class BaseData implements NewRegister {
         String descriptionProblem = scan.nextLine();
         System.out.println("\n ---> Enter the type of the problem (incident/ remote solution): ");
         String typeProblem = scan.nextLine();
-        TypeProblem problem = new TypeProblem(isSolve, idProblem, titleProblem, LocalDate.MIN);
+        TypeProblem problem = new TypeProblem(isSolve, typeProblem, idProblem, titleProblem, LocalDate.MIN);
         if ("incident".equals(typeProblem)) {
             System.out.println("The code problem is: " + problem.getTypeIncident());
         } else if ("remote solution".equals(typeProblem)) {
@@ -113,7 +113,7 @@ public class BaseData implements NewRegister {
 
         List problems;
         problems = new ArrayList();
-        problems.add(new TypeProblem(isSolve, idProblem, titleProblem, LocalDate.MIN));
+        problems.add(new TypeProblem(isSolve, typeProblem, idProblem, titleProblem, LocalDate.MIN));
         Gson gsonProblems = new Gson();
         String problemsString;
 
