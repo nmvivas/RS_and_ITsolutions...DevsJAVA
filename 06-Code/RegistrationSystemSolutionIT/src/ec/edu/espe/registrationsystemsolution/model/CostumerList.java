@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.data;
+package ec.edu.espe.registrationsystemsolution.model;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.connection.Connection;
-import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.model.Customer;
+import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.data.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,13 +18,13 @@ import java.util.List;
  *
  * @author ruben
  */
-public class CustomerList {
+public class CostumerList {
 
     private ArrayList<Customer> customerList;
     BasicDBObject document;
     ConnectionMongodb connection;
 
-    public CustomerList() {
+    public CostumerList() {
         customerList = new ArrayList();
         connection = new ConnectionMongodb();
         document = new BasicDBObject();
@@ -79,7 +79,7 @@ public class CustomerList {
         DBCursor cursor = connection.getDbCollection().find(update);
         while (cursor.hasNext()) {
             DBObject ObjectC = cursor.next();
-            ObjectC.put("IDCard", IdCard);
+            ObjectC.put("IDCard", company);
             ObjectC.put("Name", name);
             ObjectC.put("Surname", surname);
             ObjectC.put("Company", company);

@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.model;
-
-import com.mongodb.BasicDBObject;
+package ec.edu.espe.registrationsystemsolution.data;
 
 /**
  *
@@ -16,13 +14,11 @@ public class Technical extends Fellow{
     private String role;
     private String professionalCategory;
 
-    public Technical(String role, String professionalCategory, String idCard, String names, String surnames, int telephone) {
+    public Technical(String role, String professionalCategory, int idCard, String names, String surnames, int telephone) {
         super(idCard, names, surnames, telephone);
         this.role = role;
         this.professionalCategory = professionalCategory;
     }
-
-    
 
     @Override
     public String toString() {

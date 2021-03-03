@@ -8,7 +8,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.WriteResult;
-import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
 import javax.swing.JOptionPane;
 
 /**

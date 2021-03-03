@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
-import ec.edu.espe.registrationsystemsolution.model.Verification;
+import ec.edu.espe.registrationsystemsolution.data.Verification;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
