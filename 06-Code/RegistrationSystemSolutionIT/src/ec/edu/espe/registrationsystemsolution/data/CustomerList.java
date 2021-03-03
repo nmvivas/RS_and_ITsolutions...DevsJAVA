@@ -61,7 +61,7 @@ public class CustomerList {
         return aux;
     }
 
-    public boolean readC() {
+   /*public boolean readC() {
         boolean aux;
         DBCursor cursor = connection.getDbCollection().find();
         while (cursor.hasNext()) {
@@ -70,7 +70,7 @@ public class CustomerList {
         }
         aux = true;
         return aux;
-    }
+    }*/
 
     public boolean UpdateC(String IdCard, String company, String name, String surname) {
         boolean aux = false;
