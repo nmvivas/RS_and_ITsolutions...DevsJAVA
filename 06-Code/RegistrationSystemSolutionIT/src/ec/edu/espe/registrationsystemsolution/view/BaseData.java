@@ -32,7 +32,7 @@ public class BaseData implements NewRegister {
     boolean option;
         
     public void registAdministrator(Scanner scan) {
-        int idCard;
+       String idCard;
         String name;
         String surname;
         String email;
@@ -40,8 +40,8 @@ public class BaseData implements NewRegister {
         
         System.out.print(" ==========================   REGIST ADMINISTRATOR ========================================== \n");
         System.out.print("---> Enter your number Id: ");
-        idCard = scan.nextInt();
-        scan.nextLine();
+        idCard = scan.nextLine();
+       
         System.out.print("---> Enter your Names: ");
         name = scan.nextLine();
         System.out.print("---> Enter your Surnames: ");
@@ -134,7 +134,7 @@ public class BaseData implements NewRegister {
         
         System.out.println(" ===========================  REGISTER TECHNICAL ======================== \n");
         System.out.print("---> Enter your Id Card: ");
-        int idCard = scan.nextInt();
+        String idCard = scan.nextLine();
         scan.nextLine();
         System.out.print("---> Enter your Names: ");
         String names = scan.nextLine();

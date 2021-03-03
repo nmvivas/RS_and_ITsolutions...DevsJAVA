@@ -14,7 +14,7 @@ public class Technical extends Fellow{
     private String role;
     private String professionalCategory;
 
-    public Technical(String role, String professionalCategory, int idCard, String names, String surnames, int telephone) {
+    public Technical(String role, String professionalCategory, String idCard, String names, String surnames, int telephone) {
         super(idCard, names, surnames, telephone);
         this.role = role;
         this.professionalCategory = professionalCategory;
