@@ -66,7 +66,7 @@ public class TechnicalList {
         return aux;
     }
 
-    public boolean readT() {
+   /* public boolean readT() {
         boolean aux;
         DBCursor cursor = connection.getDbCollection().find();
         while (cursor.hasNext()) {
@@ -75,7 +75,7 @@ public class TechnicalList {
         }
         aux = true;
         return aux;
-    }
+    }*/
 
     public boolean UpdateT(String IdCard, String role, String name, String surname) {
         boolean aux = false;

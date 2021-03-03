@@ -22,9 +22,7 @@ public class Technical extends Fellow{
         this.professionalCategory = professionalCategory;
     }
 
-    public Technical(BasicDBObject basicDBObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 
     @Override
     public String toString() {
