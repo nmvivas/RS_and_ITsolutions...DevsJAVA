@@ -7,6 +7,8 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 
 import ec.edu.espe.filemanager.utils.Data;
+import ec.edu.espe.registrationsystemsolution.controller.Controller;
+import ec.edu.espe.registrationsystemsolution.data.AdminList;
 import ec.edu.espe.registrationsystemsolution.data.MongoDB;
 import ec.edu.espe.registrationsystemsolution.data.Administrator;
 import java.io.FileNotFoundException;
@@ -20,11 +22,24 @@ public class Main {
     
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        Date date = new Date();
+       /* Date date = new Date();
         System.out.println(date + "\n");
         FatherMenu menus = new FatherMenu();
         menus.printWelcomeMenu();
-        menus.welcomeOptions();
+        menus.welcomeOptions();*/
+       
+       //FRAMES 
+       FrmLogin login = new FrmLogin();
+       FrmNewRequest newRequest = new FrmNewRequest();
+       
+       //MODEL
+       AdminList adminList = new AdminList();
+       
+       
+       //login
+       login.setVisible(true);
+       
+       Controller controller = new Controller(login, newRequest, adminList);
     }
    
 }

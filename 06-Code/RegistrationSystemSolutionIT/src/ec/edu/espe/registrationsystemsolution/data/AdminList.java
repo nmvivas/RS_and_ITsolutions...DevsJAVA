@@ -19,6 +19,7 @@ import java.util.ArrayList;
  * @author Meli
  */
 public class AdminList {
+
     private ArrayList<Administrator> adminList;
     BasicDBObject document;
     ConnectionMongodb connection;
@@ -43,15 +44,14 @@ public class AdminList {
     public void setAdminList(ArrayList<Administrator> adminList) {
         this.adminList = adminList;
     }
-    
-    
+
     public boolean insertA(Administrator admin) {
         boolean aux = true;
-       document.append("ID-Card", admin.getIdCard());
-       document.append("Names", admin.getNames());
-       document.append("Surnames", admin.getSurnames());
-       document.append("Telephone", admin.getTelephone());
-       document.append("E-mail", admin.getEmail());
+        document.append("ID-Card", admin.getIdCard());
+        document.append("Names", admin.getNames());
+        document.append("Surnames", admin.getSurnames());
+        document.append("Telephone", admin.getTelephone());
+        document.append("E-mail", admin.getEmail());
         connection.getDbCollection().insert(document);
         for (int i = 0; i < adminList.size(); i++) {
             if (admin.getIdCard().equals(adminList.get(i).getIdCard())) {
@@ -78,13 +78,20 @@ public class AdminList {
         return aux;
     }
 
+    public boolean deleteList() {
+        boolean aux;
+        adminList.clear();
+        aux = true;
+        return aux;
+    }
+
     public boolean UpdateA(String IdCard, String company, String name, String surname) {
         boolean aux = false;
         BasicDBObject update = new BasicDBObject();
         update.put("IDCard", IdCard);
         DBCursor cursor = connection.getDbCollection().find(update);
         while (cursor.hasNext()) {
-           DBObject ObjectC = cursor.next();
+            DBObject ObjectC = cursor.next();
             ObjectC.put("IDCard", IdCard);
             ObjectC.put("Name", name);
             ObjectC.put("Surname", surname);
@@ -94,19 +101,18 @@ public class AdminList {
         }
         return aux;
     }
-    public boolean deleteA(String nameC){
-         boolean aux=false;
-        BasicDBObject delete=new BasicDBObject();
+
+    public boolean deleteA(String nameC) {
+        boolean aux = false;
+        BasicDBObject delete = new BasicDBObject();
         delete.put("Nombre", nameC);
-        DBCursor cursor=connection.getDbCollection().find(delete);
-        if(cursor.hasNext()){
-           DBObject  objetoC=cursor.next();
+        DBCursor cursor = connection.getDbCollection().find(delete);
+        if (cursor.hasNext()) {
+            DBObject objetoC = cursor.next();
             connection.getDbCollection().remove(objetoC);
-            aux=true;
+            aux = true;
         }
         return aux;
-     }
+    }
 
-    
-    
 }
