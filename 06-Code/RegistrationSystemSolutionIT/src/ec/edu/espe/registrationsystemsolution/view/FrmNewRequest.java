@@ -10,6 +10,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.WriteResult;
 import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,6 +33,30 @@ public class FrmNewRequest extends javax.swing.JFrame {
         getCmbProblem().setSelectedIndex(0);
         getTxtState().setText("");
         getTxtTechnical().setText("");
+    }
+    
+    public void showRrequest(){
+        DefaultTableModel trequest = new DefaultTableModel();
+        trequest.addColumn("Customer");
+        trequest.addColumn("Type Problem");
+        trequest.addColumn("State");
+        trequest.addColumn("Technical");
+        getTblContents().setModel(trequest);
+        
+        String []matriz = new String[8];
+        try {
+            matriz[0] = getTxtCustomer().getText();
+            matriz[1] = getChkRemote().getText();
+            matriz[2] = getTxtState().getText();
+            matriz[3] = getTxtTechnical().getText();
+            trequest.addRow(matriz);
+            
+    
+        }
+        
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
     }
     
 
@@ -68,7 +93,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
         txtState = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtTechnical = new javax.swing.JTextField();
-        btnNew = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
@@ -76,6 +101,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
         btnExit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblContents = new javax.swing.JTable();
+        btnShowRequest = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -117,10 +143,10 @@ public class FrmNewRequest extends javax.swing.JFrame {
 
         jLabel8.setText("Technical: ");
 
-        btnNew.setText("New");
-        btnNew.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNewActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
@@ -136,6 +162,11 @@ public class FrmNewRequest extends javax.swing.JFrame {
         btnCancel.setText("Cancel");
 
         btnPrint.setText("To Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -182,17 +213,17 @@ public class FrmNewRequest extends javax.swing.JFrame {
                             .addComponent(txtTechnical)
                             .addComponent(txtState)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22)
-                        .addComponent(btnCancel)
-                        .addGap(30, 30, 30)
+                        .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
                         .addComponent(btnPrint)
-                        .addGap(28, 28, 28)
-                        .addComponent(btnExit)))
+                        .addGap(35, 35, 35)
+                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -235,7 +266,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
                         .addComponent(btnPrint)
                         .addComponent(btnExit))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnEdit)
                         .addComponent(btnDelete)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -245,13 +276,10 @@ public class FrmNewRequest extends javax.swing.JFrame {
 
         tblContents.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Customer ", "Type Problem", "State", "Technical"
+
             }
         ));
         jScrollPane1.setViewportView(tblContents);
@@ -262,6 +290,13 @@ public class FrmNewRequest extends javax.swing.JFrame {
             tblContents.getColumnModel().getColumn(3).setHeaderValue("Technical");
         }
 
+        btnShowRequest.setText("Show Request");
+        btnShowRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowRequestActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -271,6 +306,10 @@ public class FrmNewRequest extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -279,7 +318,9 @@ public class FrmNewRequest extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(377, 377, 377))
+                .addGap(62, 62, 62)
+                .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(280, 280, 280))
         );
 
         pack();
@@ -289,13 +330,13 @@ public class FrmNewRequest extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
 
-    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         try {
             setDbObject(new BasicDBObject());
             setConnection(new ConnectionMongodb());
             getDbObject().append("Customer: ", getTxtCustomer().getText());
             getDbObject().append("Problem: ", getCmbProblem().getSelectedItem());
-            getDbObject().append(" Type - problem", getChkRemote().getSelectedIcon());
+            getDbObject().append(" Type - problem", getChkRemote().isSelected());
             getDbObject().append("State: ", getTxtState().getText().toString());
             getDbObject().append("Technical", getTxtTechnical().getText());
             getConnection().getDbCollection().insert(getDbObject());
@@ -314,7 +355,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_btnNewActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         setDbObject(new BasicDBObject());
@@ -322,6 +363,16 @@ public class FrmNewRequest extends javax.swing.JFrame {
         
         getDbObject().append("Customer: ", getTxtCustomer().getText());
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnShowRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowRequestActionPerformed
+          showRrequest();
+
+    }//GEN-LAST:event_btnShowRequestActionPerformed
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+        Print print = new Print();
+        print.printFile();
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -364,8 +415,9 @@ public class FrmNewRequest extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnNew;
     private javax.swing.JButton btnPrint;
+    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btnShowRequest;
     private javax.swing.JCheckBox chkIncident;
     private javax.swing.JCheckBox chkRemote;
     private javax.swing.JComboBox<String> cmbProblem;
@@ -394,6 +446,9 @@ public class FrmNewRequest extends javax.swing.JFrame {
     private javax.swing.JTextField txtTechnical;
     // End of variables declaration//GEN-END:variables
 
+    
+    
+    
     /**
      * @return the dbObject
      */
@@ -482,14 +537,14 @@ public class FrmNewRequest extends javax.swing.JFrame {
      * @return the btnNew
      */
     public javax.swing.JButton getBtnNew() {
-        return btnNew;
+        return btnSave;
     }
 
     /**
      * @param btnNew the btnNew to set
      */
     public void setBtnNew(javax.swing.JButton btnNew) {
-        this.btnNew = btnNew;
+        this.btnSave = btnNew;
     }
 
     /**
@@ -869,4 +924,21 @@ public class FrmNewRequest extends javax.swing.JFrame {
     public void setTxtTechnical(javax.swing.JTextField txtTechnical) {
         this.txtTechnical = txtTechnical;
     }
+
+    /**
+     * @return the btnShowRequest
+     */
+    public javax.swing.JButton getBtnShowRequest() {
+        return btnShowRequest;
+    }
+
+    /**
+     * @param btnShowRequest the btnShowRequest to set
+     */
+    public void setBtnShowRequest(javax.swing.JButton btnShowRequest) {
+        this.btnShowRequest = btnShowRequest;
+    }
+    
+    
+    
 }
