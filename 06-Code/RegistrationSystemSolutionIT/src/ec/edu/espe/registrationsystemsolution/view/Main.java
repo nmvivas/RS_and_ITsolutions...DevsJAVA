@@ -11,6 +11,7 @@ import ec.edu.espe.registrationsystemsolution.controller.Controller;
 import ec.edu.espe.registrationsystemsolution.data.AdminList;
 import ec.edu.espe.registrationsystemsolution.data.MongoDB;
 import ec.edu.espe.registrationsystemsolution.data.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.UserList;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
@@ -33,13 +34,13 @@ public class Main {
        FrmNewRequest newRequest = new FrmNewRequest();
        
        //MODEL
+       //AdminList adminList = new AdminList();
+       UserList userList = new UserList();
        AdminList adminList = new AdminList();
-       
        
        //login
        login.setVisible(true);
-       
-       Controller controller = new Controller(login, newRequest, adminList);
+       Controller controller = new Controller(login, newRequest, userList, adminList);
     }
    
 }
