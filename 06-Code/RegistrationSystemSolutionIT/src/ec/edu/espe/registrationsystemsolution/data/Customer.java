@@ -22,13 +22,6 @@ public class Customer extends Fellow {
         this.address = address;
     }
 
-    public Customer(BasicDBObject basicDBObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    
-   
-
     @Override
     public String toString() {
         return "Customer{" + "company=" + company + ", address=" + 

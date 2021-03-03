@@ -16,11 +16,13 @@ public class TypeProblem extends Problem {
     
     private String typeIncident = "001";
     private String typeRemoteSolution = "002";
+
+    public TypeProblem(boolean isSolve, String nameProblem, int idProblem, String titleProblem, LocalDate dateOfShipment) {
+        super(isSolve, nameProblem, idProblem, titleProblem, dateOfShipment);
+    }
       
     
-    public TypeProblem(boolean isSolve, int idProblem, String titleProblem, LocalDate dateOfShipment) {
-        super(isSolve, idProblem, titleProblem, dateOfShipment);
-    }
+    
 
     @Override
     public String toString() {

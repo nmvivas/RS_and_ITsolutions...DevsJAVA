@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author karen
+ * @author DEVS_JAVA_KND
  */
 public class Verification {
     FrmLogin login=  new FrmLogin();

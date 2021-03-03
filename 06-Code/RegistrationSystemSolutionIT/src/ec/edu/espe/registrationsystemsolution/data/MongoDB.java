@@ -29,8 +29,8 @@ public class MongoDB {
     
     public void createDocument (Administrator admin){
         dbObject.append("ID-Card", admin.getIdCard());
-        dbObject.append("Names", admin.getName());
-        dbObject.append("Surnames", admin.getSurname());
+        dbObject.append("Names", admin.getNames());
+        dbObject.append("Surnames", admin.getSurnames());
         dbObject.append("Telephone", admin.getTelephone());
         dbObject.append("E-mail", admin.getEmail());
         connection.getDbCollection().insert(dbObject);
