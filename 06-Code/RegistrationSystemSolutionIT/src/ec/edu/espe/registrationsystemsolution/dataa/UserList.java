@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.model;
+package ec.edu.espe.registrationsystemsolution.dataa;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.data.User;
+import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.model.User;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +23,6 @@ public class UserList {
 
     public UserList() {
         userList = new ArrayList();
-        connection = new ConnectionMongodb();
         document = new BasicDBObject();
     }
 

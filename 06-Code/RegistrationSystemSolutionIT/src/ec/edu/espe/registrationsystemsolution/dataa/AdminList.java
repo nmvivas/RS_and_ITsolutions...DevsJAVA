@@ -3,17 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.data;
+package ec.edu.espe.registrationsystemsolution.dataa;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 
-import ec.edu.espe.registrationsystemsolution.data.Administrator;
-import ec.edu.espe.registrationsystemsolution.data.Administrator;
-import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.data.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.data.Customer;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.ArrayList;
 
 /**
