@@ -8,7 +8,7 @@ package ec.edu.espe.registrationsystemsolution.utils;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
-import ec.edu.espe.registrationsystemsolution.data.Customer;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.Scanner;
 
 /**

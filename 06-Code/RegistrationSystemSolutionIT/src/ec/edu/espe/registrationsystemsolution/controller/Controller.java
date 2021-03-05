@@ -5,9 +5,10 @@
  */
 package ec.edu.espe.registrationsystemsolution.controller;
 
-import ec.edu.espe.registrationsystemsolution.data.AdminList;
-import ec.edu.espe.registrationsystemsolution.model.UserList;
+import ec.edu.espe.registrationsystemsolution.dataa.AdminList;
+import ec.edu.espe.registrationsystemsolution.dataa.UserList;
 import ec.edu.espe.registrationsystemsolution.view.FrmLogin;
+import ec.edu.espe.registrationsystemsolution.view.FrmMainSystem;
 import ec.edu.espe.registrationsystemsolution.view.FrmNewRequest;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,35 +26,48 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Controller implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
 
+    //FRAMES
     FrmLogin login;
     FrmNewRequest newRequest;
+    FrmMainSystem mainSystem;
+
+    //MODELS
     UserList userList;
     AdminList adminList;
 
-    public Controller(FrmLogin login, FrmNewRequest newRequest, UserList userList, AdminList adminList) {
+    //CONSTRUCTOR
+
+    public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserList userList, AdminList adminList) {
         this.login = login;
         this.newRequest = newRequest;
+        this.mainSystem = mainSystem;
         this.userList = userList;
         this.adminList = adminList;
+   
+    
 
         //LOGIN    
         login.getButtonExit().addActionListener(this);
         login.getButtonLogin().addActionListener(this);
+
+        //NEW REQUEST
+        newRequest.getBtnShowRequest().addActionListener(this);
+        newRequest.getBtnNew().addActionListener(this);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == login.getButtonLogin()) {
-            login.getjLabel1().setVisible(true);
             boolean aux = false;
             String username1 = login.getTxtUser().getText();
             String password1 = login.getTxtPassword().getText();
             userList = new UserList();
-            newRequest.setVisible(true);
-            newRequest.setLocationRelativeTo(null);
+            
+            //userList.readU();
+            mainSystem.setVisible(true);
+            mainSystem.setLocationRelativeTo(null);
             login.setVisible(false);
-            userList.readU();
             for (int i = 0; i < userList.getUserList().size(); i++) {
                 if (username1.equals(userList.getUserList().get(i).getUsername())
                         && password1.equals(userList.getUserList().get(i).getPassword())) {
