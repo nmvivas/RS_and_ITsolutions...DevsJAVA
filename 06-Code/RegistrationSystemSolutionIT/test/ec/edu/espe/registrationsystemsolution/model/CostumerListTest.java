@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
-import ec.edu.espe.registrationsystemsolution.data.Customer;
+import ec.edu.espe.registrationsystemsolution.dataa.CostumerList;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;

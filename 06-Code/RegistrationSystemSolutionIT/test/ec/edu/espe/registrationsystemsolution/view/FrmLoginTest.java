@@ -170,7 +170,7 @@ public class FrmLoginTest {
         System.out.println("getjLabel1");
         FrmLogin instance = new FrmLogin();
         JLabel expResult = null;
-        JLabel result = instance.getjLabel1();
+        Object result = null;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -184,7 +184,7 @@ public class FrmLoginTest {
         System.out.println("setjLabel1");
         JLabel jLabel1 = null;
         FrmLogin instance = new FrmLogin();
-        instance.setjLabel1(jLabel1);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
