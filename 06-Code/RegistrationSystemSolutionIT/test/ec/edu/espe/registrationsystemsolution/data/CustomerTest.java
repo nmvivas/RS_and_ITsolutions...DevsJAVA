@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import ec.edu.espe.registrationsystemsolution.model.Customer;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

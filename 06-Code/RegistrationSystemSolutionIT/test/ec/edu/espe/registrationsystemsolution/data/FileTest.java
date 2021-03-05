@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import ec.edu.espe.registrationsystemsolution.model.File;
 import java.time.LocalDate;
 import org.junit.Test;
 import static org.junit.Assert.*;

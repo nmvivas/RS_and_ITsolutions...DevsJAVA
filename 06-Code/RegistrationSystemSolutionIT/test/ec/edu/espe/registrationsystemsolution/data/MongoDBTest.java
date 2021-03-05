@@ -5,6 +5,11 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import ec.edu.espe.registrationsystemsolution.model.MongoDB;
+import ec.edu.espe.registrationsystemsolution.model.Problem;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
+import ec.edu.espe.registrationsystemsolution.model.Technical;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;

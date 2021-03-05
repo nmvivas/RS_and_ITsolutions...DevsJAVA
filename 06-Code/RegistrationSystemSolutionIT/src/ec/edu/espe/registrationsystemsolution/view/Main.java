@@ -8,10 +8,10 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.controller.Controller;
-import ec.edu.espe.registrationsystemsolution.data.AdminList;
-import ec.edu.espe.registrationsystemsolution.data.MongoDB;
-import ec.edu.espe.registrationsystemsolution.data.Administrator;
-import ec.edu.espe.registrationsystemsolution.model.UserList;
+import ec.edu.espe.registrationsystemsolution.dataa.AdminList;
+import ec.edu.espe.registrationsystemsolution.model.MongoDB;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.dataa.UserList;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
@@ -32,15 +32,16 @@ public class Main {
        //FRAMES 
        FrmLogin login = new FrmLogin();
        FrmNewRequest newRequest = new FrmNewRequest();
+       FrmMainSystem mainSystem = new FrmMainSystem();
        
        //MODEL
-       //AdminList adminList = new AdminList();
        UserList userList = new UserList();
        AdminList adminList = new AdminList();
        
        //login
+       login.setLocationRelativeTo(null);
        login.setVisible(true);
-       Controller controller = new Controller(login, newRequest, userList, adminList);
+       Controller controller = new Controller(login, newRequest, mainSystem, userList, adminList);
     }
    
 }

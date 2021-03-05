@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.data;
 
+import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
