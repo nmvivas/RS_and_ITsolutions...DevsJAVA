@@ -3,9 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.model;
+package ec.edu.espe.registrationsystemsolution.data;
 
+import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
 import com.mongodb.BasicDBObject;
+import ec.edu.espe.registrationsystemsolution.model.Administrator;
+import ec.edu.espe.registrationsystemsolution.model.Customer;
+import ec.edu.espe.registrationsystemsolution.model.Problem;
+import ec.edu.espe.registrationsystemsolution.model.Technical;
 import java.util.ArrayList;
 
 /**

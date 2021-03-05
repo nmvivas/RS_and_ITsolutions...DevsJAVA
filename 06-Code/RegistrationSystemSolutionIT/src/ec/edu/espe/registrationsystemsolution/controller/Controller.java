@@ -5,8 +5,8 @@
  */
 package ec.edu.espe.registrationsystemsolution.controller;
 
-import ec.edu.espe.registrationsystemsolution.dataa.AdminList;
-import ec.edu.espe.registrationsystemsolution.dataa.UserList;
+import ec.edu.espe.registrationsystemsolution.data.AdminList;
+import ec.edu.espe.registrationsystemsolution.data.UserList;
 import ec.edu.espe.registrationsystemsolution.view.FrmLogin;
 import ec.edu.espe.registrationsystemsolution.view.FrmMainSystem;
 import ec.edu.espe.registrationsystemsolution.view.FrmNewRequest;
@@ -62,8 +62,7 @@ public class Controller implements ActionListener, KeyListener, MouseListener, M
             boolean aux = false;
             String username1 = login.getTxtUser().getText();
             String password1 = login.getTxtPassword().getText();
-            userList = new UserList();
-            
+            userList = new UserList();           
             //userList.readU();
             mainSystem.setVisible(true);
             mainSystem.setLocationRelativeTo(null);

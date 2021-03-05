@@ -8,10 +8,10 @@ package ec.edu.espe.registrationsystemsolution.view;
 
 import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.controller.Controller;
-import ec.edu.espe.registrationsystemsolution.dataa.AdminList;
-import ec.edu.espe.registrationsystemsolution.model.MongoDB;
+import ec.edu.espe.registrationsystemsolution.data.AdminList;
+import ec.edu.espe.registrationsystemsolution.data.MongoDB;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
-import ec.edu.espe.registrationsystemsolution.dataa.UserList;
+import ec.edu.espe.registrationsystemsolution.data.UserList;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;

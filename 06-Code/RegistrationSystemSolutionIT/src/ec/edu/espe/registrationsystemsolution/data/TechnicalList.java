@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.dataa;
+package ec.edu.espe.registrationsystemsolution.data;
 
 /**
  *
- * @author ruben
+ * @author DEVS_JAVA_KND
  */
 public class TechnicalList {
     

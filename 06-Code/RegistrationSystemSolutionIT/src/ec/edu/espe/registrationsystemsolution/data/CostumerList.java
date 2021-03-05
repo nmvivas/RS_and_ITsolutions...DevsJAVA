@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.dataa;
+package ec.edu.espe.registrationsystemsolution.data;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.connection.Connection;
-import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author ruben
+ * @author DEVS_JAVA_KND
  */
 public class CostumerList {
 

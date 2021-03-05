@@ -10,7 +10,7 @@ import com.google.gson.Gson;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import ec.edu.espe.filemanager.utils.Data;
-import ec.edu.espe.registrationsystemsolution.model.MongoDB;
+import ec.edu.espe.registrationsystemsolution.data.MongoDB;
 import ec.edu.espe.registrationsystemsolution.view.FatherMenu;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Customer;

@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.registrationsystemsolution.dataa;
+package ec.edu.espe.registrationsystemsolution.data;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.registrationsystemsolution.model.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.User;
 import java.util.ArrayList;
 
 /**
  *
- * @author Meli
+ * @author DEVS_JAVA_KND
  */
 public class UserList {
 
