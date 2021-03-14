@@ -24,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author DEVS_JAVA_KND
  */
-public class Controller implements ActionListener, KeyListener, MouseListener, MouseMotionListener {
+public class Controller implements ActionListener {
 
     //FRAMES
     FrmLogin login;
@@ -36,15 +36,12 @@ public class Controller implements ActionListener, KeyListener, MouseListener, M
     AdminList adminList;
 
     //CONSTRUCTOR
-
     public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserList userList, AdminList adminList) {
         this.login = login;
         this.newRequest = newRequest;
         this.mainSystem = mainSystem;
         this.userList = userList;
         this.adminList = adminList;
-   
-    
 
         //LOGIN    
         login.getButtonExit().addActionListener(this);
@@ -62,7 +59,7 @@ public class Controller implements ActionListener, KeyListener, MouseListener, M
             boolean aux = false;
             String username1 = login.getTxtUser().getText();
             String password1 = login.getTxtPassword().getText();
-            userList = new UserList();           
+            userList = new UserList();
             //userList.readU();
             mainSystem.setVisible(true);
             mainSystem.setLocationRelativeTo(null);
@@ -71,15 +68,17 @@ public class Controller implements ActionListener, KeyListener, MouseListener, M
                 if (username1.equals(userList.getUserList().get(i).getUsername())
                         && password1.equals(userList.getUserList().get(i).getPassword())) {
                     aux = true;
-                    newRequest.getjLabel2().setText("Hola" + username1);
                     break;
                 } else {
                     aux = false;
                 }
             }
+            System.out.println("jkdbvjhdf");
         }
+        
 
-        if (ae.getSource() == newRequest.getBtnShowRequest()) {
+        if (ae.getSource().equals(newRequest.getBtnShowRequest())) {
+            
             DefaultTableModel trequest = new DefaultTableModel();
             trequest.addColumn("Customer");
             trequest.addColumn("Type Problem");
@@ -100,56 +99,5 @@ public class Controller implements ActionListener, KeyListener, MouseListener, M
             }
 
         }
-
-    }
-
-    @Override
-    public void keyTyped(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyPressed(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void keyReleased(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mousePressed(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseExited(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent me) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

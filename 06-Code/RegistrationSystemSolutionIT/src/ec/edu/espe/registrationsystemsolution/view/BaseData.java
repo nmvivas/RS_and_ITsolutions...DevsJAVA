@@ -179,13 +179,5 @@ public class BaseData implements NewRegister {
         return option;
     }
 
-    @Override
-    public void createDocument(DBCollection colecctionName, DBObject doc) {
-        
-    }
-
-    @Override
-    public void readDocument(DBObject dbObject, DBCollection colecctionName) {
-        
-    }
+    
 }

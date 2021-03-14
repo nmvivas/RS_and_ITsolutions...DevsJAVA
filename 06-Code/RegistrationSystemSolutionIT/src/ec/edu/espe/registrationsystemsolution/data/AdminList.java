@@ -12,9 +12,9 @@ import com.mongodb.DBObject;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.model.Administrator;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.ArrayList;
 

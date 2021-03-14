@@ -9,7 +9,7 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.connection.Connection;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.ArrayList;
 import java.util.List;

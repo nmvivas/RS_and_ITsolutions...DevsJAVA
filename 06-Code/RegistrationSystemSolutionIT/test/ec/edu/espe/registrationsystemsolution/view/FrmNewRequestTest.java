@@ -6,7 +6,7 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 import com.mongodb.BasicDBObject;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import java.awt.PopupMenu;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;

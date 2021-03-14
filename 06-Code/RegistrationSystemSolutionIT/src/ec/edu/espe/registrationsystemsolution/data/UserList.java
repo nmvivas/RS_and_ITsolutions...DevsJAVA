@@ -7,7 +7,7 @@ package ec.edu.espe.registrationsystemsolution.data;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.User;
 import java.util.ArrayList;
 

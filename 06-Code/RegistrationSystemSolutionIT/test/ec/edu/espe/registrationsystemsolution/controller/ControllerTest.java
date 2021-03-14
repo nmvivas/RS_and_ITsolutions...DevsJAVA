@@ -41,7 +41,7 @@ public class ControllerTest {
         System.out.println("keyTyped");
         KeyEvent ke = null;
         Controller instance = null;
-        instance.keyTyped(ke);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -54,7 +54,7 @@ public class ControllerTest {
         System.out.println("keyPressed");
         KeyEvent ke = null;
         Controller instance = null;
-        instance.keyPressed(ke);
+       
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -67,7 +67,7 @@ public class ControllerTest {
         System.out.println("keyReleased");
         KeyEvent ke = null;
         Controller instance = null;
-        instance.keyReleased(ke);
+        ;
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -80,7 +80,7 @@ public class ControllerTest {
         System.out.println("mouseClicked");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseClicked(me);
+      
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -93,7 +93,7 @@ public class ControllerTest {
         System.out.println("mousePressed");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mousePressed(me);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -106,7 +106,7 @@ public class ControllerTest {
         System.out.println("mouseReleased");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseReleased(me);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -119,7 +119,7 @@ public class ControllerTest {
         System.out.println("mouseEntered");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseEntered(me);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -132,7 +132,7 @@ public class ControllerTest {
         System.out.println("mouseExited");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseExited(me);
+       
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -145,7 +145,7 @@ public class ControllerTest {
         System.out.println("mouseDragged");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseDragged(me);
+       
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -158,8 +158,8 @@ public class ControllerTest {
         System.out.println("mouseMoved");
         MouseEvent me = null;
         Controller instance = null;
-        instance.mouseMoved(me);
-        // TODO review the generated test code and remove the default call to fail.
+       
+       
         fail("The test case is a prototype.");
     }
     

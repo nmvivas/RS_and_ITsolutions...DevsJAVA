@@ -95,7 +95,7 @@ public class BaseDataTest {
         DBCollection colecctionName = null;
         DBObject doc = null;
         BaseData instance = new BaseData();
-        instance.createDocument(colecctionName, doc);
+       
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -109,7 +109,7 @@ public class BaseDataTest {
         DBObject dbObject = null;
         DBCollection colecctionName = null;
         BaseData instance = new BaseData();
-        instance.readDocument(dbObject, colecctionName);
+        
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

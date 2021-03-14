@@ -21,8 +21,7 @@ public  interface NewRegister {
     public void registCustomer(Scanner scan);
     public void registProblem(Scanner scan);
     public void save(boolean option, String informationData);
-    public void createDocument(DBCollection colecctionName, DBObject doc);
-    public void readDocument(DBObject dbObject , DBCollection colecctionName);
+    
     
 }
 

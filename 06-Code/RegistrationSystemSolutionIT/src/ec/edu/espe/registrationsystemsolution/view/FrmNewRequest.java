@@ -8,7 +8,7 @@ package ec.edu.espe.registrationsystemsolution.view;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.WriteResult;
-import ec.edu.espe.registrationsystemsolution.controller.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -23,6 +23,61 @@ public class FrmNewRequest extends javax.swing.JFrame {
 
     public FrmNewRequest() {
         initComponents();
+    }
+
+    public void empty() {
+        getTxtCustomer().setText("");
+        getCmbProblem().setSelectedIndex(0);
+        getTxtState().setText("");
+        getTxtTechnical().setText("");
+    }
+
+    public void showRrequest() {
+        DefaultTableModel trequest = new DefaultTableModel();
+        trequest.addColumn("Customer");
+        trequest.addColumn("Type Problem");
+        trequest.addColumn("State");
+        trequest.addColumn("Technical");
+        getTblContents().setModel(trequest);
+
+        String[] matriz = new String[8];
+        try {
+            matriz[0] = getTxtCustomer().getText();
+            matriz[1] = getChkRemote().getText();
+            matriz[2] = getTxtState().getText();
+            matriz[3] = getTxtTechnical().getText();
+            trequest.addRow(matriz);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
+
+    }
+
+    public void createRequest() {
+        try {
+            setDbObject(new BasicDBObject());
+            setConnection(new ConnectionMongodb());
+            getDbObject().append("Customer: ", getTxtCustomer().getText());
+            getDbObject().append("Problem: ", getCmbProblem().getSelectedItem());
+            getDbObject().append(" Type - problem", getChkRemote().isSelected());
+            getDbObject().append("State: ", getTxtState().getText().toString());
+            getDbObject().append("Technical", getTxtTechnical().getText());
+            getConnection().getDbCollection().insert(getDbObject());
+
+            DBCursor res = getConnection().getDbCollection().find();
+            if (res != null) {
+                JOptionPane.showMessageDialog(null, "Saved Request");
+                empty();
+            } else {
+                JOptionPane.showMessageDialog(null, " ¡¡ ERROR !! ");
+                empty();
+            }
+        } catch (Exception e) {
+            System.err.println(e);
+
+        }
+
     }
 
     public BasicDBObject getDbObject() {
@@ -209,79 +264,54 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jMenu3 = jMenu3;
     }
 
-    /**
-     * @return the jMenuItem1
-     */
+   
     public javax.swing.JMenuItem getjMenuItem1() {
         return jMenuItem1;
     }
 
-    /**
-     * @param jMenuItem1 the jMenuItem1 to set
-     */
+ 
     public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
         this.jMenuItem1 = jMenuItem1;
     }
 
-    /**
-     * @return the jPanel2
-     */
+  
     public javax.swing.JPanel getjPanel2() {
         return jPanel2;
     }
 
-    /**
-     * @param jPanel2 the jPanel2 to set
-     */
+  
     public void setjPanel2(javax.swing.JPanel jPanel2) {
         this.jPanel2 = jPanel2;
     }
 
-    /**
-     * @return the jPopupMenu1
-     */
+    
     public javax.swing.JPopupMenu getjPopupMenu1() {
         return jPopupMenu1;
     }
 
-    /**
-     * @param jPopupMenu1 the jPopupMenu1 to set
-     */
+  
     public void setjPopupMenu1(javax.swing.JPopupMenu jPopupMenu1) {
         this.jPopupMenu1 = jPopupMenu1;
     }
 
-    /**
-     * @return the jPopupMenu2
-     */
     public javax.swing.JPopupMenu getjPopupMenu2() {
         return jPopupMenu2;
     }
 
-    /**
-     * @param jPopupMenu2 the jPopupMenu2 to set
-     */
     public void setjPopupMenu2(javax.swing.JPopupMenu jPopupMenu2) {
         this.jPopupMenu2 = jPopupMenu2;
     }
 
-    /**
-     * @return the jRadioButtonMenuItem1
-     */
+  
     public javax.swing.JRadioButtonMenuItem getjRadioButtonMenuItem1() {
         return jRadioButtonMenuItem1;
     }
 
-    /**
-     * @param jRadioButtonMenuItem1 the jRadioButtonMenuItem1 to set
-     */
     public void setjRadioButtonMenuItem1(javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1) {
         this.jRadioButtonMenuItem1 = jRadioButtonMenuItem1;
     }
 
-    /**
-     * @return the jScrollPane1
-     */
+   
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -293,65 +323,45 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-    /**
-     * @return the popupMenu1
-     */
+  
     public java.awt.PopupMenu getPopupMenu1() {
         return popupMenu1;
     }
 
-    /**
-     * @param popupMenu1 the popupMenu1 to set
-     */
     public void setPopupMenu1(java.awt.PopupMenu popupMenu1) {
         this.popupMenu1 = popupMenu1;
     }
 
-    /**
-     * @return the tblContents
-     */
+  
     public javax.swing.JTable getTblContents() {
         return tblContents;
     }
 
-    /**
-     * @param tblContents the tblContents to set
-     */
     public void setTblContents(javax.swing.JTable tblContents) {
         this.tblContents = tblContents;
     }
 
-    /**
-     * @return the txtCustomer
-     */
+  
     public javax.swing.JTextField getTxtCustomer() {
         return txtCustomer;
     }
 
-    /**
-     * @param txtCustomer the txtCustomer to set
-     */
+   
     public void setTxtCustomer(javax.swing.JTextField txtCustomer) {
         this.txtCustomer = txtCustomer;
     }
 
-    /**
-     * @return the txtState
-     */
+  
     public javax.swing.JTextField getTxtState() {
         return txtState;
     }
 
-    /**
-     * @param txtState the txtState to set
-     */
+  
     public void setTxtState(javax.swing.JTextField txtState) {
         this.txtState = txtState;
     }
 
-    /**
-     * @return the txtTechnical
-     */
+   
     public javax.swing.JTextField getTxtTechnical() {
         return txtTechnical;
     }
@@ -363,47 +373,13 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.txtTechnical = txtTechnical;
     }
 
-    /**
-     * @return the btnShowRequest
-     */
+ 
     public javax.swing.JButton getBtnShowRequest() {
         return btnShowRequest;
     }
 
-    /**
-     * @param btnShowRequest the btnShowRequest to set
-     */
     public void setBtnShowRequest(javax.swing.JButton btnShowRequest) {
         this.btnShowRequest = btnShowRequest;
-    }
-
-    public void empty() {
-        getTxtCustomer().setText("");
-        getCmbProblem().setSelectedIndex(0);
-        getTxtState().setText("");
-        getTxtTechnical().setText("");
-    }
-
-    public void showRrequest() {
-        DefaultTableModel trequest = new DefaultTableModel();
-        trequest.addColumn("Customer");
-        trequest.addColumn("Type Problem");
-        trequest.addColumn("State");
-        trequest.addColumn("Technical");
-        getTblContents().setModel(trequest);
-
-        String[] matriz = new String[8];
-        try {
-            matriz[0] = getTxtCustomer().getText();
-            matriz[1] = getChkRemote().getText();
-            matriz[2] = getTxtState().getText();
-            matriz[3] = getTxtTechnical().getText();
-            trequest.addRow(matriz);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR");
-        }
-
     }
 
     @SuppressWarnings("unchecked")
@@ -731,42 +707,18 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        try {
-            setDbObject(new BasicDBObject());
-            setConnection(new ConnectionMongodb());
-            getDbObject().append("Customer: ", getTxtCustomer().getText());
-            getDbObject().append("Problem: ", getCmbProblem().getSelectedItem());
-            getDbObject().append(" Type - problem", getChkRemote().isSelected());
-            getDbObject().append("State: ", getTxtState().getText().toString());
-            getDbObject().append("Technical", getTxtTechnical().getText());
-            getConnection().getDbCollection().insert(getDbObject());
-
-            DBCursor res = getConnection().getDbCollection().find();
-            if (res != null) {
-                JOptionPane.showMessageDialog(null, "Saved Request");
-                empty();
-            } else {
-                JOptionPane.showMessageDialog(null, " ¡¡ ERROR !! ");
-                empty();
-            }
-        } catch (Exception e) {
-            System.err.println(e);
-
-        }
-
+        createRequest();
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         setDbObject(new BasicDBObject());
         setConnection(new ConnectionMongodb());
-
         getDbObject().append("Customer: ", getTxtCustomer().getText());
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnShowRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowRequestActionPerformed
         showRrequest();
-
     }//GEN-LAST:event_btnShowRequestActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
