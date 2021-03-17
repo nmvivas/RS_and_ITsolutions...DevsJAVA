@@ -5,18 +5,37 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+
 /**
  *
- * @author Meli
+ * @author DEVS_JAVA_KND
  */
 public class FrmMainSystem extends javax.swing.JFrame {
 
-    
     public FrmMainSystem() {
         initComponents();
     }
 
-    
+    public JMenuItem getjItemRequest() {
+        return jItemRequest;
+    }
+
+    public void setjItemRequest(JMenuItem jItemRequest) {
+        this.jItemRequest = jItemRequest;
+    }
+
+    public JMenu getjMenuNew() {
+        return jMenuNew;
+    }
+
+    public void setjMenuNew(JMenu jMenuNew) {
+        this.jMenuNew = jMenuNew;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,6 +55,7 @@ public class FrmMainSystem extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jItem1Everything = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+        jItemExit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,7 +86,7 @@ public class FrmMainSystem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(217, 217, 217)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,6 +134,15 @@ public class FrmMainSystem extends javax.swing.JFrame {
         jMenuBarMain.add(jMenu3);
 
         jMenu1.setText("Exit ");
+
+        jItemExit.setText("Exit System");
+        jItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jItemExitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jItemExit);
+
         jMenuBarMain.add(jMenu1);
 
         jMenu2.setText("Help");
@@ -142,17 +171,17 @@ public class FrmMainSystem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jItemRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemRequestActionPerformed
-       this.setVisible(false);
-       FrmNewRequest newRequest = new FrmNewRequest();
-       newRequest.setVisible(true);
-       newRequest.setLocationRelativeTo(null);
+
     }//GEN-LAST:event_jItemRequestActionPerformed
 
     private void jItemTechnicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemTechnicalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jItemTechnicalActionPerformed
 
-    
+    private void jItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jItemExitActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -188,6 +217,7 @@ public class FrmMainSystem extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem jItem1Everything;
     private javax.swing.JMenuItem jItemCustomer;
+    private javax.swing.JMenuItem jItemExit;
     private javax.swing.JMenuItem jItemProblem;
     private javax.swing.JMenuItem jItemRequest;
     private javax.swing.JMenuItem jItemTechnical;

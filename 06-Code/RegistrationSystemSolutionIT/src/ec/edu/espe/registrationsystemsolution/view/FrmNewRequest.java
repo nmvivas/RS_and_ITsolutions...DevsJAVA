@@ -9,12 +9,13 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.WriteResult;
 import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author karen
+ * @author DEVS_JAVA_KND
  */
 public class FrmNewRequest extends javax.swing.JFrame {
 
@@ -32,52 +33,8 @@ public class FrmNewRequest extends javax.swing.JFrame {
         getTxtTechnical().setText("");
     }
 
-    public void showRrequest() {
-        DefaultTableModel trequest = new DefaultTableModel();
-        trequest.addColumn("Customer");
-        trequest.addColumn("Type Problem");
-        trequest.addColumn("State");
-        trequest.addColumn("Technical");
-        getTblContents().setModel(trequest);
-
-        String[] matriz = new String[8];
-        try {
-            matriz[0] = getTxtCustomer().getText();
-            matriz[1] = getChkRemote().getText();
-            matriz[2] = getTxtState().getText();
-            matriz[3] = getTxtTechnical().getText();
-            trequest.addRow(matriz);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "ERROR");
-        }
-
-    }
-
     public void createRequest() {
-        try {
-            setDbObject(new BasicDBObject());
-            setConnection(new ConnectionMongodb());
-            getDbObject().append("Customer: ", getTxtCustomer().getText());
-            getDbObject().append("Problem: ", getCmbProblem().getSelectedItem());
-            getDbObject().append(" Type - problem", getChkRemote().isSelected());
-            getDbObject().append("State: ", getTxtState().getText().toString());
-            getDbObject().append("Technical", getTxtTechnical().getText());
-            getConnection().getDbCollection().insert(getDbObject());
-
-            DBCursor res = getConnection().getDbCollection().find();
-            if (res != null) {
-                JOptionPane.showMessageDialog(null, "Saved Request");
-                empty();
-            } else {
-                JOptionPane.showMessageDialog(null, " ¡¡ ERROR !! ");
-                empty();
-            }
-        } catch (Exception e) {
-            System.err.println(e);
-
-        }
-
+        
     }
 
     public BasicDBObject getDbObject() {
@@ -382,6 +339,17 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.btnShowRequest = btnShowRequest;
     }
 
+    public JButton getBtnSave() {
+        return btnSave;
+    }
+
+    public void setBtnSave(JButton btnSave) {
+        this.btnSave = btnSave;
+    }
+    
+    
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -395,6 +363,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jPopupMenu2 = new javax.swing.JPopupMenu();
         popupMenu1 = new java.awt.PopupMenu();
+        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -416,13 +385,13 @@ public class FrmNewRequest extends javax.swing.JFrame {
         jPaneltable = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblContents = new javax.swing.JTable();
-        btnShowRequest = new javax.swing.JButton();
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnPrint = new javax.swing.JButton();
+        btnShowRequest = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -439,6 +408,8 @@ public class FrmNewRequest extends javax.swing.JFrame {
         jMenu3.setText("jMenu3");
 
         popupMenu1.setLabel("popupMenu1");
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("New Request");
@@ -592,13 +563,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
             tblContents.getColumnModel().getColumn(3).setHeaderValue("Technical");
         }
 
-        btnShowRequest.setText("Show Request");
-        btnShowRequest.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShowRequestActionPerformed(evt);
-            }
-        });
-
         btnEdit.setText("Edit");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -617,7 +581,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
 
         btnCancel.setText("Cancel");
 
-        btnExit.setText("Exit");
+        btnExit.setText("Return");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExitActionPerformed(evt);
@@ -631,19 +595,21 @@ public class FrmNewRequest extends javax.swing.JFrame {
             }
         });
 
+        btnShowRequest.setText("Show Request");
+        btnShowRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowRequestActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPaneltableLayout = new javax.swing.GroupLayout(jPaneltable);
         jPaneltable.setLayout(jPaneltableLayout);
         jPaneltableLayout.setHorizontalGroup(
             jPaneltableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPaneltableLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPaneltableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPaneltableLayout.createSequentialGroup()
-                        .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPaneltableLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(33, Short.MAX_VALUE))))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPaneltableLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -654,10 +620,14 @@ public class FrmNewRequest extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPrint)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPaneltableLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         jPaneltableLayout.setVerticalGroup(
             jPaneltableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -673,9 +643,9 @@ public class FrmNewRequest extends javax.swing.JFrame {
                         .addComponent(btnExit)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addGap(18, 18, 18)
+                .addComponent(btnShowRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -687,7 +657,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPaneltable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -703,28 +673,25 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        System.exit(0);
+        
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        createRequest();
+       // createRequest();
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        setDbObject(new BasicDBObject());
-        setConnection(new ConnectionMongodb());
-        getDbObject().append("Customer: ", getTxtCustomer().getText());
+
     }//GEN-LAST:event_btnEditActionPerformed
 
-    private void btnShowRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowRequestActionPerformed
-        showRrequest();
-    }//GEN-LAST:event_btnShowRequestActionPerformed
-
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        Print print = new Print();
-        print.printFile();
+       
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void btnShowRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowRequestActionPerformed
+      
+    }//GEN-LAST:event_btnShowRequestActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -770,6 +737,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkIncident;
     private javax.swing.JCheckBox chkRemote;
     private javax.swing.JComboBox<String> cmbProblem;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

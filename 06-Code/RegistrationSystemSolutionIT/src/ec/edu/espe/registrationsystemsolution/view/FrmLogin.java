@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
-import ec.edu.espe.registrationsystemsolution.model.Verification;
+import ec.edu.espe.registrationsystemsolution.controller.Verification;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,82 +17,35 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author karen
+ * @author DEVS_JAVA_KND
  */
 public class FrmLogin extends javax.swing.JFrame {
-    private static Scanner scan;
-    private static int attempts;
-    private static String user, pass;
 
-  
     public FrmLogin() {
         initComponents();
-        
-    }
-    
-   
-    public static Scanner getScan() {
-        return scan;
+
     }
 
-    public static void setScan(Scanner aScan) {
-        scan = aScan;
-    }
-
-    
-    public static int getAttempts() {
-        return attempts;
-    }
-
-    public static void setAttempts(int aAttempts) {
-        attempts = aAttempts;
-    }
-
-    
-    public static String getUser() {
-        return user;
-    }
-
-    public static void setUser(String aUser) {
-        user = aUser;
-    }
-
-    
-    public static String getPass() {
-        return pass;
-    }
-
-   
-    public static void setPass(String aPass) {
-        pass = aPass;
-    }
-
-    
     public javax.swing.JButton getButtonLogin() {
         return buttonLogin;
     }
 
-    
     public void setButtonLogin(javax.swing.JButton buttonLogin) {
         this.buttonLogin = buttonLogin;
     }
 
-    
     public javax.swing.JLabel getjLabel2() {
         return jLabel2;
     }
 
-    
     public void setjLabel2(javax.swing.JLabel jLabel2) {
         this.jLabel2 = jLabel2;
     }
 
-    
     public javax.swing.JLabel getjLabel3() {
         return jLabel3;
     }
 
-   
     public void setjLabel3(javax.swing.JLabel jLabel3) {
         this.jLabel3 = jLabel3;
     }
@@ -109,22 +62,18 @@ public class FrmLogin extends javax.swing.JFrame {
         return jPanelLogin;
     }
 
-  
     public void setjPanel2(javax.swing.JPanel jPanel2) {
         this.jPanelLogin = jPanel2;
     }
 
-    
     public javax.swing.JPasswordField getTxtPassword() {
         return txtPassword;
     }
 
-   
     public void setTxtPassword(javax.swing.JPasswordField txtPassword) {
         this.txtPassword = txtPassword;
     }
 
-   
     public javax.swing.JTextField getTxtUser() {
         return txtUser;
     }
@@ -145,15 +94,10 @@ public class FrmLogin extends javax.swing.JFrame {
         return buttonExit;
     }
 
-    
     public void setButtonExit(javax.swing.JButton buttonExit) {
         this.buttonExit = buttonExit;
     }
-    
-    
-    
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -284,54 +228,15 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLoginActionPerformed
-       /* FileReader fr = null;
-        try {
-            int nLines = 0;
-            int i = 0;
-            String[] users = null;
-            String line;
-            setScan(new Scanner(new File("D:\\users.txt")));
-            File file = new File("D:\\users.txt");
-            fr = new FileReader(file);
-            BufferedReader buffereader = new BufferedReader(fr);
 
-            try {
-                while ((line = buffereader.readLine()) != null) {
-                    nLines++;
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(FrmLogin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            users = new String[nLines];
-
-            while (getScan().hasNextLine()) {
-                users[i++] = getScan().nextLine();
-            }
-
-            setAttempts(getAttempts() + 1);
-            setUser(getTxtUser().getText());
-            setPass(getTxtPassword().getText());
-            Verification verification = new Verification();
-            verification.VerfiyUser(users, getUser(), getPass(), getAttempts());
-            
-            } catch (FileNotFoundException ex) {
-            Logger.getLogger(FrmLogin.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                fr.close();
-            } catch (IOException ex) {
-                Logger.getLogger(FrmLogin.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }*/
     }//GEN-LAST:event_buttonLoginActionPerformed
 
     private void buttonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonExitActionPerformed
-      System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_buttonExitActionPerformed
 
-    
     public static void main(String args[]) {
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmLogin().setVisible(true);
@@ -351,6 +256,4 @@ public class FrmLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 
-    
-    
 }

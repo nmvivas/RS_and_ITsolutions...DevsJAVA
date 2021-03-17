@@ -28,14 +28,14 @@ public class ConnectionMongodb {
         try {
             String nameDatabase;
             String nameCollection;
-            mongoCURI = new MongoClientURI("mongodb+srv://user_devsknd:1234.devsknd"
+            mongoCURI = new MongoClientURI("mongodb+srv://user_devsknd:1234.devs"
                     + "@project0.tqftq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             mongoClient = new MongoClient(getMongoCURI());
-            //System.out.println(" Enter the name of the database");
-            //nameDatabase = scan.nextLine();
+            System.out.println(" Enter the name of the database");
+            nameDatabase = scan.nextLine();
             database = mongoClient.getDB("New");
-            //System.out.println(" Enter the name of the collection");
-            //nameCollection = scan.nextLine();
+            System.out.println(" Enter the name of the collection");
+            nameCollection = scan.nextLine();
             dbCollection = database.getCollection("Request");
             JOptionPane.showMessageDialog(null, "Successful Connection");
         } catch(Exception e) {

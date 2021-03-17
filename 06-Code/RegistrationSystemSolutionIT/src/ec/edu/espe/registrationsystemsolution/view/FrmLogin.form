@@ -113,10 +113,8 @@
                               <EmptySpace pref="33" max="32767" attributes="0"/>
                               <Component id="buttonLogin" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtPassword" pref="141" max="32767" attributes="0"/>
-                              <Component id="txtUser" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="txtPassword" alignment="0" pref="141" max="32767" attributes="0"/>
+                          <Component id="txtUser" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
