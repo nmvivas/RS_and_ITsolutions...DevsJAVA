@@ -111,6 +111,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         if (ae.getSource().equals(mainSystem.getjItemRequest())) {
+            
             mainSystem.hide();
             newRequest.setLocationRelativeTo(null);
             newRequest.show();

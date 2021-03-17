@@ -23,11 +23,6 @@ public class Main {
     
     public static void main(String[] args) throws IOException, InterruptedException {
 
-       /* Date date = new Date();
-        System.out.println(date + "\n");
-        FatherMenu menus = new FatherMenu();
-        menus.printWelcomeMenu();
-        menus.welcomeOptions();*/
        
        //FRAMES 
        FrmLogin login = new FrmLogin();

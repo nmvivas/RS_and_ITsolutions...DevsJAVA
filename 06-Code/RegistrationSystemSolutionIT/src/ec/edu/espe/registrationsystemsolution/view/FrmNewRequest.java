@@ -27,10 +27,12 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }
 
     public void empty() {
-        getTxtCustomer().setText("");
-        getCmbProblem().setSelectedIndex(0);
-        getTxtState().setText("");
-        getTxtTechnical().setText("");
+        txtCustomer.setText("");
+        cmbProblem.setSelectedIndex(0);
+        chkRemote.setActionCommand("");
+        chkIncident.setActionCommand("");
+        txtTechnical.setText("");
+        jTextArea1.setText("");
     }
 
     public void createRequest() {
@@ -534,7 +536,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(chkRemote)
                         .addComponent(chkIncident)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)

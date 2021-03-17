@@ -16,13 +16,11 @@ import javax.swing.JOptionPane;
  * @author DEVS_JAVA_KND
  */
 public class Verification implements Login {
-    FrmMainSystem mainSystem = new FrmMainSystem();
-    FrmLogin login = new FrmLogin();
-    String res;
 
-  
     public void VerfiyUser(String users[], String user, String password, int attempts) {
-        
+        FrmMainSystem mainSystem = new FrmMainSystem();
+        FrmLogin login = new FrmLogin();
+        String res;
         boolean findOut = false;
 
         for (int i = 0; i < users.length; i++) {
