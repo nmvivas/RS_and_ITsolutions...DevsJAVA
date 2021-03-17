@@ -15,6 +15,6 @@ public interface Login {
    
         int attempts = -1;
         int maximum = 2;
-    public void verify(Scanner scan);
+    public void VerfiyUser(String users[], String user, String password, int attempts);
 
 }
