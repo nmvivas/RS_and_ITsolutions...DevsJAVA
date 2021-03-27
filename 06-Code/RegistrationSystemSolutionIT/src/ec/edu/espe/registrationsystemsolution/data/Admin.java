@@ -22,13 +22,13 @@ import java.util.ArrayList;
  *
  * @author DEVS_JAVA_KND
  */
-public class AdminList {
+public class Admin {
 
     private ArrayList<Administrator> adminList;
     BasicDBObject document;
     ConnectionMongodb connection;
 
-    public AdminList() {
+    public Admin() {
         adminList = new ArrayList();
         connection = new ConnectionMongodb();
         document = new BasicDBObject();

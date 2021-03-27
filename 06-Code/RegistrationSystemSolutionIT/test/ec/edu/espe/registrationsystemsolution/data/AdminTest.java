@@ -14,18 +14,18 @@ import static org.junit.Assert.*;
  *
  * @author ruben
  */
-public class AdminListTest {
+public class AdminTest {
     
-    public AdminListTest() {
+    public AdminTest() {
     }
 
     /**
-     * Test of getAdminList method, of class AdminList.
+     * Test of getAdminList method, of class Admin.
      */
     @Test
     public void testGetAdminList() {
         System.out.println("getAdminList");
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         ArrayList<Administrator> expResult = null;
         ArrayList<Administrator> result = instance.getAdminList();
         assertEquals(expResult, result);
@@ -34,26 +34,26 @@ public class AdminListTest {
     }
 
     /**
-     * Test of setAdminList method, of class AdminList.
+     * Test of setAdminList method, of class Admin.
      */
     @Test
     public void testSetAdminList() {
         System.out.println("setAdminList");
         ArrayList<Administrator> adminList = null;
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         instance.setAdminList(adminList);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of insertA method, of class AdminList.
+     * Test of insertA method, of class Admin.
      */
     @Test
     public void testInsertA() {
         System.out.println("insertA");
         Administrator admin = null;
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.insertA(admin);
         assertEquals(expResult, result);
@@ -62,12 +62,12 @@ public class AdminListTest {
     }
 
     /**
-     * Test of readA method, of class AdminList.
+     * Test of readA method, of class Admin.
      */
     @Test
     public void testReadA() {
         System.out.println("readA");
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.readA();
         assertEquals(expResult, result);
@@ -76,12 +76,12 @@ public class AdminListTest {
     }
 
     /**
-     * Test of deleteList method, of class AdminList.
+     * Test of deleteList method, of class Admin.
      */
     @Test
     public void testDeleteList() {
         System.out.println("deleteList");
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.deleteList();
         assertEquals(expResult, result);
@@ -90,7 +90,7 @@ public class AdminListTest {
     }
 
     /**
-     * Test of UpdateA method, of class AdminList.
+     * Test of UpdateA method, of class Admin.
      */
     @Test
     public void testUpdateA() {
@@ -99,7 +99,7 @@ public class AdminListTest {
         String company = "";
         String name = "";
         String surname = "";
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.UpdateA(IdCard, company, name, surname);
         assertEquals(expResult, result);
@@ -108,13 +108,13 @@ public class AdminListTest {
     }
 
     /**
-     * Test of deleteA method, of class AdminList.
+     * Test of deleteA method, of class Admin.
      */
     @Test
     public void testDeleteA() {
         System.out.println("deleteA");
         String nameC = "";
-        AdminList instance = new AdminList();
+        Admin instance = new Admin();
         boolean expResult = false;
         boolean result = instance.deleteA(nameC);
         assertEquals(expResult, result);

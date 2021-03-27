@@ -20,12 +20,12 @@ public class CostumerListTest {
     }
 
     /**
-     * Test of getCustomerList method, of class CostumerList.
+     * Test of getCustomerList method, of class Costumer.
      */
     @Test
     public void testGetCustomerList() {
         System.out.println("getCustomerList");
-        CostumerList instance = new CostumerList();
+        Costumer instance = new Costumer();
         ArrayList<Customer> expResult = null;
         ArrayList<Customer> result = instance.getCustomerList();
         assertEquals(expResult, result);
@@ -34,26 +34,26 @@ public class CostumerListTest {
     }
 
     /**
-     * Test of setCustomerList method, of class CostumerList.
+     * Test of setCustomerList method, of class Costumer.
      */
     @Test
     public void testSetCustomerList() {
         System.out.println("setCustomerList");
         ArrayList<Customer> customerList = null;
-        CostumerList instance = new CostumerList();
+        Costumer instance = new Costumer();
         instance.setCustomerList(customerList);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of insertC method, of class CostumerList.
+     * Test of insertC method, of class Costumer.
      */
     @Test
     public void testInsertC() {
         System.out.println("insertC");
         Customer customer = null;
-        CostumerList instance = new CostumerList();
+        Costumer instance = new Costumer();
         boolean expResult = false;
         boolean result = instance.insertC(customer);
         assertEquals(expResult, result);
@@ -62,7 +62,7 @@ public class CostumerListTest {
     }
 
     /**
-     * Test of UpdateC method, of class CostumerList.
+     * Test of UpdateC method, of class Costumer.
      */
     @Test
     public void testUpdateC() {
@@ -71,7 +71,7 @@ public class CostumerListTest {
         String company = "";
         String name = "";
         String surname = "";
-        CostumerList instance = new CostumerList();
+        Costumer instance = new Costumer();
         boolean expResult = false;
         boolean result = instance.UpdateC(IdCard, company, name, surname);
         assertEquals(expResult, result);
@@ -80,13 +80,13 @@ public class CostumerListTest {
     }
 
     /**
-     * Test of deleteC method, of class CostumerList.
+     * Test of deleteC method, of class Costumer.
      */
     @Test
     public void testDeleteC() {
         System.out.println("deleteC");
         String nameC = "";
-        CostumerList instance = new CostumerList();
+        Costumer instance = new Costumer();
         boolean expResult = false;
         boolean result = instance.deleteC(nameC);
         assertEquals(expResult, result);

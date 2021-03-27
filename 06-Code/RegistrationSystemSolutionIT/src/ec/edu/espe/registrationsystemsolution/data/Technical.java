@@ -9,6 +9,6 @@ package ec.edu.espe.registrationsystemsolution.data;
  *
  * @author DEVS_JAVA_KND
  */
-public class TechnicalList {
+public class Technical {
     
 }

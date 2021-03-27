@@ -18,13 +18,13 @@ import java.util.List;
  *
  * @author DEVS_JAVA_KND
  */
-public class CostumerList {
+public class Costumer {
 
     private ArrayList<Customer> customerList;
     BasicDBObject document;
     ConnectionMongodb connection;
 
-    public CostumerList() {
+    public Costumer() {
         customerList = new ArrayList();
         connection = new ConnectionMongodb();
         document = new BasicDBObject();

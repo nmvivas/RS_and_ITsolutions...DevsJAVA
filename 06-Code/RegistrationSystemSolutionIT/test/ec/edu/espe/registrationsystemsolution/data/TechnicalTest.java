@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author ruben
  */
-public class TechnicalListTest {
+public class TechnicalTest {
     
-    public TechnicalListTest() {
+    public TechnicalTest() {
     }
 
     @Test

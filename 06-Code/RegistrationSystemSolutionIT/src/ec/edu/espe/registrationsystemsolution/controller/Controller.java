@@ -7,8 +7,8 @@ package ec.edu.espe.registrationsystemsolution.controller;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.registrationsystemsolution.data.AdminList;
-import ec.edu.espe.registrationsystemsolution.data.UserList;
+import ec.edu.espe.registrationsystemsolution.data.Admin;
+import ec.edu.espe.registrationsystemsolution.data.UserL;
 import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.view.FrmLogin;
 import ec.edu.espe.registrationsystemsolution.view.FrmMainSystem;
@@ -81,11 +81,11 @@ public class Controller implements ActionListener {
     FrmMainSystem mainSystem;
 
     //MODELS
-    UserList userList;
-    AdminList adminList;
+    UserL userList;
+    Admin adminList;
 
     //CONSTRUCTOR
-    public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserList userList, AdminList adminList) {
+    public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserL userList, Admin adminList) {
         this.login = login;
         this.newRequest = newRequest;
         this.mainSystem = mainSystem;

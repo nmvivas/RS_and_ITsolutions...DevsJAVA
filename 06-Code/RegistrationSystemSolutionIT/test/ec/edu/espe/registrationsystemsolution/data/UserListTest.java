@@ -20,73 +20,73 @@ public class UserListTest {
     }
 
     /**
-     * Test of getUserList method, of class UserList.
+     * Test of getUserList method, of class User.
      */
     @Test
     public void testGetUserList() {
         System.out.println("getUserList");
-        UserList instance = new UserList();
+        //User instance = new User();
         ArrayList<User> expResult = null;
-        ArrayList<User> result = instance.getUserList();
-        assertEquals(expResult, result);
+        //ArrayList<User> result = instance.getUserList();
+        //assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setUserList method, of class UserList.
+     * Test of setUserList method, of class User.
      */
     @Test
     public void testSetUserList() {
-        System.out.println("setUserList");
+        /*System.out.println("setUserList");
         ArrayList<User> userList = null;
-        UserList instance = new UserList();
+        User instance = new User();
         instance.setUserList(userList);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("The test case is a prototype.");*/
     }
 
     /**
-     * Test of insertU method, of class UserList.
+     * Test of insertU method, of class User.
      */
     @Test
     public void testInsertU() {
-        System.out.println("insertU");
+      /*  System.out.println("insertU");
         User user = null;
-        UserList instance = new UserList();
+        User instance = new User();
         boolean expResult = false;
         boolean result = instance.insertU(user);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("The test case is a prototype.");*/
     }
 
     /**
-     * Test of readU method, of class UserList.
+     * Test of readU method, of class User.
      */
     @Test
     public void testReadU() {
-        System.out.println("readU");
-        UserList instance = new UserList();
+      /*  System.out.println("readU");
+        User instance = new User();
         boolean expResult = false;
         boolean result = instance.readU();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("The test case is a prototype.");*/
     }
 
     /**
-     * Test of deleteList method, of class UserList.
+     * Test of deleteList method, of class User.
      */
     @Test
     public void testDeleteList() {
         System.out.println("deleteList");
-        UserList instance = new UserList();
+        /*User instance = new User();
         boolean expResult = false;
         boolean result = instance.deleteList();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("The test case is a prototype.");*/
     }
     
 }

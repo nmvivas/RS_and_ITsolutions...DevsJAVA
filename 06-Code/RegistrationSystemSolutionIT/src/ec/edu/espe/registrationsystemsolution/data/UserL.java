@@ -15,13 +15,13 @@ import java.util.ArrayList;
  *
  * @author DEVS_JAVA_KND
  */
-public class UserList {
+public class UserL {
 
     ArrayList<User> userList;
     BasicDBObject document;
     ConnectionMongodb connection;
 
-    public UserList() {
+    public UserL() {
         userList = new ArrayList();
         document = new BasicDBObject();
     }

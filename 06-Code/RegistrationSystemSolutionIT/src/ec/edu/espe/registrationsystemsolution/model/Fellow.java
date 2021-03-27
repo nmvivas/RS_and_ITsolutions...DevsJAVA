@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class Fellow {
 
-   String idCard;
+    String idCard;
     String name;
     String surname;
     int telephone;
@@ -32,7 +32,6 @@ public class Fellow {
         return "Fellow{" + "idCard=" + idCard + ", names=" + name
                 + ", surnames=" + surname + ", telephone=" + telephone + '}';
     }
-
 
     /**
      * @return the idCard
