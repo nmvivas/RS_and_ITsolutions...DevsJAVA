@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
-import com.mongodb.BasicDBObject;
-
 /**
  *
  * @author DEVS_JAVA_KND

@@ -6,7 +6,6 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.DBCursor;
 import com.mongodb.WriteResult;
 import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import javax.swing.JButton;

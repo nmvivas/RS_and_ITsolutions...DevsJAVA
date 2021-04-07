@@ -5,10 +5,6 @@
  */
 package ec.edu.espe.registrationsystemsolution.model;
 
-import com.mongodb.BasicDBObject;
-import ec.edu.espe.filemanager.utils.Data;
-import java.util.Scanner;
-
 /**
  *
  * @author DEVS_JAVA_KND

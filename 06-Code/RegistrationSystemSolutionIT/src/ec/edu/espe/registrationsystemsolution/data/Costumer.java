@@ -8,11 +8,9 @@ package ec.edu.espe.registrationsystemsolution.data;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import com.mongodb.connection.Connection;
 import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
 import ec.edu.espe.registrationsystemsolution.model.Customer;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -61,16 +59,6 @@ public class Costumer {
         return aux;
     }
 
-   /*public boolean readC() {
-        boolean aux;
-        DBCursor cursor = connection.getDbCollection().find();
-        while (cursor.hasNext()) {
-            Customer customer = new Customer((BasicDBObject) cursor.next());
-            customerList.add(customer);
-        }
-        aux = true;
-        return aux;
-    }*/
 
     public boolean UpdateC(String IdCard, String company, String name, String surname) {
         boolean aux = false;
