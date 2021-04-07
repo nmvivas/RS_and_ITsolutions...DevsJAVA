@@ -36,7 +36,7 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }
 
     public void createRequest() {
-        
+
     }
 
     public BasicDBObject getDbObject() {
@@ -223,32 +223,26 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jMenu3 = jMenu3;
     }
 
-   
     public javax.swing.JMenuItem getjMenuItem1() {
         return jMenuItem1;
     }
 
- 
     public void setjMenuItem1(javax.swing.JMenuItem jMenuItem1) {
         this.jMenuItem1 = jMenuItem1;
     }
 
-  
     public javax.swing.JPanel getjPanel2() {
         return jPanel2;
     }
 
-  
     public void setjPanel2(javax.swing.JPanel jPanel2) {
         this.jPanel2 = jPanel2;
     }
 
-    
     public javax.swing.JPopupMenu getjPopupMenu1() {
         return jPopupMenu1;
     }
 
-  
     public void setjPopupMenu1(javax.swing.JPopupMenu jPopupMenu1) {
         this.jPopupMenu1 = jPopupMenu1;
     }
@@ -261,7 +255,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jPopupMenu2 = jPopupMenu2;
     }
 
-  
     public javax.swing.JRadioButtonMenuItem getjRadioButtonMenuItem1() {
         return jRadioButtonMenuItem1;
     }
@@ -270,7 +263,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jRadioButtonMenuItem1 = jRadioButtonMenuItem1;
     }
 
-   
     public javax.swing.JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
@@ -282,7 +274,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.jScrollPane1 = jScrollPane1;
     }
 
-  
     public java.awt.PopupMenu getPopupMenu1() {
         return popupMenu1;
     }
@@ -291,7 +282,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.popupMenu1 = popupMenu1;
     }
 
-  
     public javax.swing.JTable getTblContents() {
         return tblContents;
     }
@@ -300,27 +290,22 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.tblContents = tblContents;
     }
 
-  
     public javax.swing.JTextField getTxtCustomer() {
         return txtCustomer;
     }
 
-   
     public void setTxtCustomer(javax.swing.JTextField txtCustomer) {
         this.txtCustomer = txtCustomer;
     }
 
-  
     public javax.swing.JTextField getTxtState() {
         return txtState;
     }
 
-  
     public void setTxtState(javax.swing.JTextField txtState) {
         this.txtState = txtState;
     }
 
-   
     public javax.swing.JTextField getTxtTechnical() {
         return txtTechnical;
     }
@@ -332,7 +317,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
         this.txtTechnical = txtTechnical;
     }
 
- 
     public javax.swing.JButton getBtnShowRequest() {
         return btnShowRequest;
     }
@@ -348,9 +332,6 @@ public class FrmNewRequest extends javax.swing.JFrame {
     public void setBtnSave(JButton btnSave) {
         this.btnSave = btnSave;
     }
-    
-    
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -675,11 +656,11 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        
+
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-       // createRequest();
+        // createRequest();
 
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -688,11 +669,29 @@ public class FrmNewRequest extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-       
+
     }//GEN-LAST:event_btnPrintActionPerformed
 
     private void btnShowRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowRequestActionPerformed
-      
+        FrmNewRequest newRequest = new FrmNewRequest();
+        DefaultTableModel trequest = new DefaultTableModel();
+        trequest.addColumn("Customer");
+        trequest.addColumn("Type Problem");
+        trequest.addColumn("State");
+        trequest.addColumn("Technical");
+        newRequest.getTblContents().setModel(trequest);
+
+        String[] matriz = new String[8];
+        try {
+            matriz[0] = newRequest.getTxtCustomer().getText();
+            matriz[1] = newRequest.getChkRemote().getText();
+            matriz[2] = newRequest.getTxtState().getText();
+            matriz[3] = newRequest.getTxtTechnical().getText();
+            trequest.addRow(matriz);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
     }//GEN-LAST:event_btnShowRequestActionPerformed
 
     public static void main(String args[]) {

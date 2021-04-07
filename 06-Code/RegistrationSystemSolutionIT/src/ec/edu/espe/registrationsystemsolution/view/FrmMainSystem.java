@@ -189,7 +189,11 @@ public class FrmMainSystem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jItemRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemRequestActionPerformed
-
+           
+            this.setVisible(false);
+            FrmNewRequest newRequest = new FrmNewRequest();
+            newRequest.setLocationRelativeTo(null);
+            newRequest.show();
     }//GEN-LAST:event_jItemRequestActionPerformed
 
     private void jItemTechnicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jItemTechnicalActionPerformed
