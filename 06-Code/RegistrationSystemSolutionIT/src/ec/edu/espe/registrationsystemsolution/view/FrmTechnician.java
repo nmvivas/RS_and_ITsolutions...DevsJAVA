@@ -9,12 +9,12 @@ package ec.edu.espe.registrationsystemsolution.view;
  *
  * @author ruben
  */
-public class FrmTechnical extends javax.swing.JFrame {
+public class FrmTechnician extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmTechnical
      */
-    public FrmTechnical() {
+    public FrmTechnician() {
         initComponents();
     }
 
@@ -41,6 +41,8 @@ public class FrmTechnical extends javax.swing.JFrame {
         txtRole = new javax.swing.JTextField();
         txtProfessional = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnModify = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +58,7 @@ public class FrmTechnical extends javax.swing.JFrame {
 
         lblProfessional.setText("Professional C");
 
-        jLabel7.setText("REGISTRATE TECHNICAL");
+        jLabel7.setText("REGISTRATE TECHNICIAN");
 
         txtName.setText(" ");
 
@@ -77,36 +79,45 @@ public class FrmTechnical extends javax.swing.JFrame {
 
         btnSave.setText("Save");
 
+        btnDelete.setText("Delete");
+
+        btnModify.setText("Modify");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblName)
-                    .addComponent(lblSurenames)
-                    .addComponent(lblIDCard)
-                    .addComponent(lblTelephone)
-                    .addComponent(lblRole)
-                    .addComponent(lblProfessional))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtName)
-                    .addComponent(txtSurenames)
-                    .addComponent(txtID)
-                    .addComponent(txtTelephone)
-                    .addComponent(txtRole)
-                    .addComponent(txtProfessional, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSave)
-                .addGap(161, 161, 161))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(143, Short.MAX_VALUE)
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(136, 136, 136))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblName)
+                            .addComponent(lblSurenames)
+                            .addComponent(lblIDCard)
+                            .addComponent(lblTelephone)
+                            .addComponent(lblRole)
+                            .addComponent(lblProfessional))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txtSurenames)
+                            .addComponent(txtID)
+                            .addComponent(txtTelephone)
+                            .addComponent(txtRole)
+                            .addComponent(txtProfessional, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(btnSave)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnDelete)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                        .addComponent(btnModify)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +152,10 @@ public class FrmTechnical extends javax.swing.JFrame {
                     .addComponent(lblProfessional)
                     .addComponent(txtProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnSave)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSave)
+                    .addComponent(btnDelete)
+                    .addComponent(btnModify))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -169,25 +183,28 @@ public class FrmTechnical extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmTechnical.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmTechnician.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmTechnical.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmTechnician.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmTechnical.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmTechnician.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmTechnical.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmTechnician.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmTechnical().setVisible(true);
+                new FrmTechnician().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnModify;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblIDCard;

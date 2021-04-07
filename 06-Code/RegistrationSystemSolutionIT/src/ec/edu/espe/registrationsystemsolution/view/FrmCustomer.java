@@ -41,6 +41,8 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtAddress = new javax.swing.JTextField();
         txtCompany = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnModify = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,36 +79,45 @@ public class FrmCustomer extends javax.swing.JFrame {
 
         btnSave.setText("Save");
 
+        btnDelete.setText("Delete");
+
+        btnModify.setText("Modify");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblName)
-                    .addComponent(lblSurenames)
-                    .addComponent(lblIDCard)
-                    .addComponent(lblTelephone)
-                    .addComponent(lblAddress)
-                    .addComponent(lblCompany))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtName)
-                    .addComponent(txtSurenames)
-                    .addComponent(txtID)
-                    .addComponent(txtTelephone)
-                    .addComponent(txtAddress)
-                    .addComponent(txtCompany, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnSave)
-                .addGap(161, 161, 161))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(144, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(136, 136, 136))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblName)
+                            .addComponent(lblSurenames)
+                            .addComponent(lblIDCard)
+                            .addComponent(lblTelephone)
+                            .addComponent(lblAddress)
+                            .addComponent(lblCompany))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txtSurenames)
+                            .addComponent(txtID)
+                            .addComponent(txtTelephone)
+                            .addComponent(txtAddress)
+                            .addComponent(txtCompany, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(btnSave)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDelete)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnModify)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +152,10 @@ public class FrmCustomer extends javax.swing.JFrame {
                     .addComponent(lblCompany)
                     .addComponent(txtCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnSave)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSave)
+                    .addComponent(btnDelete)
+                    .addComponent(btnModify))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
@@ -189,6 +203,8 @@ public class FrmCustomer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnModify;
     private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblAddress;

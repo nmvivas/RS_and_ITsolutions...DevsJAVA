@@ -36,6 +36,24 @@ public class FrmMainSystem extends javax.swing.JFrame {
         this.jMenuNew = jMenuNew;
     }
 
+    public JMenuItem getjItemCustomer() {
+        return jItemCustomer;
+    }
+
+    public void setjItemCustomer(JMenuItem jItemCustomer) {
+        this.jItemCustomer = jItemCustomer;
+    }
+
+    public JMenuItem getjItemTechnical() {
+        return jItemTechnical;
+    }
+
+    public void setjItemTechnical(JMenuItem jItemTechnical) {
+        this.jItemTechnical = jItemTechnical;
+    }
+    
+    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

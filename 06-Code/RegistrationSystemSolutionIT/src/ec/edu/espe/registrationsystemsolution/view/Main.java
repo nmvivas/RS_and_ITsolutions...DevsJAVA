@@ -28,7 +28,8 @@ public class Main {
        FrmLogin login = new FrmLogin();
        FrmNewRequest newRequest = new FrmNewRequest();
        FrmMainSystem mainSystem = new FrmMainSystem();
-       
+       FrmTechnician technician = new FrmTechnician();
+       FrmCustomer customer = new FrmCustomer();     
        //MODEL
        UserL userList = new UserL();
        Admin adminList = new Admin();
@@ -36,7 +37,7 @@ public class Main {
        //login
        login.setLocationRelativeTo(null);
        login.setVisible(true);
-       Controller controller = new Controller(login, newRequest, mainSystem, userList, adminList);
+       Controller controller = new Controller(login, newRequest, mainSystem, userList, adminList, technician, customer);
     }
    
 }

@@ -10,9 +10,11 @@ import com.mongodb.DBCursor;
 import ec.edu.espe.registrationsystemsolution.data.Admin;
 import ec.edu.espe.registrationsystemsolution.data.UserL;
 import ec.edu.espe.registrationsystemsolution.utils.ConnectionMongodb;
+import ec.edu.espe.registrationsystemsolution.view.FrmCustomer;
 import ec.edu.espe.registrationsystemsolution.view.FrmLogin;
 import ec.edu.espe.registrationsystemsolution.view.FrmMainSystem;
 import ec.edu.espe.registrationsystemsolution.view.FrmNewRequest;
+import ec.edu.espe.registrationsystemsolution.view.FrmTechnician;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -79,16 +81,20 @@ public class Controller implements ActionListener {
     FrmLogin login;
     FrmNewRequest newRequest;
     FrmMainSystem mainSystem;
+    FrmTechnician technician;
+    FrmCustomer customer;
 
     //MODELS
     UserL userList;
     Admin adminList;
 
     //CONSTRUCTOR
-    public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserL userList, Admin adminList) {
+    public Controller(FrmLogin login, FrmNewRequest newRequest, FrmMainSystem mainSystem, UserL userList, Admin adminList, FrmTechnician technician, FrmCustomer customer) {
         this.login = login;
         this.newRequest = newRequest;
         this.mainSystem = mainSystem;
+        this.technician = technician;
+        this.customer = customer;
         this.userList = userList;
         this.adminList = adminList;
 
@@ -104,15 +110,16 @@ public class Controller implements ActionListener {
 
         //MAIN SYSTEM
         mainSystem.getjItemRequest().addActionListener(this);
-        mainSystem.getjMenuNew().getItem(1);
+        mainSystem.getjItemTechnical().addActionListener(this);
+        mainSystem.getjItemCustomer().addActionListener(this);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        if (ae.getSource().equals(mainSystem.getjMenuNew().getItem(1))) {
-            
+        if (ae.getSource().equals(mainSystem.getjItemRequest())) {
+
             mainSystem.hide();
             newRequest.setLocationRelativeTo(null);
             newRequest.show();
@@ -218,6 +225,18 @@ public class Controller implements ActionListener {
             newRequest.hide();
             mainSystem.setLocationRelativeTo(null);
             mainSystem.show();
+        }
+
+        if (ae.getSource().equals(mainSystem.getjItemCustomer())) {
+            mainSystem.hide();
+            customer.setLocationRelativeTo(null);
+            customer.show();
+        }
+         
+        if (ae.getSource().equals(mainSystem.getjItemTechnical())){
+            mainSystem.hide();
+            technician.setLocationRelativeTo(null);
+            technician.show();
         }
 
     }
