@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.registrationsystemsolution.utils;
 
-import java.util.Scanner;
-
 /**
  *
  * @author DEVS_JAVA_KND

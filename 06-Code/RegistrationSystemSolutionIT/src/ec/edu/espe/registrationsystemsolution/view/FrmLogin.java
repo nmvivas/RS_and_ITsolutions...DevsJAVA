@@ -5,16 +5,6 @@
  */
 package ec.edu.espe.registrationsystemsolution.view;
 
-import ec.edu.espe.registrationsystemsolution.controller.Verification;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author DEVS_JAVA_KND

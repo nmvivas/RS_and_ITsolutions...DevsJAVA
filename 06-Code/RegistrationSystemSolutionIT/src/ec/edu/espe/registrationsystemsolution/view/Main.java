@@ -6,15 +6,11 @@
 package ec.edu.espe.registrationsystemsolution.view;
 
 
-import ec.edu.espe.filemanager.utils.Data;
 import ec.edu.espe.registrationsystemsolution.controller.Controller;
 import ec.edu.espe.registrationsystemsolution.data.Admin;
 
-import ec.edu.espe.registrationsystemsolution.model.Administrator;
 import ec.edu.espe.registrationsystemsolution.data.UserL;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Date;
 
 
  /* @author DEVS_JAVA_KND

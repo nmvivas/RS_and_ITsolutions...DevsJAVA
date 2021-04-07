@@ -8,7 +8,6 @@ package ec.edu.espe.registrationsystemsolution.controller;
 import ec.edu.espe.registrationsystemsolution.utils.Login;
 import ec.edu.espe.registrationsystemsolution.view.FrmLogin;
 import ec.edu.espe.registrationsystemsolution.view.FrmMainSystem;
-import ec.edu.espe.registrationsystemsolution.view.FrmNewRequest;
 import javax.swing.JOptionPane;
 
 /**
