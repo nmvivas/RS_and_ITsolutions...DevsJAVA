@@ -104,13 +104,14 @@ public class Controller implements ActionListener {
 
         //MAIN SYSTEM
         mainSystem.getjItemRequest().addActionListener(this);
+        mainSystem.getjMenuNew().getItem(1);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        if (ae.getSource().equals(mainSystem.getjItemRequest())) {
+        if (ae.getSource().equals(mainSystem.getjMenuNew().getItem(1))) {
             
             mainSystem.hide();
             newRequest.setLocationRelativeTo(null);
